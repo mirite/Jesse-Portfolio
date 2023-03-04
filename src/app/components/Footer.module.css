@@ -1,0 +1,5 @@
+.footer {
+    margin-top: var(--space-m);;
+    padding: var(--space-m);
+    text-align: center;
+}
