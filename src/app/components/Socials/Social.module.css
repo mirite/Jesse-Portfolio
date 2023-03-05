@@ -1,0 +1,12 @@
+.social {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+@container (width < 12em) {
+    .social {
+        flex-direction: column;
+        text-align: center;
+    }
+}
