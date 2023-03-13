@@ -19,6 +19,8 @@
     "next": "13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "4.9.5"
+    "sass": "^1.59.2",
+    "typescript": "4.9.5",
+    "wp-types": "^3.61.0"
   }
 }
