@@ -1,9 +1,12 @@
 import type {
+    WP_REST_API_Categories,
     WP_REST_API_Post as WPPost,
-    WP_REST_API_Posts as WPPosts,
+    WP_REST_API_Posts as WPPosts, WP_Taxonomy, WP_Taxonomy_Labels,
 } from "wp-types";
+import {Category} from "@/types";
 
 const remote = "https://jgconner.com/wp/wp-json/wp/v2";
+let categories: Category[];
 
 function processPost(post: WPPost) {
     const date = post.date.substring(0, 10);
@@ -49,7 +52,8 @@ export async function getPosts(count: number, category?: string) {
         (category ? `&categories=${category}` : "");
     const rawData = await getRaw<WPPosts>(endpoint);
 
-    if ("errors" in rawData) {
+    // @ts-ignore
+    if ("errors" in rawData || ("data" in rawData && rawData.data.status > 399)) {
         return [];
     }
     return rawData.filter(isPublished).map(processPost);
@@ -82,10 +86,35 @@ export function getType(post: WPPost) {
     return firstTerm.slug;
 }
 
-export async function getPostsForStaticBuild(categoryID: string) {
-    const posts = await getPosts(100, categoryID);
+export async function getPostsForStaticBuild() {
+    const posts = await getPosts(100);
 
     return posts.map((post) => ({
+        category: post.category,
         slug: post.slug,
+    }));
+}
+
+export async function getCategories() {
+    if(categories) {
+        return categories;
+    }
+    const endpoint =
+        `categories`;
+    const rawData = await getRaw<WP_REST_API_Categories>(endpoint);
+
+    if ("errors" in rawData) {
+        return [];
+    }
+    categories = rawData.filter(category=>category.count).map(({slug, name, id})=> {
+        return {slug, name, id};
+    });
+    return categories
+}
+
+export async function getCategoriesForStaticBuild() {
+    const categories = await getCategories();
+    return categories.map((category) => ({
+        category: category.slug,
     }));
 }

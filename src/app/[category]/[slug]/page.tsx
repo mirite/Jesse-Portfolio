@@ -1,9 +1,10 @@
 import React from 'react';
 import {getPost, getPostsForStaticBuild} from "@/app/wordpress";
 import {createPostMetadata} from "@/app/posts";
+import Post from "@/app/components/Post";
 
 interface Props {
-    params: { slug: string };
+    params: { slug: string, category: string };
 }
 
 const Page = async (props: Props) => {
@@ -14,10 +15,7 @@ const Page = async (props: Props) => {
         return <p>Post not found {slug}</p>
     }
     return (
-        <div>
-            <h1>{post.title}</h1>
-            <div dangerouslySetInnerHTML={{__html: post.content || ""}}></div>
-        </div>
+        <Post {...post}/>
     );
 };
 
@@ -26,7 +24,7 @@ export async function generateMetadata({params}: Props) {
 }
 
 export async function generateStaticParams() {
-    return await getPostsForStaticBuild("3");
+    return await getPostsForStaticBuild();
 }
 
 export default Page;

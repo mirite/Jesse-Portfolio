@@ -3,7 +3,7 @@ import {getRichTextContent} from "@/app/connector";
 import Socials from "@/app/components/Socials/Socials";
 import BioImage from "@/app/components/BioImage";
 import Card from "@/app/components/Card";
-import {getPosts} from "@/app/wordpress";
+import {getCategories, getPosts} from "@/app/wordpress";
 import Posts from "@/app/components/Posts";
 
 export default async function Home() {
@@ -30,6 +30,8 @@ const data = async () => {
 
     const title = await getRichTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
     const posts = (await getPosts(10)) || [];
+    const categories = (await getCategories()) || [];
+    console.log(categories);
     return {
         props: {
             title,
