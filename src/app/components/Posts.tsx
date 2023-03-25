@@ -3,8 +3,9 @@ import {WP_REST_API_Post} from "wp-types";
 import Card from "@/app/components/Card";
 import styles from './Posts.module.scss';
 import {getType} from "@/app/wordpress";
+import {Post} from "@/types";
 interface Props {
-    posts: WP_REST_API_Post[]
+    posts: Post[]
 }
 const Posts = (props: Props) => {
     const {posts} = props;
@@ -12,7 +13,7 @@ const Posts = (props: Props) => {
         <div className={styles.posts}>
             {
                 posts.map(post => (
-                    <Card key={post.id} title={post.title.rendered || ''} link={getType(post) + "/" + post.slug}/>
+                    <Card key={post.slug} title={post.title} link={post.category + "/" + post.slug}/>
                 ))
             }
         </div>

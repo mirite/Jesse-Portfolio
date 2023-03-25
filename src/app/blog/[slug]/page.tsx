@@ -1,24 +1,28 @@
 import React from 'react';
-import {getPost, getPosts, getPostsForStaticBuild} from "@/app/wordpress";
-import {Metadata} from "next";
+import {getPost, getPostsForStaticBuild} from "@/app/wordpress";
+import {createPostMetadata} from "@/app/posts";
 
 interface Props {
-    params: {slug: string};
+    params: { slug: string };
 }
+
 const Page = async (props: Props) => {
     const {params} = props;
-    const post = await getPost(params.slug);
+    const {slug} = params;
+    const post = await getPost(slug);
+    if (!post) {
+        return <p>Post not found {slug}</p>
+    }
     return (
         <div>
-            <h1>{post?.title.rendered}</h1>
-            <div dangerouslySetInnerHTML={{__html: post?.content.rendered || ""}}></div>
+            <h1>{post.title}</h1>
+            <div dangerouslySetInnerHTML={{__html: post.content || ""}}></div>
         </div>
     );
 };
 
-export async function generateMetadata({params}: Props): Promise<Metadata> {
-    const post = await getPost(params.slug);
-    return { title: post?.title.rendered, description: post?.excerpt.raw || ""};
+export async function generateMetadata({params}: Props) {
+    return await createPostMetadata(params.slug)
 }
 
 export async function generateStaticParams() {

@@ -6,11 +6,16 @@ import type {
 const remote = "https://jgconner.com/wp/wp-json/wp/v2";
 
 function processPost(post: WPPost) {
-    post.date = post.date.substring(0, 10);
-    post.content.rendered = post.content.rendered
+    const date = post.date.substring(0, 10);
+    const content = post.content.rendered
         .replace(/data-width/g, "width")
         .replace(/data-height/g, "height");
-    return post;
+    const slug = post.slug;
+    const title = post.title.rendered;
+    const excerpt = post.excerpt.rendered;
+    const category = getType(post);
+
+    return {date, content, slug, title, excerpt, category};
 }
 
 function isPublished(post: WPPost): boolean {
@@ -47,7 +52,6 @@ export async function getPosts(count: number, category?: string) {
     if ("errors" in rawData) {
         return [];
     }
-    console.log(rawData);
     return rawData.filter(isPublished).map(processPost);
 }
 

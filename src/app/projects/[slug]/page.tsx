@@ -1,5 +1,6 @@
 import React from 'react';
 import {getPosts, getPostsForStaticBuild} from "@/app/wordpress";
+import {createPostMetadata} from "@/app/posts";
 
 interface Props {
     params: {slug: string};
@@ -12,6 +13,10 @@ const Page = (props: Props) => {
         </div>
     );
 };
+
+export async function generateMetadata({params}: Props) {
+    return await createPostMetadata(params.slug)
+}
 
 export async function generateStaticParams() {
     return await getPostsForStaticBuild("14");
