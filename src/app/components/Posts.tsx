@@ -1,7 +1,7 @@
 import React from 'react';
 import {WP_REST_API_Post} from "wp-types";
 import Card from "@/app/components/Card";
-import styles from './Posts.module.css';
+import styles from './Posts.module.scss';
 interface Props {
     posts: WP_REST_API_Post[]
 }
