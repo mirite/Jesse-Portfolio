@@ -3,11 +3,12 @@ import {getAsset} from "@/app/connector";
 import styles from './Image.module.css';
 
 interface Props extends ImgHTMLAttributes<any> {
-    assetID: string;
+    assetid: string;
 }
 
 const Image = async (props: Props) => {
-    const image = await getAsset(props.assetID);
+    const image = await getAsset(props.assetid);
+
     if (!image) {
         return null;
     }

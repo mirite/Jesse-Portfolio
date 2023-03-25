@@ -6,10 +6,10 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.inner}>
-            <div className="header-home">
+            <div className="header-home" aria-label="Site Title">
                 <Link href="/"> Jesse Conner </Link>
             </div>
-            <nav className={styles.nav}>
+            <nav className={styles.nav} aria-label="Main Navigation">
                 <ul>
                     <li className="nav-item">
                         <Link href="/blog">Blog</Link>

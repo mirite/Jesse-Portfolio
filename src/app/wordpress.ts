@@ -47,6 +47,7 @@ export async function getPosts(count: number, category?: string) {
     if ("errors" in rawData) {
         return [];
     }
+    console.log(rawData);
     return rawData.filter(isPublished).map(processPost);
 }
 
@@ -68,4 +69,19 @@ export async function getPage(slug: string) {
     }
 
     return processPost(rawData[0]);
+}
+
+export function getType(post: WPPost) {
+    const terms=post["_embedded"]?.["wp:term"] as {slug: string}[][];
+    if(!terms) return "";
+    const firstTerm = terms[0][0];
+    return firstTerm.slug;
+}
+
+export async function getPostsForStaticBuild(categoryID: string) {
+    const posts = await getPosts(100, categoryID);
+
+    return posts.map((post) => ({
+        slug: post.slug,
+    }));
 }

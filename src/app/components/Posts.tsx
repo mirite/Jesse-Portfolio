@@ -2,6 +2,7 @@ import React from 'react';
 import {WP_REST_API_Post} from "wp-types";
 import Card from "@/app/components/Card";
 import styles from './Posts.module.scss';
+import {getType} from "@/app/wordpress";
 interface Props {
     posts: WP_REST_API_Post[]
 }
@@ -11,7 +12,7 @@ const Posts = (props: Props) => {
         <div className={styles.posts}>
             {
                 posts.map(post => (
-                    <Card key={post.id} title={post.title.rendered || ''} link={"https://jesseconner.ca"}/>
+                    <Card key={post.id} title={post.title.rendered || ''} link={getType(post) + "/" + post.slug}/>
                 ))
             }
         </div>
