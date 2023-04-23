@@ -1,5 +1,5 @@
 import React, {ImgHTMLAttributes} from 'react';
-import {getAsset} from "@/app/connector";
+import {getAsset} from "@/app/helpers/connector";
 import styles from './Image.module.css';
 
 interface Props extends ImgHTMLAttributes<any> {

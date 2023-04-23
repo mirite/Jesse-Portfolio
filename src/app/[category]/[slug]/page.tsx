@@ -1,6 +1,5 @@
 import React from 'react';
-import {getPost, getPostsForStaticBuild} from "@/app/wordpress";
-import {createPostMetadata} from "@/app/posts";
+import {createPostMetadata, getPost, getPostsForStaticBuild} from "@/app/helpers/posts";
 import Post from "@/app/components/Post";
 
 interface Props {

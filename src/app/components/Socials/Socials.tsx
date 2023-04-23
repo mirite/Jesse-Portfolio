@@ -1,5 +1,5 @@
 import React from 'react';
-import {getEntries} from "@/app/connector";
+import {getEntries} from "@/app/helpers/connector";
 import {Social as ISocial} from "@/app/components/Socials/types";
 import Social from "@/app/components/Socials/Social";
 import styles from "./Socials.module.css";
