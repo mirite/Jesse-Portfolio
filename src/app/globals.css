@@ -5,12 +5,15 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
+  --color-0: 255, 255, 255;
   --color-1: 240, 229, 164;
   --color-2: 131, 135, 140;
   --color-3: 167, 74, 86;
   --color-4: 141, 108, 85;
   --color-5: 37, 46, 69;
+  --color-6: 0, 0, 139;
 
+  --link-color: var(--color-6);
   --foreground-rgb: var(--color-5);
   --background-start-rgb: var(--color-1);
   --background-end-rgb: var(--color-1);
@@ -46,6 +49,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --link-color: var(--color-0);
     --foreground-rgb: var(--color-1);
     --background-start-rgb: var(--color-5);
     --background-end-rgb: var(--color-5);
@@ -54,8 +58,6 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 html,
@@ -85,6 +87,7 @@ main {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
+  display: flex;
 }
 
 h1 {
@@ -111,9 +114,21 @@ h6 {
   font-size: var(--step-0);
 }
 
+p {
+  line-height: 1.5em;
+  max-width: 80ch;
+  margin-bottom: 2em;
+}
+
 a {
-  color: inherit;
+  color: rgb(var(--link-color), 0.85);
   text-decoration: none;
+  transition: all 0.1s ease-in-out;
+}
+
+a:hover {
+  color: rgb(var(--link-color), 1);
+  transform: scale3d(1.5, 3, 6.5) rotate3d(1, 2, 3, 90deg);
 }
 
 img {
