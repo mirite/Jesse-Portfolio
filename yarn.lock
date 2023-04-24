@@ -2157,7 +2157,7 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-typescript@4.9.5, typescript@>=3:
+typescript@4.9.5:
   version "4.9.5"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
   integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
@@ -2223,13 +2223,6 @@ word-wrap@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/word-wrap/-/word-wrap-1.2.3.tgz#610636f6b1f703891bd34771ccb17fb93b47079c"
   integrity sha512-Hz/mrNwitNRh/HUAtM/VT/5VH+ygD6DV7mYKZAtHOrbs8U7lvPS6xf7EJKMF0uW1KJCl0H701g3ZGus+muE5vQ==
-
-wp-types@^3.61.0:
-  version "3.61.0"
-  resolved "https://registry.yarnpkg.com/wp-types/-/wp-types-3.61.0.tgz#93a2e6bd5937da317e9504cbf247d0719689bb12"
-  integrity sha512-3u7g4n+c5QugHar1R/3PLTQLv4NTIi2Lmjh+IjrDZJNRpU40sQtGCc3jLjLYQlaLVUpPNwMAedIAryQfUbQFRw==
-  dependencies:
-    typescript ">=3"
 
 wrappy@1:
   version "1.0.2"

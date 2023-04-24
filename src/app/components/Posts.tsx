@@ -1,8 +1,6 @@
 import React from 'react';
-import {WP_REST_API_Post} from "wp-types";
 import Card from "@/app/components/Card";
 import styles from './Posts.module.scss';
-import {getType} from "@/app/wordpress";
 import {Post} from "@/types";
 interface Props {
     posts: Post[]
