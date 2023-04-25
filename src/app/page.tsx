@@ -1,6 +1,6 @@
 import styles from './page.module.css'
 import {getRichTextContent} from "@/app/helpers/connector";
-import Socials from "@/app/components/Socials/Socials";
+import Socials from "@/app/components/Socials";
 import BioImage from "@/app/components/BioImage";
 import Posts from "@/app/components/Posts";
 import {getPosts} from "@/app/helpers/posts";

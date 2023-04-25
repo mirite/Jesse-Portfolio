@@ -128,7 +128,6 @@ a {
 
 a:hover {
   color: rgb(var(--link-color), 1);
-  transform: scale3d(1.5, 3, 6.5) rotate3d(1, 2, 3, 90deg);
 }
 
 img {

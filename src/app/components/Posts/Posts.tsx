@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from "@/app/components/Card";
+import Card from "@/app/components/Posts/Card";
 import styles from './Posts.module.scss';
 import {Post} from "@/types";
 interface Props {
