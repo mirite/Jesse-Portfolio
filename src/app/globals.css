@@ -88,6 +88,7 @@ main {
   max-width: var(--max-width);
   margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -116,7 +117,6 @@ h6 {
 
 p {
   line-height: 1.5em;
-  max-width: 80ch;
   margin-bottom: 2em;
 }
 

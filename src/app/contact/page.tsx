@@ -3,11 +3,11 @@ import styles from "@/app/page.module.css";
 import BioImage from "@/app/components/BioImage";
 import Socials from "@/app/components/Socials";
 import {getRichTextContent} from "@/app/helpers/connector";
-
+import contactPageStyles from "./page.module.css";
 const Page = async () => {
     const {title} = await data();
     return (
-        <div>
+        <div className={contactPageStyles.container}>
             <div className={styles.title}>
                 {title}
             </div>

@@ -1,7 +1,7 @@
 .hero {
     margin-inline: auto;
     display: grid;
-    max-width: 50%;
+    width: max(50%, calc(var(--max-width) / 2));
     justify-content: center;
     align-items: center;
     grid-template-columns: 1fr 1fr;
