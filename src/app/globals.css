@@ -133,7 +133,8 @@ a:hover {
 }
 
 img {
-  border-radius: var(--border-radius);
+  max-width: 100%;
+  height: auto;
 }
 
 .no-break {

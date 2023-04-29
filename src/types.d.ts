@@ -1,9 +1,10 @@
-import {Entry} from "contentful";
+import {Asset, Entry} from "contentful";
 import {Document} from '@contentful/rich-text-types';
 export interface Post extends RawPost {
     slug: string;
     category: string
     excerpt: string;
+    assets: Asset[];
 }
 
 export interface RawPost {
