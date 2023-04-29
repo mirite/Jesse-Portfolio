@@ -5,18 +5,15 @@
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --color-0: 255, 255, 255;
-  --color-1: 240, 229, 164;
-  --color-2: 131, 135, 140;
-  --color-3: 167, 74, 86;
-  --color-4: 141, 108, 85;
-  --color-5: 37, 46, 69;
-  --color-6: 0, 0, 139;
+  --color-1: 179, 197, 211;
+  --color-2: 175, 182, 185;
+  --color-3: 138, 92, 83;
+  --color-4: 98, 98, 118;
 
-  --link-color: var(--color-6);
-  --foreground-rgb: var(--color-5);
+  --link-color: var(--color-4);
+  --foreground-rgb: var(--color-4);
   --background-start-rgb: var(--color-1);
-  --background-end-rgb: var(--color-1);
+  --background-end-rgb: var(--color-2);
 
   --step-0: clamp(1.00rem, calc(0.93rem + 0.37vw), 1.25rem);
   --step-1: clamp(1.20rem, calc(1.09rem + 0.54vw), 1.56rem);
@@ -49,10 +46,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --link-color: var(--color-0);
+    --link-color: var(--color-1);
     --foreground-rgb: var(--color-1);
-    --background-start-rgb: var(--color-5);
-    --background-end-rgb: var(--color-5);
+    --background-start-rgb: var(--color-3);
+    --background-end-rgb: var(--color-4);
   }
 }
 
@@ -89,6 +86,11 @@ main {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(80ch, 100%);
 }
 
 h1 {
@@ -141,14 +143,12 @@ img {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-    --accent-colour: wheat;
   }
 }
 
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
-    --accent-colour: black;
   }
 }
 

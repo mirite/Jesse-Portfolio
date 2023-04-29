@@ -3,14 +3,14 @@ import {Post as PostType} from "@/types";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import styles from './Post.module.css';
 import {getPrettyDate} from "@/app/helpers/stringTransforms";
-interface Props extends PostType {}
+interface Props extends Partial<Pick<PostType, 'title' | 'content'| 'posted'>> {}
 const Post = (post: Props) => {
     const {title, content, posted} = post;
     return (
-        <div className={styles.container}>
-            <h1>{title}</h1>
-            <p>Posted: {getPrettyDate(posted)}</p>
-            {documentToReactComponents(content)}
+        <div className="container">
+            {title && <h1>{title}</h1>}
+            {posted && <p>Posted: {getPrettyDate(posted)}</p>}
+            {content && <>{documentToReactComponents(content)}</>}
         </div>
     );
 };

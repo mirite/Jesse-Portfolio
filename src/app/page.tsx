@@ -1,9 +1,10 @@
 import styles from './page.module.css'
-import {getRichTextContent} from "@/app/helpers/connector";
+import {getContent, getRichTextContent} from "@/app/helpers/connector";
 import Socials from "@/app/components/Socials";
 import BioImage from "@/app/components/BioImage";
 import Posts from "@/app/components/Posts";
-import {getPosts} from "@/app/helpers/posts";
+import {createPostMetadata, getPosts} from "@/app/helpers/posts";
+import {Snippet} from "@/types";
 
 export default async function Home() {
     const {props} = await data();
@@ -12,11 +13,6 @@ export default async function Home() {
         <div>
             <div className={styles.title}>
                 {title}
-            </div>
-            <div className={styles.hero}>
-                <BioImage/>
-                {/* @ts-expect-error Server Component */}
-                <Socials/>
             </div>
             <div>
                 <Posts posts={posts}/>
@@ -34,5 +30,12 @@ const data = async () => {
             title,
             posts
         },
+    }
+}
+
+export async function generateMetadata() {
+    return {
+        title: "Jesse Conner",
+        description: ""
     }
 }

@@ -4,10 +4,11 @@ import BioImage from "@/app/components/BioImage";
 import Socials from "@/app/components/Socials";
 import {getRichTextContent} from "@/app/helpers/connector";
 import contactPageStyles from "./page.module.css";
+import ContactForm from "@/app/components/ContactForm";
 const Page = async () => {
     const {title} = await data();
     return (
-        <div className={contactPageStyles.container}>
+        <div className={"container"}>
             <div className={styles.title}>
                 {title}
             </div>
@@ -16,6 +17,7 @@ const Page = async () => {
                 {/* @ts-expect-error Server Component */}
                 <Socials/>
             </div>
+            <ContactForm />
         </div>
     );
 };
@@ -26,5 +28,11 @@ const data = async () => {
     return {title};
 }
 
+export async function generateMetadata() {
+    return {
+        title: "Contact",
+        description: ""
+    }
+}
 
 export default Page;

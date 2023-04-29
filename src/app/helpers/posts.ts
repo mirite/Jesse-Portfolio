@@ -8,8 +8,9 @@ export async function createPostMetadata(slug: string): Promise<Metadata> {
     if(!post) {
         return {};
     }
-    const {title, excerpt} = post;
-    return { title: title, description: excerpt};
+
+    const {title, excerpt, category} = post;
+    return { title: category + " > " + title, description: excerpt};
 }
 
 export async function getPostsForStaticBuild() {

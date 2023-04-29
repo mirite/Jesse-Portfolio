@@ -13,4 +13,9 @@ export interface RawPost {
     category: Entry<Category>[]
 }
 
-export type Category = { name: string; slug: string; id: number }
+export interface Snippet {
+    content: Document;
+    label: string;
+}
+
+export type Category = { name: string; slug: string; id: number, description: string };
