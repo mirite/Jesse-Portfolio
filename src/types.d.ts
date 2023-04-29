@@ -20,3 +20,6 @@ export interface Snippet {
 }
 
 export type Category = { name: string; slug: string; id: number, description: string };
+
+export type Proficiency = 'high' | 'medium' | 'starter';
+export type Skill = {name: string, proficiency: Proficiency, interestingness: number};
