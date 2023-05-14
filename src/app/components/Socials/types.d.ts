@@ -1,5 +1,5 @@
 export interface Social {
-    platform: string;
-    link: string;
-    username: string;
+  platform: string;
+  link: string;
+  username: string;
 }

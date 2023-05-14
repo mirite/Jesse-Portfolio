@@ -1,20 +1,20 @@
 .hero {
-    margin-inline: auto;
-    display: grid;
-    width: max(50%, calc(var(--max-width) / 2));
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-m);
+  margin-inline: auto;
+  display: grid;
+  width: max(50%, calc(var(--max-width) / 2));
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-m);
 }
 
 @media (max-width: 950px) {
-    .hero {
-        grid-template-columns: 1fr;
-    }
+  .hero {
+    grid-template-columns: 1fr;
+  }
 }
 
 .title {
-    text-align: center;
-    margin-bottom: var(--space-m);
+  text-align: center;
+  margin-bottom: var(--space-m);
 }
