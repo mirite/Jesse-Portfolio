@@ -1,11 +1,7 @@
-import {
-  ContentfulClientApi,
-  createClient,
-  CreateClientParams,
-  Entry,
-} from "contentful";
-import { documentToReactComponents as renderRichText } from "@contentful/rich-text-react-renderer";
-import { Document } from "@contentful/rich-text-types";
+import type {ContentfulClientApi, CreateClientParams, Entry,} from "contentful";
+import {createClient,} from "contentful";
+import {documentToReactComponents,} from "@contentful/rich-text-react-renderer";
+import type {Document} from "@contentful/rich-text-types";
 
 let _client: ContentfulClientApi | undefined;
 
@@ -47,10 +43,12 @@ export async function getEntries<T>(id: string) {
   return response.items;
 }
 
+// @ts-ignore
 export async function getRichTextContent<T>(id: string, field: keyof T) {
   const content = await getContent<T>(id);
   if (content) {
     const document = content.fields[field] as Document;
-    return renderRichText(document);
+    return documentToReactComponents(document);
   }
+  return "";
 }

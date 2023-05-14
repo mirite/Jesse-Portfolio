@@ -1,5 +1,5 @@
-import { Asset, Entry } from "contentful";
-import { Document } from "@contentful/rich-text-types";
+import type { Asset, Entry } from "contentful";
+import type { Document } from "@contentful/rich-text-types";
 export interface Post extends RawPost {
   slug: string;
   category: string;
