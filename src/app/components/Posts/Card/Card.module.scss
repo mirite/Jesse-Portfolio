@@ -1,7 +1,7 @@
 .card {
   border-radius: var(--border-radius);
   aspect-ratio: 1/1;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-color);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: all ease-in-out 0.3s;
   margin: var(--space-s);
