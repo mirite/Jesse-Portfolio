@@ -1,6 +1,6 @@
 import React from "react";
 import { Asset } from "contentful";
-import GalleryImage from "@/app/components/GalleryImage";
+import GalleryImage from "./GalleryImage";
 import styles from "./Gallery.module.css";
 const Gallery = ({ assets }: { assets: Asset[] }) => {
   return (

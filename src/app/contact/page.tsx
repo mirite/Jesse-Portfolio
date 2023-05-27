@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "@/app/page.module.css";
-import BioImage from "@/app/components/BioImage";
+import BioImage from "@/app/components/BioImage/BioImage";
 import Socials from "@/app/components/Socials";
 import { getRichTextContent } from "@/app/helpers/connector";
-import ContactForm from "@/app/components/ContactForm";
+import ContactForm from "@/app/components/ContactForm/ContactForm";
 
 const Page = async () => {
   const { title } = await data();

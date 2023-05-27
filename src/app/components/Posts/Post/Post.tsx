@@ -3,7 +3,7 @@ import { Post as PostType } from "@/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import styles from "./Post.module.css";
 import { getPrettyDate } from "@/app/helpers/stringTransforms";
-import Gallery from "@/app/components/Gallery";
+import Gallery from "@/app/components/Gallery/Gallery";
 interface Props
   extends Partial<Pick<PostType, "title" | "content" | "posted" | "assets">> {}
 const Post = (post: Props) => {

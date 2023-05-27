@@ -1,8 +1,9 @@
-import React, { ImgHTMLAttributes } from "react";
+import React from "react";
 import { getAsset } from "@/app/helpers/connector";
 import styles from "./Image.module.css";
+import NextImage, {ImageProps} from "next/image";
 
-interface Props extends ImgHTMLAttributes<any> {
+interface Props extends Omit<ImageProps, 'src'| 'alt'> {
   assetid: string;
 }
 
@@ -14,7 +15,7 @@ const Image = async (props: Props) => {
   }
   return (
     <div className={styles.wrapper}>
-      <img
+      <NextImage
         src={"https:" + image.file.url}
         title={image.title}
         alt={image.description}

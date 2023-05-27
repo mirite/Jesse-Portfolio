@@ -9,7 +9,6 @@ const BioImage = () => {
         assetid={"5ErbQQzw8IRhgf5CZfqZsj"}
         width={250}
         height={250}
-        alt={"Jesse Conner"}
       />
     </div>
   );
