@@ -1,186 +1,189 @@
 :root {
-    --max-width: 1400px;
-    --border-radius: 1rem;
-    --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+  --max-width: 1400px;
+  --border-radius: 1rem;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-    /* Color Theme Swatches in HSLA */
-    --background-color: 215, 217, 255;
-    --text-color: 8, 0, 0;
-    --primary-color: 255, 255, 255;
-    --accent-color: 220, 136, 15;
-    --link-color: 24, 0, 221;
+  /* Color Theme Swatches in HSLA */
+  --background-color: 215, 217, 255;
+  --text-color: 8, 0, 0;
+  --primary-color: 255, 255, 255;
+  --accent-color: 220, 136, 15;
+  --link-color: 24, 0, 221;
 
-    --step-0: 1rem;
-    --step-1: 1.2rem;
-    --step-2: 1.44rem;
-    --step-3: 1.728rem;
-    --step-4: 2.047rem;
-    --step-5: 2.488rem;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.44rem;
+  --step-3: 1.728rem;
+  --step-4: 2.047rem;
+  --step-5: 2.488rem;
 
-    --space-3xs: 0.25rem;
-    --space-2xs: 0.5rem;
-    --space-xs: 0.75rem;
-    --space-s: 1rem;
-    --space-m: 1.5rem;
-    --space-l: 2rem;
-    --space-xl: 2.5rem;
-    --space-2xl: 3rem;
-    --space-3xl: 3.5rem;
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3rem;
+  --space-3xl: 3.5rem;
 
-    --box-shadow:  rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+  --box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
 }
 
 @media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: 7, 22, 17;
-        --text-color: 246, 243, 244;
-        --primary-color: 34, 31, 31;
-        --accent-color: 220, 136, 15;
-        --link-color: oklch(1 0.28 264.05 / 1);
-    }
+  :root {
+    --background-color: 7, 22, 17;
+    --text-color: 246, 243, 244;
+    --primary-color: 34, 31, 31;
+    --accent-color: 220, 136, 15;
+    --link-color: oklch(1 0.28 264.05 / 1);
+  }
 }
 
 * {
-    box-sizing: border-box;
-    transition-timing-function: ease-in-out;
+  box-sizing: border-box;
+  transition-timing-function: ease-in-out;
 }
 
 html,
 body {
-    max-width: 100vw;
-    overflow-x: hidden;
-    font-size: calc(1em + min(calc(1400px / 200), 0.5vw));
-    font-family: opensans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-size: calc(1em + min(calc(1400px / 200), 0.5vw));
+  font-family: opensans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body {
-    font-size: var(--step-0);
-    color: rgb(var(--text-color));
-    background-color: rgb(var(--background-color));
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-size: var(--step-0);
+  color: rgb(var(--text-color));
+  background-color: rgb(var(--background-color));
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main {
-    flex: 1;
-    width: 100%;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+  flex: 1;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
-    margin-inline: auto;
-    width: min(80ch, 100%);
+  margin-inline: auto;
+  width: min(80ch, 100%);
 }
 
 h1 {
-    font-size: var(--step-5);
+  font-size: var(--step-5);
 }
 
 h2 {
-    font-size: var(--step-4);
+  font-size: var(--step-4);
 }
 
 h3 {
-    font-size: var(--step-3);
+  font-size: var(--step-3);
 }
 
 h4 {
-    font-size: var(--step-2);
+  font-size: var(--step-2);
 }
 
 h5 {
-    font-size: var(--step-1);
+  font-size: var(--step-1);
 }
 
 h6 {
-    font-size: var(--step-0);
+  font-size: var(--step-0);
 }
 
 p {
-    line-height: 1.5em;
-    margin-bottom: 2em;
+  line-height: 1.5em;
+  margin-bottom: 2em;
 }
 
 a {
-    text-decoration: none;
-    transition: all 0.1s ease-in-out;
-    color: rgb(var(--link-color));
+  text-decoration: none;
+  transition: all 0.1s ease-in-out;
+  color: rgb(var(--link-color));
 }
 
 a:hover {
-    filter: brightness(150%);
+  filter: brightness(150%);
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 button {
-    background-color: rgb(var(--accent-color));
-    backface-visibility: hidden;
-    border-radius: 6px;
-    border-width: 0;
-    box-shadow: var(--box-shadow);
-    box-sizing: border-box;
-    color: rgb(var(--text-color));
-    cursor: pointer;
-    font-size: 100%;
-    line-height: 1.15;
-    margin: 12px 0 0;
-    outline: none;
-    overflow: hidden;
-    padding: 0 25px;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    transition: all .2s, box-shadow .08s ease-in;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+  background-color: rgb(var(--accent-color));
+  backface-visibility: hidden;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  color: rgb(var(--text-color));
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 button:hover {
-   transform: scale(102%);
+  transform: scale(102%);
 }
 
 button:disabled {
-    cursor: default;
+  cursor: default;
 }
 
 button:focus {
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
 }
 
 .no-break {
-    break-inside: avoid;
+  break-inside: avoid;
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
+  html {
+    color-scheme: dark;
+  }
 }
 
 @media (prefers-color-scheme: light) {
-    html {
-        color-scheme: light;
-    }
+  html {
+    color-scheme: light;
+  }
 }
 
 label,
 button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media (max-width: 1400px) {
-    main {
-        padding-inline: var(--space-s);
-    }
+  main {
+    padding-inline: var(--space-s);
+  }
 }

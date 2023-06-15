@@ -5,11 +5,7 @@ const BioImage = () => {
   return (
     <div className={styles.container}>
       {/* @ts-expect-error Server Component */}
-      <Image
-        assetid={"5ErbQQzw8IRhgf5CZfqZsj"}
-        width={250}
-        height={250}
-      />
+      <Image assetid={"5ErbQQzw8IRhgf5CZfqZsj"} width={250} height={250} />
     </div>
   );
 };

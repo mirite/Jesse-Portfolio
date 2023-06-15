@@ -1,7 +1,11 @@
-import type {ContentfulClientApi, CreateClientParams, Entry,} from "contentful";
-import {createClient,} from "contentful";
-import {documentToReactComponents,} from "@contentful/rich-text-react-renderer";
-import type {Document} from "@contentful/rich-text-types";
+import type {
+  ContentfulClientApi,
+  CreateClientParams,
+  Entry,
+} from "contentful";
+import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Document } from "@contentful/rich-text-types";
 
 let _client: ContentfulClientApi | undefined;
 

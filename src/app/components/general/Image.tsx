@@ -1,9 +1,9 @@
 import React from "react";
 import { getAsset } from "@/app/helpers/connector";
 import styles from "./Image.module.css";
-import NextImage, {ImageProps} from "next/image";
+import NextImage, { ImageProps } from "next/image";
 
-interface Props extends Omit<ImageProps, 'src'| 'alt'> {
+interface Props extends Omit<ImageProps, "src" | "alt"> {
   assetid: string;
 }
 

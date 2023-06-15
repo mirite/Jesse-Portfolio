@@ -1,1 +1,1 @@
-export {default} from './BioImage';
+export { default } from "./BioImage";
