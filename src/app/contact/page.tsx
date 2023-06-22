@@ -12,7 +12,6 @@ const Page = async () => {
       <div className={styles.title}>{title}</div>
       <div className={styles.hero}>
         <BioImage />
-        {/* @ts-expect-error Server Component */}
         <Socials />
       </div>
       <ContactForm />

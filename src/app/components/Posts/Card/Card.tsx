@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Card.module.scss";
+import MyImage from "@/app/components/general/MyImage";
 
 interface Props {
   title: string;
@@ -11,7 +12,7 @@ const Card = (props: Props) => {
   return (
     <div className={styles.card}>
       <a href={link}>
-        {image && <img src={image} alt={title} />}
+        {image && <MyImage assetid={image} />}
         <h2>{title}</h2>
       </a>
     </div>
