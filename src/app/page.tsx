@@ -1,4 +1,3 @@
-import styles from "./page.module.css";
 import { getRichTextContent } from "@/app/helpers/connector";
 import Posts from "@/app/components/Posts";
 import { getPosts } from "@/app/helpers/posts";
@@ -8,7 +7,7 @@ export default async function Home() {
   const { title, posts } = props;
   return (
     <div>
-      <div className={styles.title}>{title}</div>
+      <div className="text-3xl font-bold underline">Blah{title}</div>
       <div>
         <Posts posts={posts} />
       </div>
