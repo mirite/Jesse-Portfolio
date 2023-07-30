@@ -1,10 +1,9 @@
 import React from "react";
 import { Social } from "@/app/components/Socials/types";
-import styles from "./Social.module.css";
 const Social = (social: Social) => {
   return (
-    <li className={styles.social}>
-      <span>
+    <li className="flex justify-between">
+      <span className="mr-3">
         <strong>{social.platform}</strong>:
       </span>
       <a href={social.link} target="_blank" rel="noopener noreferrer">

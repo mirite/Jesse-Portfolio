@@ -7,7 +7,7 @@ export default async function Home() {
   const { title, posts } = props;
   return (
     <div>
-      <div className="text-3xl font-bold underline">Blah{title}</div>
+      <div className="text-3xl font-bold underline">{title}</div>
       <div>
         <Posts posts={posts} />
       </div>

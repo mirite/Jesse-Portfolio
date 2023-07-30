@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./Card.module.scss";
 import MyImage from "@/app/components/general/MyImage";
 
 interface Props {
@@ -10,10 +9,10 @@ interface Props {
 const Card = (props: Props) => {
   const { title, image, link } = props;
   return (
-    <div className="shadow-md rounded-lg bg-slate-50 text-black m-5 p-5 opacity-50 text-center">
+    <div className="shadow rounded-lg bg-slate-50 text-black m-2 p-2 opacity-50 flex justify-center items-center text-center font-semibold aspect-square">
       <a href={link}>
         {image && <MyImage assetid={image} />}
-        <h2>{title}</h2>
+        <h3>{title}</h3>
       </a>
     </div>
   );

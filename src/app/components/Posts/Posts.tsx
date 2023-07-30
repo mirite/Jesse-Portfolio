@@ -1,6 +1,5 @@
 import React from "react";
 import Card from "@/app/components/Posts/Card";
-import styles from "./Posts.module.scss";
 import { Post } from "@/types";
 interface Props {
   posts: Post[];
@@ -8,7 +7,7 @@ interface Props {
 const Posts = (props: Props) => {
   const { posts } = props;
   return (
-    <div className={styles.posts}>
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
       {posts.map((post) => (
         <Card
           key={post.slug}

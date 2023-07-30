@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "@/app/page.module.css";
 import BioImage from "@/app/components/BioImage/BioImage";
 import Socials from "@/app/components/Socials";
 import { getRichTextContent } from "@/app/helpers/connector";
@@ -8,9 +7,9 @@ import ContactForm from "@/app/components/ContactForm/ContactForm";
 const Page = async () => {
   const { title } = await data();
   return (
-    <div className={"container"}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.hero}>
+    <div className="container">
+      <div>{title}</div>
+      <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
         <BioImage />
         <Socials />
       </div>

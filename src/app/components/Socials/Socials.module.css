@@ -1,8 +1,0 @@
-.socials {
-  container-type: inline-size;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-s);
-  padding: 0;
-  max-width: 300px;
-}
