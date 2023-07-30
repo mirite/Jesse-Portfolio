@@ -4,15 +4,15 @@ import { Snippet } from "@/types";
 import Post from "@/app/components/Posts/Post";
 import Skills from "@/app/components/Skills/Skills";
 import { getSkills } from "@/app/helpers/skills";
+import PageWrapper from "@/app/components/PageWrapper";
 
 const Page = async () => {
   const { content, skills } = await data();
   return (
-    <div>
-      <h1>{content?.fields.label}</h1>
+    <PageWrapper title={content?.fields.label || ""}>
       <Post content={content?.fields.content} />
       <Skills skills={skills} />
-    </div>
+    </PageWrapper>
   );
 };
 

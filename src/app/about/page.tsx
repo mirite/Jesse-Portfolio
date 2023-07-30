@@ -2,14 +2,14 @@ import React from "react";
 import { getContent } from "@/app/helpers/connector";
 import Post from "@/app/components/Posts/Post";
 import { Snippet } from "@/types";
+import PageWrapper from "@/app/components/PageWrapper";
 
 const Page = async () => {
   const { content } = await data();
   return (
-    <div>
-      <h1>{content?.fields.label}</h1>
+    <PageWrapper title={content?.fields.label || ""}>
       <Post content={content?.fields.content} />
-    </div>
+    </PageWrapper>
   );
 };
 

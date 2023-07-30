@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import NavLink from "@/app/components/Header/NavLink";
 
 
 const Header = () => {
@@ -11,21 +12,11 @@ const Header = () => {
         </div>
         <nav className="flex justify-end grow" aria-label="Main Navigation">
           <ul className="flex">
-            <li className="mr-2">
-              <Link href="/blog">Blog</Link>
-            </li>
-            <li className="mr-2">
-              <Link href="/projects">Projects</Link>
-            </li>
-            <li className="mr-2">
-              <Link href="/skills">Skills</Link>
-            </li>
-            <li className="mr-2">
-              <Link href="/about">About</Link>
-            </li>
-            <li className="mr-2">
-              <Link href="/contact">Contact</Link>
-            </li>
+            <NavLink path="/blog" label="Blog" />
+            <NavLink path="/projects" label="Projects" />
+            <NavLink path="/skills" label="Skills" />
+            <NavLink path="/about" label="About" />
+            <NavLink path="/contact" label="Contact" />
           </ul>
         </nav>
       </div>
