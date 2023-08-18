@@ -5,13 +5,18 @@ import Post from "@/app/components/Posts/Post";
 import Skills from "@/app/components/Skills/Skills";
 import { getSkills } from "@/app/helpers/skills";
 import PageWrapper from "@/app/components/PageWrapper";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
 const Page = async () => {
   const { content, skills } = await data();
+  const { fields } = content || {};
+  if (!fields?.content || !fields.label) return <p>Content not found</p>;
   return (
-    <PageWrapper title={content?.fields.label || ""}>
-      <Post content={content?.fields.content} />
-      <Skills skills={skills} />
+    <PageWrapper title={fields.label || ""}>
+      <div className="container">
+        {documentToReactComponents(fields.content)}
+        <Skills skills={skills} />
+      </div>
     </PageWrapper>
   );
 };

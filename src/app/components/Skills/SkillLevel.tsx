@@ -1,6 +1,5 @@
 import { Skill as SkillType } from "@/types";
 import React from "react";
-import styles from "./SkillLevel.module.css";
 import Skill from "@/app/components/Skills/Skill";
 
 interface Props {
@@ -20,7 +19,7 @@ const SkillLevel = (props: Props) => {
   return (
     <div>
       <h2>{label}</h2>
-      <ul className={styles.list}>
+      <ul className="flex flex-wrap p-1">
         {filteredSkills.map((skill) => (
           <Skill key={skill.name} {...skill} />
         ))}

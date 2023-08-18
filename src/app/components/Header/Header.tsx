@@ -12,7 +12,6 @@ const Header = () => {
         </div>
         <nav className="flex justify-end grow" aria-label="Main Navigation">
           <ul className="flex">
-            <NavLink path="/blog" label="Blog" />
             <NavLink path="/projects" label="Projects" />
             <NavLink path="/skills" label="Skills" />
             <NavLink path="/about" label="About" />

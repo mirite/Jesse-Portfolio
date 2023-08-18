@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --max-width: 1400px;
+  --border-radius: 1rem;
+
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.44rem;
+  --step-3: 1.728rem;
+  --step-4: 2.047rem;
+  --step-5: 2.488rem;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-s: 1rem;
+  --space-m: 1.5rem;
+  --space-l: 2rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 3rem;
+  --space-3xl: 3.5rem;
+
+  --box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  --link-color: 0 0 255;
+}
+
+* {
+  box-sizing: border-box;
+  transition-timing-function: ease-in-out;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-size: calc(1em + min(calc(1400px / 200), 0.5vw));
+  font-family:
+    opensans,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+body {
+  font-size: var(--step-0);
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  margin-inline: auto;
+  width: min(80ch, 100%);
+}
+
+h1 {
+  font-size: var(--step-5);
+}
+
+h2 {
+  font-size: var(--step-4);
+}
+
+h3 {
+  font-size: var(--step-3);
+}
+
+h4 {
+  font-size: var(--step-2);
+}
+
+h5 {
+  font-size: var(--step-1);
+}
+
+h6 {
+  font-size: var(--step-0);
+}
+
+p {
+  margin-bottom: 2em;
+}
+
+a {
+  transition: all 0.1s ease-in-out;
+  text-decoration: underline;
+    color: rgb(var(--link-color));
+}
+
+a:hover {
+  filter: brightness(150%);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input[type="submit"],
+button[type="submit"] {
+  background-color: rgb(var(--accent-color));
+  backface-visibility: hidden;
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
+  box-sizing: border-box;
+  color: rgb(var(--text-color));
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 5px 25px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  transition:
+    all 0.2s,
+    box-shadow 0.08s ease-in;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+
+  &:hover {
+    transform: scale(102%);
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &:focus {
+    box-shadow:
+      rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+      rgba(50, 50, 93, 0.2) 0 6px 15px 0,
+      rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+      rgba(50, 151, 211, 0.3) 0 0 0 4px;
+  }
+}
+
+.no-break {
+  break-inside: avoid;
+}
+
+label,
+button {
+  cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+  body {
+    padding-inline: var(--space-s);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px 15px;
+  font-size: 0.875rem;
+  border-radius: 6px;
+  overflow: hidden;
+}

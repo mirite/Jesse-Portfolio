@@ -12,7 +12,7 @@ const Posts = (props: Props) => {
         <Card
           key={post.slug}
           title={post.title}
-          link={post.category + "/" + post.slug}
+          link={post.categorySlug + "/" + post.slug}
         />
       ))}
     </div>

@@ -1,6 +1,6 @@
 import React, { useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {OptionDefinition} from "@/app/components/DarkModeToggle/index";
+import { OptionDefinition } from "@/app/components/DarkModeToggle/index";
 
 type OptionProps = OptionDefinition & {
   onClick: () => void;
@@ -8,7 +8,7 @@ type OptionProps = OptionDefinition & {
 
 const Option = (props: OptionProps) => {
   const { label, icon, onClick, className } = props;
-    const defaultOption = "defaultOption" in props;
+  const defaultOption = "defaultOption" in props;
   const id = useId();
   return (
     <li>

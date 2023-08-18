@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Option from "@/app/components/DarkModeToggle/Option";
 import { faSun, faMoon, faDisplay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,15 +15,19 @@ type OptionIcon = OptionDefinition["icon"];
 const Index = () => {
   const handleChange = (e: OptionDefinition) => {
     const mode = e.className;
-    options
-      .filter((option) => option.className && option.className !== mode)
-      .forEach((option) => document.body.classList.remove(option.className));
     if (mode) {
-      document.body.classList.add(mode);
+      localStorage.theme = mode;
+    } else {
+      localStorage.removeItem("theme");
     }
+    updateTheme();
     setModalActive(false);
     setCurrentMode(e.icon);
   };
+
+  useEffect(() => {
+    updateTheme();
+  }, []);
 
   const [modalActive, setModalActive] = useState(false);
   const [currentMode, setCurrentMode] = useState<OptionIcon>(faDisplay);
@@ -32,7 +36,11 @@ const Index = () => {
       {modalActive ? (
         <ul className="absolute">
           {options.map((option, index) => (
-            <Option key={index} {...option} onClick={()=>handleChange(option)} />
+            <Option
+              key={index}
+              {...option}
+              onClick={() => handleChange(option)}
+            />
           ))}
         </ul>
       ) : (
@@ -43,5 +51,17 @@ const Index = () => {
     </div>
   );
 };
+
+function updateTheme() {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+}
 
 export default Index;

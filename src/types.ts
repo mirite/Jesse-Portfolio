@@ -31,4 +31,5 @@ export type Skill = {
   name: string;
   proficiency: Proficiency;
   interestingness: number;
+  notes?: Document;
 };

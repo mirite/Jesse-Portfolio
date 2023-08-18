@@ -10,7 +10,7 @@ const Page = async () => {
   return (
     <PageWrapper title={title}>
       <div className="container">
-        <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+        <div className="flex w-max mx-auto flex-col md:flex-row justify-between items-center md:items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
           <BioImage />
           <Socials />
         </div>

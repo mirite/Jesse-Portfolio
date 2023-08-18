@@ -11,6 +11,7 @@ const Search = (props: Props) => {
       <label htmlFor={id}>Search: </label>
       <input
         id={id}
+        type={"text"}
         value={props.searchTerm}
         onInput={(e) => props.onChange(e.currentTarget.value)}
       />

@@ -8,7 +8,7 @@ const NavLink = ({ path, label }: { path: string; label: string }) => {
   const additionalClasses = current ? "underline" : "";
   return (
     <li className={"mr-2 " + additionalClasses}>
-      <Link href={path}>{label}</Link>
+      <Link className={current ? "underline" : "no-underline"} href={path}>{label}</Link>
     </li>
   );
 };

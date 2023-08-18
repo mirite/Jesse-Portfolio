@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 import Header from "@/app/components/Header/Header";
 import Footer from "@/app/components/Footer";
 
@@ -14,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex justify-center min-h-[100vh] max-w-[100vw]">
+      <body className="flex justify-center min-h-[100vh] max-w-[100vw] bg-white dark:bg-black text-black dark:text-white">
         <div className="max-w-[1400px] mx-1 w-[100%]">
           <Header />
           {children}
