@@ -10,13 +10,13 @@ interface Props
 const Post = (post: Props) => {
   const { title, content, posted, assets } = post;
   return (
-      <PageWrapper title={title || ""}>
-    <div className="container">
-      {posted && <p>Posted: {getPrettyDate(posted)}</p>}
-      {content && <>{documentToReactComponents(content)}</>}
-      {(assets && assets?.length > 0) && <Gallery assets={assets} />}
-    </div>
-      </PageWrapper>
+    <PageWrapper title={title || ""}>
+      <div className="container">
+        {posted && <p>Posted: {getPrettyDate(posted)}</p>}
+        {content && <>{documentToReactComponents(content)}</>}
+        {assets && assets?.length > 0 && <Gallery assets={assets} />}
+      </div>
+    </PageWrapper>
   );
 };
 

@@ -2,7 +2,6 @@ import Link from "next/link";
 import React from "react";
 import NavLink from "@/app/components/Header/NavLink";
 
-
 const Header = () => {
   return (
     <header className="mb-1">

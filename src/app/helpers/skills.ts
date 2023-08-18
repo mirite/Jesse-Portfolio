@@ -10,10 +10,10 @@ export async function getSkills() {
 export function splitSkillsByProficiency(allSkills: Skill[]) {
   const high = allSkills.filter(({ proficiency }) => proficiency === "high");
   const medium = allSkills.filter(
-    ({ proficiency }) => proficiency === "medium"
+    ({ proficiency }) => proficiency === "medium",
   );
   const starter = allSkills.filter(
-    ({ proficiency }) => proficiency === "starter"
+    ({ proficiency }) => proficiency === "starter",
   );
   return { high, medium, starter };
 }

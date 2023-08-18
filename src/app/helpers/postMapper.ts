@@ -19,7 +19,7 @@ export function postMapper(entry: Entry<RawPost>): Post {
 function getExcerpt(entry: Entry<RawPost>): string {
   const content = entry.fields.content.content;
   const firstParagraph = content.find(
-    (block) => block.nodeType === "paragraph"
+    (block) => block.nodeType === "paragraph",
   );
   // @ts-expect-error
   return firstParagraph?.content[0]?.value || "";
@@ -39,7 +39,7 @@ function getCategories(entry: Entry<RawPost>) {
 
 function getAssets(entry: Entry<RawPost>): Asset[] {
   const assetBlocks = entry.fields.content.content.filter(
-    ({ nodeType }) => nodeType === "embedded-asset-block"
+    ({ nodeType }) => nodeType === "embedded-asset-block",
   );
   return assetBlocks.map((block) => block.data.target);
 }

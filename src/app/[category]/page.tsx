@@ -16,24 +16,24 @@ const Page = async (props: Props) => {
   const categorySlug = params.category;
   const categories = await getCategories();
   const categoryDetails = categories.find(
-    (category) => category.slug === categorySlug
+    (category) => category.slug === categorySlug,
   );
   if (!categoryDetails) {
     return <div>Category not found</div>;
   }
   const posts = await getPosts(100, categorySlug);
   return (
-      <PageWrapper title={categoryDetails.name}>
-    <div className="container">
-      <ul>
-        {posts.map((post) => (
-          <li key={post.slug}>
-            <Link href={categorySlug + "/" + post.slug}>{post.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-      </PageWrapper>
+    <PageWrapper title={categoryDetails.name}>
+      <div className="container">
+        <ul>
+          {posts.map((post) => (
+            <li key={post.slug}>
+              <Link href={categorySlug + "/" + post.slug}>{post.title}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </PageWrapper>
   );
 };
 

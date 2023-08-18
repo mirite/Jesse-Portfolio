@@ -8,20 +8,23 @@ import PageWrapper from "@/app/components/PageWrapper";
 const Page = async () => {
   const { title } = await data();
   return (
-      <PageWrapper title={title}>
-    <div className="container">
-      <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
-        <BioImage />
-        <Socials />
+    <PageWrapper title={title}>
+      <div className="container">
+        <div className="flex w-full flex-col md:flex-row justify-between items-center md:items-start space-x-0 md:space-x-4 space-y-4 md:space-y-0">
+          <BioImage />
+          <Socials />
+        </div>
+        <ContactForm />
       </div>
-      <ContactForm />
-    </div>
-        </PageWrapper>
+    </PageWrapper>
   );
 };
 
 const data = async () => {
-  const title = await getRichTextContent("6hDDlcnlG9gdoL8QClVPOw", "content") as string;
+  const title = (await getRichTextContent(
+    "6hDDlcnlG9gdoL8QClVPOw",
+    "content",
+  )) as string;
   return { title };
 };
 

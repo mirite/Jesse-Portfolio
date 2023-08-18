@@ -14,7 +14,7 @@ const SkillLevel = (props: Props) => {
   const filteredSkills = !searchTerm
     ? skills
     : skills.filter(({ name }) =>
-        name.toLowerCase().includes(searchTerm.toLowerCase())
+        name.toLowerCase().includes(searchTerm.toLowerCase()),
       );
   if (!filteredSkills.length) return <></>;
   return (

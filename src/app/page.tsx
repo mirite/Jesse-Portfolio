@@ -7,14 +7,17 @@ export default async function Home() {
   const { props } = await data();
   const { title, posts } = props;
   return (
-      <PageWrapper title={title}>
-        <Posts posts={posts} />
-      </PageWrapper>
+    <PageWrapper title={title}>
+      <Posts posts={posts} />
+    </PageWrapper>
   );
 }
 
 const data = async () => {
-  const title = await getRichTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content") as string;
+  const title = (await getRichTextContent(
+    "5elXtJ9BtgyNW3u0qrTzxy",
+    "content",
+  )) as string;
   const posts = (await getPosts(10)) || [];
   return {
     props: {
