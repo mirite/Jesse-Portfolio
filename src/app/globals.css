@@ -6,13 +6,6 @@
   --max-width: 1400px;
   --border-radius: 1rem;
 
-  /* Color Theme Swatches in HSLA */
-  --background-color: 215, 217, 255;
-  --text-color: 8, 0, 0;
-  --primary-color: 255, 255, 255;
-  --accent-color: 220, 136, 15;
-  --link-color: 24, 0, 221;
-
   --step-0: 1rem;
   --step-1: 1.2rem;
   --step-2: 1.44rem;
@@ -32,16 +25,54 @@
 
   --box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
     rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+
+  --light-background-color: 215, 217, 255;
+  --light-text-color: 8, 0, 0;
+  --light-primary-color: 255, 255, 255;
+  --light-accent-color: 220, 136, 15;
+  --light-link-color: 24, 0, 221;
+
+  --dark-background-color: 7, 22, 17;
+  --dark-text-color: 246, 243, 244;
+  --dark-primary-color: 34, 31, 31;
+  --dark-accent-color: 220, 136, 15;
+  --dark-link-color: oklch(1 0.28 264.05 / 1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: var(--light-background-color);
+    --text-color: var(--light-text-color);
+    --primary-color: var(--light-primary-color);
+    --accent-color: var(--light-accent-color);
+    --link-color: var(--light-link-color);
+  }
+}
+
+body.light {
+  --background-color: var(--light-background-color);
+  --text-color: var(--light-text-color);
+  --primary-color: var(--light-primary-color);
+  --accent-color: var(--light-accent-color);
+  --link-color: var(--light-link-color);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: 7, 22, 17;
-    --text-color: 246, 243, 244;
-    --primary-color: 34, 31, 31;
-    --accent-color: 220, 136, 15;
-    --link-color: oklch(1 0.28 264.05 / 1);
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+    --primary-color: var(--dark-primary-color);
+    --accent-color: var(--dark-accent-color);
+    --link-color: var(--dark-link-color);
   }
+}
+
+body.dark {
+  --background-color: var(--dark-background-color);
+  --text-color: var(--dark-text-color);
+  --primary-color: var(--dark-primary-color);
+  --accent-color: var(--dark-accent-color);
+  --link-color: var(--dark-link-color);
 }
 
 * {
@@ -134,10 +165,10 @@ button {
   cursor: pointer;
   font-size: 100%;
   line-height: 1.15;
-  margin: 12px 0 0;
+  margin: 0 0;
   outline: none;
   overflow: hidden;
-  padding: 0 25px;
+  padding: 5px 25px;
   position: relative;
   display: inline-block;
   text-align: center;
@@ -174,10 +205,18 @@ button:focus {
   }
 }
 
+body.dark {
+  color-scheme: dark;
+}
+
 @media (prefers-color-scheme: light) {
   html {
     color-scheme: light;
   }
+}
+
+body.light {
+  color-scheme: light;
 }
 
 label,
