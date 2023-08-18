@@ -10,7 +10,7 @@ export function postMapper(entry: Entry<RawPost>): Post {
   return {
     ...entry.fields,
     slug,
-    category: category.fields.name.toLowerCase(),
+    categorySlug: category.fields.name.toLowerCase(),
     excerpt,
     assets,
   };

@@ -35,6 +35,6 @@ export async function getPost(postSlug: string) {
 export async function getPosts(count: number = 9999, categorySlug?: string) {
   return (await getEntries<RawPost>(`blogPost`))
     .map(postMapper)
-    .filter((post) => !categorySlug || post.category === categorySlug)
+    .filter((post) => !categorySlug || post.categorySlug === categorySlug)
     .slice(0, count);
 }

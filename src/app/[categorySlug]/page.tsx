@@ -8,12 +8,12 @@ import {
 import { getPosts } from "@/app/helpers/posts";
 import PageWrapper from "@/app/components/PageWrapper";
 interface Props {
-  params: { category: string };
+  params: { categorySlug: string };
 }
 
 const Page = async (props: Props) => {
   const { params } = props;
-  const categorySlug = params.category;
+  const categorySlug = params.categorySlug;
   const categories = await getCategories();
   const categoryDetails = categories.find(
     (category) => category.slug === categorySlug,
@@ -38,7 +38,7 @@ const Page = async (props: Props) => {
 };
 
 export async function generateMetadata({ params }: Props) {
-  return await createCategoryMetadata(params.category);
+  return await createCategoryMetadata(params.categorySlug);
 }
 
 export async function generateStaticParams() {
