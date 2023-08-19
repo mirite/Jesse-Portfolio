@@ -5,8 +5,9 @@ import Button from "@/app/components/general/Button";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextWrapper from "@/app/components/general/TextWrapper";
+import LinkDisplay from "@/app/components/Skills/LinkDisplay";
 
-const SkillNotes = (props: Required<Skill> & { onClose: () => void }) => {
+const SkillNotes = (props: Skill & { onClose: () => void }) => {
   useEffect(() => {
     document.body.style.overflowY = "hidden";
     return () => {
@@ -32,7 +33,8 @@ const SkillNotes = (props: Required<Skill> & { onClose: () => void }) => {
           <div className="flex justify-between mb-2 items-start font-bold">
             <h3 className="prose-md">{props.name}</h3>
           </div>
-          <article>{documentToReactComponents(props.notes)}</article>
+          {props.notes && <article>{documentToReactComponents(props.notes)}</article>}
+          {props.projects && <LinkDisplay links={props.projects} />}
         </TextWrapper>
       </div>
     </div>

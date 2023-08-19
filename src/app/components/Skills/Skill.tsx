@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Skill } from "@/types";
-import styles from "./Skill.module.css";
 import SkillNotes from "@/app/components/Skills/SkillNotes";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +8,7 @@ const Skill = (skill: Skill) => {
   const { name, notes } = skill;
   const [showing, setShowing] = useState(false);
 
-  if (hasNotes(skill)) {
+  if (hasNotesOrLinks(skill)) {
     return (
       <>
         <Button onClick={() => setShowing(true)}>
@@ -25,6 +24,6 @@ const Skill = (skill: Skill) => {
 
 export default Skill;
 
-function hasNotes(skill: Skill): skill is Required<Skill> {
-  return skill.notes !== undefined;
+function hasNotesOrLinks(skill: Skill) {
+  return skill.notes !== undefined || skill.projects !== undefined;
 }
