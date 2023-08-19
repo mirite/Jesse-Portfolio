@@ -4,8 +4,9 @@ import { Snippet } from "@/types";
 import Post from "@/app/components/Posts/Post";
 import Skills from "@/app/components/Skills/Skills";
 import { getSkills } from "@/app/helpers/skills";
-import PageWrapper from "@/app/components/PageWrapper";
+import PageWrapper from "@/app/components/general/PageWrapper";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import TextWrapper from "@/app/components/general/TextWrapper";
 
 const Page = async () => {
   const { content, skills } = await data();
@@ -13,10 +14,8 @@ const Page = async () => {
   if (!fields?.content || !fields.label) return <p>Content not found</p>;
   return (
     <PageWrapper title={fields.label || ""}>
-      <div className="container">
-        {documentToReactComponents(fields.content)}
-        <Skills skills={skills} />
-      </div>
+      <TextWrapper>{documentToReactComponents(fields.content)}</TextWrapper>
+      <Skills skills={skills} />
     </PageWrapper>
   );
 };

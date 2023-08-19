@@ -14,7 +14,7 @@ const Skills = (props: Props) => {
   const { high, medium, starter } = splitSkillsByProficiency(props.skills);
   const [searchTerm, setSearchTerm] = React.useState("");
   return (
-    <div>
+    <div className="max-w-prose mx-auto my-2">
       <Search searchTerm={searchTerm} onChange={setSearchTerm} />
       <SkillLevel skills={high} label="High" searchTerm={searchTerm} />
       <SkillLevel skills={medium} label="Medium" searchTerm={searchTerm} />

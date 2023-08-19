@@ -6,7 +6,8 @@ import {
   getCategoriesForStaticBuild,
 } from "@/app/helpers/categories";
 import { getPosts } from "@/app/helpers/posts";
-import PageWrapper from "@/app/components/PageWrapper";
+import PageWrapper from "@/app/components/general/PageWrapper";
+import TextWrapper from "@/app/components/general/TextWrapper";
 interface Props {
   params: { categorySlug: string };
 }
@@ -24,7 +25,7 @@ const Page = async (props: Props) => {
   const posts = await getPosts(100, categorySlug);
   return (
     <PageWrapper title={categoryDetails.name}>
-      <div className="container">
+      <TextWrapper>
         <ul>
           {posts.map((post) => (
             <li key={post.slug}>
@@ -32,7 +33,7 @@ const Page = async (props: Props) => {
             </li>
           ))}
         </ul>
-      </div>
+      </TextWrapper>
     </PageWrapper>
   );
 };

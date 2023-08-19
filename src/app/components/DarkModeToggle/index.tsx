@@ -1,8 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Option from "@/app/components/DarkModeToggle/Option";
 import { faSun, faMoon, faDisplay } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "@/app/components/general/Button";
 
 const options = [
   { label: "Light", icon: faSun, className: "light" },
@@ -13,7 +14,10 @@ const options = [
 export type OptionDefinition = (typeof options)[number];
 type OptionIcon = OptionDefinition["icon"];
 const Index = () => {
-  const handleChange = (e: OptionDefinition) => {
+  const modalRef = useRef<HTMLUListElement>(null); // Ref to store the modal
+
+  const handleChange = (e: OptionDefinition, event: React.MouseEvent) => {
+    event.stopPropagation();
     const mode = e.className;
     if (mode) {
       localStorage.theme = mode;
@@ -27,26 +31,39 @@ const Index = () => {
 
   useEffect(() => {
     updateTheme();
+    const handleBodyClick = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setModalActive(false);
+      }
+    };
+    document.body.addEventListener("click", handleBodyClick);
+    return () => document.body.removeEventListener("click", handleBodyClick); // Cleanup listener on unmount
   }, []);
 
   const [modalActive, setModalActive] = useState(false);
   const [currentMode, setCurrentMode] = useState<OptionIcon>(faDisplay);
   return (
     <div className="relative w-12">
-      {modalActive ? (
-        <ul className="absolute">
-          {options.map((option, index) => (
+      <Button
+        className={modalActive ? "opacity-0" : ""}
+        onClick={() => setModalActive(true)}
+        title="Colour Theme"
+      >
+        <FontAwesomeIcon icon={currentMode} />
+      </Button>
+      {modalActive && (
+        <ul className="absolute top-0" ref={modalRef}>
+          {options.map((option) => (
             <Option
-              key={index}
+              key={option.label}
               {...option}
-              onClick={() => handleChange(option)}
+              onClick={(e) => handleChange(option, e)}
             />
           ))}
         </ul>
-      ) : (
-        <button onClick={() => setModalActive(true)}>
-          <FontAwesomeIcon icon={currentMode} />
-        </button>
       )}
     </div>
   );

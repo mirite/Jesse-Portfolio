@@ -1,9 +1,10 @@
 import React, { useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { OptionDefinition } from "@/app/components/DarkModeToggle/index";
+import Button from "@/app/components/general/Button";
 
 type OptionProps = OptionDefinition & {
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
 };
 
 const Option = (props: OptionProps) => {
@@ -12,21 +13,18 @@ const Option = (props: OptionProps) => {
   const id = useId();
   return (
     <li>
-      <input
-        className="hidden"
-        type={"radio"}
+      <Button
         name={"darkModeToggle"}
-        value={className}
+        className="block w-full"
         id={id}
-        onClick={onClick}
-        defaultChecked={defaultOption}
-      />
-      <label htmlFor={id} className="flex items-center">
-        <div className="w-8 flex justify-center">
+        onClick={(e) => onClick(e)}
+      >
+        <div className="flex items-center gap-2">
           <FontAwesomeIcon icon={icon} />
+
+          <div>{label}</div>
         </div>
-        <div>{label}</div>
-      </label>
+      </Button>
     </li>
   );
 };

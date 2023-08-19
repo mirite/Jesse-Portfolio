@@ -18,8 +18,8 @@ const SkillLevel = (props: Props) => {
   if (!filteredSkills.length) return <></>;
   return (
     <div>
-      <h2>{label}</h2>
-      <ul className="flex flex-wrap p-1">
+      <h2 className="text-2xl">{label}</h2>
+      <ul className="flex flex-wrap p-1 gap-x-3 gap-y-1 justify-center">
         {filteredSkills.map((skill) => (
           <Skill key={skill.name} {...skill} />
         ))}

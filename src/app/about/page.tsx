@@ -2,7 +2,7 @@ import React from "react";
 import { getContent } from "@/app/helpers/connector";
 import Post from "@/app/components/Posts/Post";
 import { Snippet } from "@/types";
-import PageWrapper from "@/app/components/PageWrapper";
+import PageWrapper from "@/app/components/general/PageWrapper";
 
 const Page = async () => {
   const { content } = await data();

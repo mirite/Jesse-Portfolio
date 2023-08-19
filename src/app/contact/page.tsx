@@ -3,7 +3,7 @@ import BioImage from "@/app/components/BioImage";
 import Socials from "@/app/components/Socials";
 import { getRichTextContent } from "@/app/helpers/connector";
 import ContactForm from "@/app/components/ContactForm/ContactForm";
-import PageWrapper from "@/app/components/PageWrapper";
+import PageWrapper from "@/app/components/general/PageWrapper";
 
 const Page = async () => {
   const { title } = await data();

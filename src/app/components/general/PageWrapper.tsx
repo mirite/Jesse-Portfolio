@@ -6,7 +6,7 @@ const PageWrapper = ({
 }: PropsWithChildren & { title: string }) => {
   return (
     <main className="flex-1 w-full max-w-[1400px] min-h-[100vh]">
-      <h1 className="text-3xl font-bold mb-4">{title}</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
       {children}
     </main>
   );
