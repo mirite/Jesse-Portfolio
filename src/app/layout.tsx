@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex justify-center min-h-[100vh] max-w-[100vw] bg-white dark:bg-black text-black dark:text-white">
-        <div className="max-w-[1400px] mx-1 w-[100%]">
+        <div className="max-w-[1400px] mx-3 w-[100%]">
           <Header />
           {children}
           <Footer />

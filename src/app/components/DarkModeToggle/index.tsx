@@ -1,12 +1,16 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Option from "@/app/components/DarkModeToggle/Option";
-import { faSun, faMoon, faDisplay } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faLightbulb,
+} from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@/app/components/general/Button";
+import {faDisplay} from "@fortawesome/free-solid-svg-icons";
 
 const options = [
-  { label: "Light", icon: faSun, className: "light" },
+  { label: "Light", icon: faLightbulb, className: "light" },
   { label: "Dark", icon: faMoon, className: "dark" },
   { label: "System", icon: faDisplay, className: "", defaultOption: true },
 ] as const;
@@ -46,7 +50,7 @@ const Index = () => {
   const [modalActive, setModalActive] = useState(false);
   const [currentMode, setCurrentMode] = useState<OptionIcon>(faDisplay);
   return (
-    <div className="relative w-12">
+    <div className="relative">
       <Button
         className={modalActive ? "opacity-0" : ""}
         onClick={() => setModalActive(true)}
@@ -55,7 +59,7 @@ const Index = () => {
         <FontAwesomeIcon icon={currentMode} />
       </Button>
       {modalActive && (
-        <ul className="absolute top-0" ref={modalRef}>
+        <ul className="fixed top-0 right-2" ref={modalRef}>
           {options.map((option) => (
             <Option
               key={option.label}

@@ -33,7 +33,9 @@ const SkillNotes = (props: Skill & { onClose: () => void }) => {
           <div className="flex justify-between mb-2 items-start font-bold">
             <h3 className="prose-md">{props.name}</h3>
           </div>
-          {props.notes && <article>{documentToReactComponents(props.notes)}</article>}
+          {props.notes && (
+            <article>{documentToReactComponents(props.notes)}</article>
+          )}
           {props.projects && <LinkDisplay links={props.projects} />}
         </TextWrapper>
       </div>
