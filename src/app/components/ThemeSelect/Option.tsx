@@ -1,15 +1,15 @@
 import React, { useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { OptionDefinition } from "@/app/components/ThemeSelect/index";
 import Button from "@/app/components/general/Button";
+import {OptionDefinition} from "@/app/helpers/theme";
+import {PressEvent} from "@react-types/shared";
 
 type OptionProps = OptionDefinition & {
-  onPress: (e: React.MouseEvent) => void;
+  onPress: (e: PressEvent) => void;
 };
 
 const Option = (props: OptionProps) => {
   const { label, icon, onPress, className } = props;
-  const defaultOption = "defaultOption" in props;
   const id = useId();
   return (
     <li>
