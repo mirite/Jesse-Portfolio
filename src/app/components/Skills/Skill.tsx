@@ -11,7 +11,7 @@ const Skill = (skill: Skill) => {
   if (hasNotesOrLinks(skill)) {
     return (
       <>
-        <Button onClick={() => setShowing(true)}>
+        <Button onPress={() => setShowing(true)}>
           <span className="mr-1">{name}</span>
           <FontAwesomeIcon icon={faCommentDots} />
         </Button>

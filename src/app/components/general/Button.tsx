@@ -1,24 +1,18 @@
-import React, { DetailedHTMLProps } from "react";
+"use client";
+import React, { ButtonHTMLAttributes, useRef } from "react";
+import { AriaButtonProps, useButton } from "react-aria";
 
 const Button = ({
   children,
-  className,
-  role,
-  type,
-  ...rest
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
-  const finalClass =
-    "pill transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400 " +
-    className;
-  const roleToUse = role || "button";
-  const typeToUse = type || "button";
+  className = "",
+  ...props
+}: AriaButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
+  const finalClass = "btn " + className;
+  const ref = useRef<HTMLButtonElement>(null);
+  const { buttonProps } = useButton(props as AriaButtonProps, ref);
+
   return (
-    <button
-      className={finalClass.trim()}
-      role={roleToUse}
-      type={typeToUse}
-      {...rest}
-    >
+    <button className={finalClass} {...buttonProps} ref={ref}>
       {children}
     </button>
   );

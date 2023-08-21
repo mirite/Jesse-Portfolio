@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import NavLink from "@/app/components/Header/NavLink";
-import DarkModeToggle from "@/app/components/DarkModeToggle";
+import DarkModeToggle from "../../ThemeSelect";
 import Button from "@/app/components/general/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -12,7 +12,7 @@ const Index = () => {
     <div className="grow flex justify-end">
       <Button
         className={"md:hidden " + (showing ? "opacity-0" : "")}
-        onClick={() => setShowing(true)}
+        onPress={() => setShowing(true)}
       >
         <FontAwesomeIcon icon={faBars} />
       </Button>
@@ -23,7 +23,7 @@ const Index = () => {
         }
       >
         <div className="md:hidden">
-          <Button className="float-right" onClick={() => setShowing(false)}>
+          <Button className="float-right" onPress={() => setShowing(false)}>
             <FontAwesomeIcon icon={faClose} />
           </Button>
         </div>

@@ -1,14 +1,14 @@
 import React, { useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { OptionDefinition } from "@/app/components/DarkModeToggle/index";
+import { OptionDefinition } from "@/app/components/ThemeSelect/index";
 import Button from "@/app/components/general/Button";
 
 type OptionProps = OptionDefinition & {
-  onClick: (e: React.MouseEvent) => void;
+  onPress: (e: React.MouseEvent) => void;
 };
 
 const Option = (props: OptionProps) => {
-  const { label, icon, onClick, className } = props;
+  const { label, icon, onPress, className } = props;
   const defaultOption = "defaultOption" in props;
   const id = useId();
   return (
@@ -17,7 +17,7 @@ const Option = (props: OptionProps) => {
         name={"darkModeToggle"}
         className="block w-full"
         id={id}
-        onClick={(e) => onClick(e)}
+        onPress={(e) => onPress(e)}
       >
         <div className="flex items-center gap-2">
           <FontAwesomeIcon icon={icon} />
