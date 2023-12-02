@@ -17,11 +17,11 @@ const SkillNotes = (props: Skill & { onClose: () => void }) => {
   return (
     <div
       className="fixed inset-0 flex justify-center items-center bg-black/10 backdrop-blur-sm"
-      onPress={props.onClose}
+      onClick={props.onClose}
     >
       <div
         className="w-2/3 p-3 bg-white dark:bg-black rounded-md"
-        onPress={(e) => e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
       >
         <Button
           className="leading-none p-1 float-right"
