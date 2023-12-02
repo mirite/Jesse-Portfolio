@@ -1,4 +1,4 @@
-import type { Asset, Entry } from "contentful";
+import {EntrySkeletonType, type Asset, type Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 export interface Post extends RawPost {
   slug: string;
@@ -8,10 +8,13 @@ export interface Post extends RawPost {
 }
 
 export interface RawPost {
+  contentTypeID: "blogPost";
+  fields: {
   posted: string;
   content: Document;
   title: string;
   category: Entry<Category>[];
+  }
 }
 
 export interface Snippet {
@@ -20,17 +23,23 @@ export interface Snippet {
 }
 
 export type Category = {
+contentTypeId: "category",
+  fields:{
   name: string;
   slug: string;
   id: number;
   description: string;
+}
 };
 
 export type Proficiency = "high" | "medium" | "starter";
 export type Skill = {
+  contenttypeID:"skill",
+  fields : {
   name: string;
   proficiency: Proficiency;
   interestingness: number;
   notes?: Document;
   projects?: Record<string, string>;
+  }
 };

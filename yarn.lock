@@ -2388,13 +2388,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axios@npm:^0.27.0":
-  version: 0.27.2
-  resolution: "axios@npm:0.27.2"
+"axios@npm:^1.6.0":
+  version: 1.6.2
+  resolution: "axios@npm:1.6.2"
   dependencies:
-    follow-redirects: "npm:^1.14.9"
+    follow-redirects: "npm:^1.15.0"
     form-data: "npm:^4.0.0"
-  checksum: 76d673d2a90629944b44d6f345f01e58e9174690f635115d5ffd4aca495d99bcd8f95c590d5ccb473513f5ebc1d1a6e8934580d0c57cdd0498c3a101313ef771
+    proxy-from-env: "npm:^1.1.0"
+  checksum: 9b77e030e85e4f9cbcba7bb52fbff67d6ce906c92d213e0bd932346a50140faf83733bf786f55bd58301bd92f9973885c7b87d6348023e10f7eaf286d0791a1d
   languageName: node
   linkType: hard
 
@@ -2666,39 +2667,39 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful-resolve-response@npm:^1.3.12":
-  version: 1.6.5
-  resolution: "contentful-resolve-response@npm:1.6.5"
+"contentful-resolve-response@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "contentful-resolve-response@npm:1.8.1"
   dependencies:
     fast-copy: "npm:^2.1.7"
-  checksum: bd7591c9d0f9846f2d5c38c578aa63f0acdee0dc9b7b13f3062700532fc42b41d51f9801b2e25d5a48cd87025cb89d7a95961f840fa20ed7a6cddf3cd57bc5ea
+  checksum: 5d147b94815b9227405e512be5202be312d80fa0b61732c128094c1c73a16b5d4fbf7c9f68e93dc2d1b648a99f380fb9be7d1890fadac9ed2e736723c78dc555
   languageName: node
   linkType: hard
 
-"contentful-sdk-core@npm:^7.0.5":
-  version: 7.0.6
-  resolution: "contentful-sdk-core@npm:7.0.6"
+"contentful-sdk-core@npm:^8.1.0":
+  version: 8.1.2
+  resolution: "contentful-sdk-core@npm:8.1.2"
   dependencies:
     fast-copy: "npm:^2.1.7"
     lodash.isplainobject: "npm:^4.0.6"
     lodash.isstring: "npm:^4.0.1"
     p-throttle: "npm:^4.1.1"
-    qs: "npm:^6.9.4"
-  checksum: 4b6672bbb6202610ba628cc5ef0fa8906470eb8dd027dc96b4c39de687021d9b4e49554f6ca86150a437dc65e9580ce4b6d582996342d93ad023a1e77cdbcc55
+    qs: "npm:^6.11.2"
+  checksum: 09404984ee6fa61773078b3287b98628b31042c4f86378ce5aea665f198c5ce443f80550896874320961a04a3d6cfc0815b00c25b5c4f09c72196c1f9ea62dbc
   languageName: node
   linkType: hard
 
-"contentful@npm:^9.3.5":
-  version: 9.3.5
-  resolution: "contentful@npm:9.3.5"
+"contentful@npm:^10.6.13":
+  version: 10.6.13
+  resolution: "contentful@npm:10.6.13"
   dependencies:
     "@contentful/rich-text-types": "npm:^16.0.2"
-    axios: "npm:^0.27.0"
-    contentful-resolve-response: "npm:^1.3.12"
-    contentful-sdk-core: "npm:^7.0.5"
-    fast-copy: "npm:^2.1.7"
+    axios: "npm:^1.6.0"
+    contentful-resolve-response: "npm:^1.8.1"
+    contentful-sdk-core: "npm:^8.1.0"
     json-stringify-safe: "npm:^5.0.1"
-  checksum: 2fdcf38d4d9b120bcc0302462be9f7e17dbea3832fa29506c0f5a6e5fca54dd1ed29c70dcfa0869c137f62b1b2aa723f2e6eaab0954a1c60c99c5f9b53400c46
+    type-fest: "npm:^4.0.0"
+  checksum: 16329aa4ef6d4b8fb3918349188f010563cab65553cf8c03d4731dba1a3a3baf569dd86c45413b3cc63e9afb3b6d279d6e412f0ff4919622e6a1b34007b7b884
   languageName: node
   linkType: hard
 
@@ -3485,13 +3486,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.9":
-  version: 1.15.2
-  resolution: "follow-redirects@npm:1.15.2"
+"follow-redirects@npm:^1.15.0":
+  version: 1.15.3
+  resolution: "follow-redirects@npm:1.15.3"
   peerDependenciesMeta:
     debug:
       optional: true
-  checksum: da5932b70e63944d38eecaa16954bac4347036f08303c913d166eda74809d8797d38386e3a0eb1d2fe37d2aaff2764cce8e9dbd99459d860cf2cdfa237923b5f
+  checksum: 915a2cf22e667bdf47b1a43cc6b7dce14d95039e9bbf9a24d0e739abfbdfa00077dd43c86d4a7a19efefcc7a99af144920a175eedc3888d268af5df67c272ee5
   languageName: node
   linkType: hard
 
@@ -4376,7 +4377,7 @@ __metadata:
     "@types/react": "npm:18.2.41"
     "@types/react-dom": "npm:18.2.17"
     autoprefixer: "npm:^10.4.16"
-    contentful: "npm:^9.3.5"
+    contentful: "npm:^10.6.13"
     eslint: "npm:8.55.0"
     eslint-config-next: "npm:14.0.3"
     eslint-config-prettier: "npm:^9.1.0"
@@ -5371,6 +5372,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"proxy-from-env@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "proxy-from-env@npm:1.1.0"
+  checksum: fe7dd8b1bdbbbea18d1459107729c3e4a2243ca870d26d34c2c1bcd3e4425b7bcc5112362df2d93cc7fb9746f6142b5e272fd1cc5c86ddf8580175186f6ad42b
+  languageName: node
+  linkType: hard
+
 "punycode@npm:^2.1.0":
   version: 2.3.0
   resolution: "punycode@npm:2.3.0"
@@ -5378,12 +5386,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qs@npm:^6.9.4":
-  version: 6.11.1
-  resolution: "qs@npm:6.11.1"
+"qs@npm:^6.11.2":
+  version: 6.11.2
+  resolution: "qs@npm:6.11.2"
   dependencies:
     side-channel: "npm:^1.0.4"
-  checksum: 7ec57d3d62334c6313346b54f2b588b28c983793bf73981b77d769396fbb04fec911fa4e8a085528c3ebe7c04cfc9c9130410b277b3328da91087ae8ca728437
+  checksum: 4f95d4ff18ed480befcafa3390022817ffd3087fc65f146cceb40fc5edb9fa96cb31f648cae2fa96ca23818f0798bd63ad4ca369a0e22702fcd41379b3ab6571
   languageName: node
   linkType: hard
 
@@ -6225,6 +6233,13 @@ __metadata:
   version: 0.20.2
   resolution: "type-fest@npm:0.20.2"
   checksum: dea9df45ea1f0aaa4e2d3bed3f9a0bfe9e5b2592bddb92eb1bf06e50bcf98dbb78189668cd8bc31a0511d3fc25539b4cd5c704497e53e93e2d40ca764b10bfc3
+  languageName: node
+  linkType: hard
+
+"type-fest@npm:^4.0.0":
+  version: 4.8.3
+  resolution: "type-fest@npm:4.8.3"
+  checksum: 978edf5d00651e944b8c4d50f765a4cc09126e7fb90b46ed157265012e2f8aeb178c0ca493a175213ffa1705a795e4b5579c2ef4bc27bdd3462cdceccbf386f7
   languageName: node
   linkType: hard
 
