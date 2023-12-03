@@ -13,7 +13,7 @@ export interface RawPost {
   posted: string;
   content: Document;
   title: string;
-  category: Entry<Category>[];
+  category: Entry<Category, undefined>[];
   }
 }
 

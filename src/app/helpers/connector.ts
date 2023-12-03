@@ -1,4 +1,4 @@
-import type {ContentfulClientApi, CreateClientParams, Entry, EntrySkeletonType,} from "contentful";
+import type { CreateClientParams, Entry, EntrySkeletonType,} from "contentful";
 import {createClient} from "contentful";
 import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
 import type {Document} from "@contentful/rich-text-types";
@@ -17,13 +17,13 @@ function getClient() {
     };
     _client = createClient(params);
   }
-  return _client.withAllLocales;
+  return _client;
 }
 
-export async function getContent<T extends EntrySkeletonType>(id: string): Promise<Entry<T> | undefined> {
+export async function getContent<T extends EntrySkeletonType>(id: string): Promise<Entry<T, undefined> | undefined> {
   const client = getClient();
   try {
-    return await client.getEntry<T, 'en-US'>(id);
+    return await client.getEntry<T>(id);
   } catch (e) {
     console.log(e);
   }
@@ -37,10 +37,10 @@ export async function getAsset(id: string) {
   }
 }
 
-export async function getEntries<T extends EntrySkeletonType>(id: string) {
+export async function getEntries<T extends EntrySkeletonType>(id: string):Promise<Entry<T, undefined>[]> {
   const client = getClient();
-  const response = await client.getEntries<T, 'en-US'>({ content_type: id });
-  return response.items.map(item => item.fields) as T[];
+  const response = await client.getEntries<T>({ content_type: id });
+  return response.items;
 }
 
 // @ts-ignore
