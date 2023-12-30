@@ -29,7 +29,9 @@ const Page = async (props: Props) => {
         <ul>
           {posts.map((post) => (
             <li key={post.slug}>
-              <Link href={categorySlug + "/" + post.slug}>{post.fields.title}</Link>
+              <Link href={categorySlug + "/" + post.slug}>
+                {post.fields.title}
+              </Link>
             </li>
           ))}
         </ul>

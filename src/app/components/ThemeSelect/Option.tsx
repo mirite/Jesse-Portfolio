@@ -1,8 +1,8 @@
 import React, { useId } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@/app/components/general/Button";
-import {OptionDefinition} from "@/app/helpers/theme";
-import {PressEvent} from "@react-types/shared";
+import { OptionDefinition } from "@/app/helpers/theme";
+import { PressEvent } from "@react-types/shared";
 
 type OptionProps = OptionDefinition & {
   onPress: (e: PressEvent) => void;

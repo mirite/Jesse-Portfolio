@@ -1,7 +1,7 @@
-import type { CreateClientParams, Entry, EntrySkeletonType,} from "contentful";
-import {createClient} from "contentful";
-import {documentToReactComponents} from "@contentful/rich-text-react-renderer";
-import type {Document} from "@contentful/rich-text-types";
+import type { CreateClientParams, Entry, EntrySkeletonType } from "contentful";
+import { createClient } from "contentful";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Document } from "@contentful/rich-text-types";
 
 let _client: ReturnType<typeof createClient>;
 
@@ -20,7 +20,9 @@ function getClient() {
   return _client;
 }
 
-export async function getContent<T extends EntrySkeletonType>(id: string): Promise<Entry<T, undefined> | undefined> {
+export async function getContent<T extends EntrySkeletonType>(
+  id: string,
+): Promise<Entry<T, undefined> | undefined> {
   const client = getClient();
   try {
     return await client.getEntry<T>(id);
@@ -37,14 +39,19 @@ export async function getAsset(id: string) {
   }
 }
 
-export async function getEntries<T extends EntrySkeletonType>(id: string):Promise<Entry<T, undefined>[]> {
+export async function getEntries<T extends EntrySkeletonType>(
+  id: string,
+): Promise<Entry<T, undefined>[]> {
   const client = getClient();
   const response = await client.getEntries<T>({ content_type: id });
   return response.items;
 }
 
 // @ts-ignore
-export async function getRichTextContent<T extends EntrySkeletonType>(id: string, field: keyof T) {
+export async function getRichTextContent<T extends EntrySkeletonType>(
+  id: string,
+  field: keyof T,
+) {
   const content = await getContent<T>(id);
   if (content) {
     const document = content.fields[field] as Document;
