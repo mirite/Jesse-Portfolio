@@ -4,6 +4,7 @@ import Socials from "@/app/components/Socials";
 import { getRichTextContent } from "@/app/helpers/connector";
 import ContactForm from "@/app/components/ContactForm/ContactForm";
 import PageWrapper from "@/app/components/general/PageWrapper";
+import {Snippet} from "@/types";
 
 const Page = async () => {
   const { title } = await data();
@@ -21,7 +22,7 @@ const Page = async () => {
 };
 
 const data = async () => {
-  const title = (await getRichTextContent(
+  const title = (await getRichTextContent<Snippet>(
     "6hDDlcnlG9gdoL8QClVPOw",
     "content",
   )) as string;

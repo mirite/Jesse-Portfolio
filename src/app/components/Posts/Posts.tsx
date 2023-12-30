@@ -11,7 +11,7 @@ const Posts = (props: Props) => {
       {posts.map((post) => (
         <Card
           key={post.slug}
-          title={post.title}
+          title={post.fields.title}
           link={post.categorySlug + "/" + post.slug}
         />
       ))}

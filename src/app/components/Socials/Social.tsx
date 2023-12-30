@@ -1,6 +1,6 @@
 import React from "react";
 import { Social } from "@/app/components/Socials/types";
-const Social = (social: Social) => {
+const Social = (social: Social["fields"]) => {
   return (
     <li className="flex justify-between">
       <span className="mr-3">

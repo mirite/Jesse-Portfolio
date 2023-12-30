@@ -50,7 +50,7 @@ export async function getEntries<T extends EntrySkeletonType>(
 // @ts-ignore
 export async function getRichTextContent<T extends EntrySkeletonType>(
   id: string,
-  field: keyof T,
+  field: keyof T["fields"],
 ) {
   const content = await getContent<T>(id);
   if (content) {

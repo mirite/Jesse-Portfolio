@@ -8,7 +8,7 @@ export function postMapper(entry: Entry<RawPost>): Post {
   const excerpt = getExcerpt(entry);
   const assets = getAssets(entry);
   return {
-    ...entry.fields,
+    fields: entry.fields,
     slug,
     categorySlug: category.fields.name.toLowerCase(),
     excerpt,
