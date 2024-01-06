@@ -1,8 +1,8 @@
 import React from "react";
-import { Skill } from "@/types";
+import { SkillSkeleton } from "@/types";
 import PillList from "@/app/components/general/PillList";
 
-const LinkDisplay = (props: { links: Required<Skill>["fields"]["projects"] }) => {
+const LinkDisplay = (props: { links: Required<SkillSkeleton>["fields"]["projects"] }) => {
   return (
     <PillList>
       {Object.entries(props.links || {}).map(([name, link]) => (

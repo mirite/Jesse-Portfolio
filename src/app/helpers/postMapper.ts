@@ -1,44 +1,50 @@
 import { Asset, Entry } from "contentful";
-import { Category, Post, RawPost } from "@/types";
+import { CategorySkeleton, Post, PostSkeleton, RawPost } from "@/types";
 import { createSlug } from "@/app/helpers/stringTransforms";
+import { Pos } from "@jridgewell/gen-mapping/dist/types/types";
 
-export function postMapper(entry: Entry<RawPost>): Post {
+export function postMapper(entry: RawPost): Post {
   const category = getCategory(entry);
+  const categoryName = (category?.fields.name as string) || "";
   const slug = getSlug(entry);
   const excerpt = getExcerpt(entry);
   const assets = getAssets(entry);
   return {
-    fields: entry.fields,
+    ...entry,
     slug,
-    categorySlug: category.fields.name.toLowerCase(),
+    categorySlug: categoryName.toLowerCase(),
     excerpt,
     assets,
   };
 }
 
-function getExcerpt(entry: Entry<RawPost>): string {
-  const content = entry.fields.content.content;
+function getExcerpt(entry: RawPost): string {
+  const content = entry.content.content;
   const firstParagraph = content.find(
     (block) => block.nodeType === "paragraph",
   );
-  // @ts-expect-error
-  return firstParagraph?.content[0]?.value || "";
+
+  const firstParagraphContent = firstParagraph?.content[0];
+  if (firstParagraphContent && "value" in firstParagraphContent) {
+    return firstParagraphContent.value;
+  }
+  return "";
 }
 
-export function getSlug(entry: Entry<RawPost>) {
-  return createSlug(entry.fields.title);
+export function getSlug(entry: RawPost) {
+  return createSlug(entry.title);
 }
 
-function getCategory(entry: Entry<RawPost>) {
+function getCategory(entry: RawPost) {
   return getCategories(entry)[0];
 }
 
-function getCategories(entry: Entry<RawPost>) {
-  return entry.fields.category as Entry<Category>[];
+function getCategories(entry: RawPost) {
+  return entry.category;
 }
 
-function getAssets(entry: Entry<RawPost>): Asset[] {
-  const assetBlocks = entry.fields.content.content.filter(
+function getAssets(entry: RawPost): Asset[] {
+  const assetBlocks = entry.content.content.filter(
     ({ nodeType }) => nodeType === "embedded-asset-block",
   );
   return assetBlocks.map((block) => block.data.target);

@@ -17,7 +17,7 @@ const Page = async (props: Props) => {
   if (!post) {
     return <p>Post not found {slug}</p>;
   }
-  return <Post {...post.fields} />;
+  return <Post {...post} />;
 };
 
 export async function generateMetadata({ params }: Props) {

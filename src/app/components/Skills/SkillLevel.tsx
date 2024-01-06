@@ -14,8 +14,7 @@ const SkillLevel = (props: Props) => {
   const filteredSkills = !searchTerm
     ? skills
     : skills.filter((skill) =>
-
-        skill.fields.name.toLowerCase().includes(searchTerm.toLowerCase()),
+        skill.name.toLowerCase().includes(searchTerm.toLowerCase()),
       );
   if (!filteredSkills.length) return <></>;
   return (
@@ -23,7 +22,7 @@ const SkillLevel = (props: Props) => {
       <h2 className="text-2xl">{label}</h2>
       <PillList>
         {filteredSkills.map((skill) => (
-          <Skill key={skill.fields.name} {...skill} />
+          <Skill key={skill.name} {...skill} />
         ))}
       </PillList>
     </div>

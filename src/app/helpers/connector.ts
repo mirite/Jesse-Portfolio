@@ -1,4 +1,4 @@
-import type { CreateClientParams, Entry, EntrySkeletonType } from "contentful";
+import type { CreateClientParams, EntrySkeletonType } from "contentful";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Document } from "@contentful/rich-text-types";
@@ -22,10 +22,10 @@ function getClient() {
 
 export async function getContent<T extends EntrySkeletonType>(
   id: string,
-): Promise<Entry<T, undefined> | undefined> {
+): Promise<T["fields"] | undefined> {
   const client = getClient();
   try {
-    return await client.getEntry<T>(id);
+    return (await client.getEntry<T>(id)).fields;
   } catch (e) {
     console.log(e);
   }
@@ -41,10 +41,10 @@ export async function getAsset(id: string) {
 
 export async function getEntries<T extends EntrySkeletonType>(
   id: string,
-): Promise<Entry<T, undefined>[]> {
+): Promise<T["fields"][]> {
   const client = getClient();
   const response = await client.getEntries<T>({ content_type: id });
-  return response.items;
+  return response.items.map((i) => i.fields);
 }
 
 // @ts-ignore
@@ -54,7 +54,7 @@ export async function getRichTextContent<T extends EntrySkeletonType>(
 ) {
   const content = await getContent<T>(id);
   if (content) {
-    const document = content.fields[field] as Document;
+    const document = content[field] as Document;
     return documentToReactComponents(document);
   }
   return "";

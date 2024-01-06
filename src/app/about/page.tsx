@@ -1,20 +1,20 @@
 import React from "react";
 import { getContent } from "@/app/helpers/connector";
 import Post from "@/app/components/Posts/Post";
-import { Snippet } from "@/types";
+import { SnippetSkeleton } from "@/types";
 import PageWrapper from "@/app/components/general/PageWrapper";
 
 const Page = async () => {
   const { content } = await data();
   return (
-    <PageWrapper title={content?.fields.label || ""}>
-      <Post content={content?.fields.content} />
+    <PageWrapper title={content?.label || ""}>
+      <Post content={content?.content} />
     </PageWrapper>
   );
 };
 
 const data = async () => {
-  const content = await getContent<Snippet>("iG7QQEKWeFbtsHLGpFvN9");
+  const content = await getContent<SnippetSkeleton>("iG7QQEKWeFbtsHLGpFvN9");
   return { content };
 };
 

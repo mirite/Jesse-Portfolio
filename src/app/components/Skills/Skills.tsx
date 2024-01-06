@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Skill } from "@/types";
+import { Skill, SkillSkeleton } from "@/types";
 import { splitSkillsByProficiency } from "@/app/helpers/skills";
 import SkillLevel from "@/app/components/Skills/SkillLevel";
 import Search from "@/app/components/Skills/Search";
