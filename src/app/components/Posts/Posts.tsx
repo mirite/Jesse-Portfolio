@@ -7,7 +7,7 @@ interface Props {
 const Posts = (props: Props) => {
   const { posts } = props;
   return (
-    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]">
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2">
       {posts.map((post) => (
         <Card
           key={post.slug}
