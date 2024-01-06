@@ -3,10 +3,17 @@ import { Asset } from "contentful";
 import Image from "next/image";
 
 const GalleryImage = ({ asset }: { asset: Asset }) => {
-    const details = asset.fields?.file?.details;
-    const meta = asset.fields.file;
+  const details = asset.fields?.file?.details;
+  const meta = asset.fields.file;
 
-    if(!details || !meta || !(typeof meta.url === "string")|| !(typeof meta.fileName === "string") || !("image" in details)) return (<></>);
+  if (
+    !details ||
+    !meta ||
+    !(typeof meta.url === "string") ||
+    !(typeof meta.fileName === "string") ||
+    !("image" in details)
+  )
+    return <></>;
   return (
     <div>
       <a href={meta.url} target="_blank">
