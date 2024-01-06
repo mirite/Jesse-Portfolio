@@ -1,9 +1,0 @@
-.container {
-  list-style: none;
-  padding-inline: var(--space-2xs);
-  padding-block: calc(var(--space-2xs) / 2);
-  margin: var(--space-3xs);
-  border-radius: 2rem;
-  border: 1px solid rgb(var(--text-color));
-  box-shadow: var(--box-shadow);
-}
