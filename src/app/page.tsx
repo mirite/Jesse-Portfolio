@@ -1,13 +1,14 @@
 import { getPlainTextContent, getPosts } from "@/lib/";
 import { PageWrapper, Posts } from "@/app/components/";
 import Link from "next/link";
+import { TextWrapper } from "@/app/components";
 
 export default async function Home() {
   const { props } = await data();
   const { title, posts } = props;
   return (
     <PageWrapper title={title}>
-      <div className={"prose mx-auto"}>
+      <TextWrapper>
         <p>
           Welcome to my site! I am a software developer (primarily web) from
           Toronto, Ontario. This site is a place for me to share my&nbsp;
@@ -21,7 +22,7 @@ export default async function Home() {
           set, so I have dabbled (and more) in a variety of other languages,
           frameworks, and tools.
         </p>
-      </div>
+      </TextWrapper>
       <h2 className={"text-2xl font-bold mb-3 text-center"}>
         Most recent posts:
       </h2>

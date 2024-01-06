@@ -24,7 +24,7 @@ const Nav = () => {
           </Button>
         </div>
         <nav aria-label="Main Navigation">
-          <ul className="flex md:flex-row flex-col">
+          <ul className="flex md:flex-row flex-col" id={"nav-links"}>
             <NavLink path="/projects" label="Projects" />
             <NavLink path="/skills" label="Skills" />
             <NavLink path="/about" label="About" />
@@ -50,6 +50,13 @@ const Nav = () => {
                 menu.classList.remove("block");
                 menu.classList.add("hidden");
                 toggle.classList.remove("opacity-0");
+                });
+                const navLinks = document.querySelectorAll("#nav-links a");
+                const currentPath = window.location.pathname;
+                navLinks.forEach((link) => {
+       if ("/" + link.href.split("/").pop() === currentPath) {
+            link.classList.remove("no-underline");
+            }
                 });
             `}
       </Script>
