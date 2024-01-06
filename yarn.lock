@@ -28,6 +28,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentful/rich-text-plain-text-renderer@npm:^16.0.7":
+  version: 16.0.7
+  resolution: "@contentful/rich-text-plain-text-renderer@npm:16.0.7"
+  dependencies:
+    "@contentful/rich-text-types": "npm:^16.3.0"
+  checksum: ceeb293d2f941350276808e5e348bc3e4a6eef406d50c66e545d40c293daa546614e851651953a937f358d48ed1b00f55a17e1d24ea2efe242f77d46d17cdc74
+  languageName: node
+  linkType: hard
+
 "@contentful/rich-text-react-renderer@npm:15.19.0":
   version: 15.19.0
   resolution: "@contentful/rich-text-react-renderer@npm:15.19.0"
@@ -4022,6 +4031,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jesse-next@workspace:."
   dependencies:
+    "@contentful/rich-text-plain-text-renderer": "npm:^16.0.7"
     "@contentful/rich-text-react-renderer": "npm:15.19.0"
     "@formspree/react": "npm:^2.5.1"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"

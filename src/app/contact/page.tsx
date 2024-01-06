@@ -1,7 +1,7 @@
 import React from "react";
 import BioImage from "@/app/contact/BioImage";
 import Socials from "./Socials";
-import { getRichTextContent, SnippetSkeleton } from "@/lib/";
+import { getPlainTextContent, SnippetSkeleton } from "@/lib/";
 import ContactForm from "@/app/contact/ContactForm/ContactForm";
 import { PageWrapper } from "@/app/components/";
 
@@ -21,10 +21,10 @@ const Page = async () => {
 };
 
 const data = async () => {
-  const title = (await getRichTextContent<SnippetSkeleton>(
+  const title = await getPlainTextContent<SnippetSkeleton>(
     "6hDDlcnlG9gdoL8QClVPOw",
     "content",
-  )) as string;
+  );
   return { title };
 };
 

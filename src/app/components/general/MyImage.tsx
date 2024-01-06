@@ -1,6 +1,5 @@
 import React from "react";
 import { getAsset } from "@/lib/";
-import styles from "./Image.module.css";
 import NextImage, { ImageProps } from "next/image";
 
 interface Props extends Omit<ImageProps, "src" | "alt"> {
@@ -17,8 +16,14 @@ const MyImage = async (props: Props) => {
   if (!details || !meta || !("image" in details)) return <></>;
 
   return (
-    <div className={styles.wrapper}>
-      <NextImage src={"https:" + meta.url} title={""} alt={""} {...props} />
+    <div className={"leading-none"}>
+      <NextImage
+        src={"https:" + meta.url}
+        title={""}
+        alt={""}
+        className={"max-w-full h-auto"}
+        {...props}
+      />
     </div>
   );
 };

@@ -2,6 +2,7 @@ import type { CreateClientParams, EntrySkeletonType } from "contentful";
 import { createClient } from "contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Document } from "@contentful/rich-text-types";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
 
 let _client: ReturnType<typeof createClient>;
 
@@ -51,11 +52,27 @@ export async function getEntries<T extends EntrySkeletonType>(
 export async function getRichTextContent<T extends EntrySkeletonType>(
   id: string,
   field: keyof T["fields"],
+  raw?: boolean,
 ) {
   const content = await getContent<T>(id);
   if (content) {
     const document = content[field] as Document;
+    if (raw) {
+      return document;
+    }
     return documentToReactComponents(document);
+  }
+  return "";
+}
+
+export async function getPlainTextContent<T extends EntrySkeletonType>(
+  id: string,
+  field: keyof T["fields"],
+) {
+  const content = await getContent<T>(id);
+  if (content) {
+    const document = content[field] as Document;
+    return documentToPlainTextString(document);
   }
   return "";
 }
