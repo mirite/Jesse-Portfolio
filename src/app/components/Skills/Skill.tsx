@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Skill } from "@/types";
+import { Skill as SkillType } from "@/types";
 import SkillNotes from "@/app/components/Skills/SkillNotes";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Button from "@/app/components/general/Button";
-const Skill = (skill: Skill) => {
+const Skill = (skill: SkillType) => {
   const { name, notes } = skill;
   const [showing, setShowing] = useState(false);
 
@@ -24,6 +24,6 @@ const Skill = (skill: Skill) => {
 
 export default Skill;
 
-function hasNotesOrLinks(skill: Skill) {
+function hasNotesOrLinks(skill: SkillType) {
   return skill.notes !== undefined || skill.projects !== undefined;
 }

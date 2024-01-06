@@ -1,10 +1,10 @@
-import { Category } from "@/types";
+import { CategorySkeleton } from "@/types";
 import { categoryMapper } from "@/app/helpers/categoryMapper";
 import { getEntries } from "@/app/helpers/connector";
 import { Metadata } from "next";
 
 export async function getCategories() {
-  return (await getEntries<Category>(`category`)).map(categoryMapper);
+  return (await getEntries<CategorySkeleton>(`category`)).map(categoryMapper);
 }
 
 export async function getCategoriesForStaticBuild() {

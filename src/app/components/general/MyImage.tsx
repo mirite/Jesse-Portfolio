@@ -8,19 +8,17 @@ interface Props extends Omit<ImageProps, "src" | "alt"> {
 }
 
 const MyImage = async (props: Props) => {
-  const image = await getAsset(props.assetid);
+  const asset = await getAsset(props.assetid);
+  if (!asset) return <>Asset not found</>;
 
-  if (!image) {
-    return null;
-  }
+  const details = asset.file?.details;
+  const meta = asset.file;
+
+  if (!details || !meta || !("image" in details)) return <></>;
+
   return (
     <div className={styles.wrapper}>
-      <NextImage
-        src={"https:" + image.file.url}
-        title={image.title}
-        alt={image.description}
-        {...props}
-      />
+      <NextImage src={"https:" + meta.url} title={""} alt={""} {...props} />
     </div>
   );
 };

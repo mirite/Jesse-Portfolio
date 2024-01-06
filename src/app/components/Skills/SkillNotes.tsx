@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Skill } from "@/types";
+import { SkillSkeleton } from "@/types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Button from "@/app/components/general/Button";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
@@ -7,7 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import TextWrapper from "@/app/components/general/TextWrapper";
 import LinkDisplay from "@/app/components/Skills/LinkDisplay";
 
-const SkillNotes = (props: Skill & { onClose: () => void }) => {
+const SkillNotes = (
+  props: SkillSkeleton["fields"] & { onClose: () => void },
+) => {
   useEffect(() => {
     document.body.style.overflowY = "hidden";
     return () => {

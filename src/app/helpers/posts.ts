@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getEntries } from "@/app/helpers/connector";
-import { RawPost } from "@/types";
+import { PostSkeleton } from "@/types";
 import { postMapper } from "@/app/helpers/postMapper";
 
 export async function createPostMetadata(slug: string): Promise<Metadata> {
@@ -10,7 +10,10 @@ export async function createPostMetadata(slug: string): Promise<Metadata> {
   }
 
   const { title, excerpt, category } = post;
-  return { title: category + " > " + title, description: excerpt };
+  return {
+    title: category[0].fields.name + " > " + title,
+    description: excerpt,
+  };
 }
 
 export async function getPostsForStaticBuild() {
@@ -33,7 +36,7 @@ export async function getPost(postSlug: string) {
 }
 
 export async function getPosts(count: number = 9999, categorySlug?: string) {
-  return (await getEntries<RawPost>(`blogPost`))
+  return (await getEntries<PostSkeleton>(`blogPost`))
     .map(postMapper)
     .filter((post) => !categorySlug || post.categorySlug === categorySlug)
     .slice(0, count);

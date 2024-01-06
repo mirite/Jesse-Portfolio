@@ -1,10 +1,10 @@
 import { getEntries } from "@/app/helpers/connector";
-import { Skill } from "@/types";
+import { Skill, SkillSkeleton } from "@/types";
 
 export async function getSkills() {
-  return (await getEntries<Skill>(`skill`))
-    .map((entry) => entry.fields)
-    .sort((a, b) => b.interestingness - a.interestingness);
+  return (await getEntries<SkillSkeleton>(`skill`)).sort(
+    (a, b) => b.interestingness - a.interestingness,
+  );
 }
 
 export function splitSkillsByProficiency(allSkills: Skill[]) {
