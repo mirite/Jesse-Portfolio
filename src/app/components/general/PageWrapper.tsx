@@ -1,11 +1,15 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 
 const PageWrapper = ({
   children,
   title,
-}: PropsWithChildren & { title: string }) => {
+  className: extendedClassName,
+  ...rest
+}: React.HTMLAttributes<HTMLDivElement> & { title: string }) => {
+  const className = twMerge("grow w-full", extendedClassName);
   return (
-    <main className="flex-1 w-full max-w-[1400px] min-h-[100vh]">
+    <main className={className} {...rest}>
       <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
       {children}
     </main>
