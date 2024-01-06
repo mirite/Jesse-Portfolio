@@ -2689,9 +2689,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"contentful@npm:^10.6.15":
-  version: 10.6.15
-  resolution: "contentful@npm:10.6.15"
+"contentful@npm:^10.6.16":
+  version: 10.6.16
+  resolution: "contentful@npm:10.6.16"
   dependencies:
     "@contentful/rich-text-types": "npm:^16.0.2"
     axios: "npm:^1.6.0"
@@ -2699,7 +2699,7 @@ __metadata:
     contentful-sdk-core: "npm:^8.1.0"
     json-stringify-safe: "npm:^5.0.1"
     type-fest: "npm:^4.0.0"
-  checksum: 50a9257b80ef81bf6c28651c611916173bdfed2beb3a628ab2064a4defab7f5bd6deacd87a2797108386ccbae604612de52df1f0b8ca8ccfc6eec83338dee754
+  checksum: be734281b669477379625c54c3a66a48c38cbef9f6bc7d004a8af549ddb88b7aa2b15cd64877cceed2deeefb8ffc80d821d4d978068fd5100856e06be10e2574
   languageName: node
   linkType: hard
 
@@ -4377,18 +4377,18 @@ __metadata:
     "@types/react": "npm:18.2.46"
     "@types/react-dom": "npm:18.2.18"
     autoprefixer: "npm:^10.4.16"
-    contentful: "npm:^10.6.15"
+    contentful: "npm:^10.6.16"
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:14.0.4"
     eslint-config-prettier: "npm:^9.1.0"
     next: "npm:14.0.4"
-    postcss: "npm:^8.4.32"
+    postcss: "npm:^8.4.33"
     prettier: "npm:3.1.1"
     react: "npm:18.2.0"
     react-aria: "npm:^3.31.0"
     react-dom: "npm:18.2.0"
-    sass: "npm:^1.69.6"
-    tailwindcss: "npm:^3.4.0"
+    sass: "npm:^1.69.7"
+    tailwindcss: "npm:^3.4.1"
     typescript: "npm:5.3.3"
   languageName: unknown
   linkType: soft
@@ -5318,14 +5318,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.32":
-  version: 8.4.32
-  resolution: "postcss@npm:8.4.32"
+"postcss@npm:^8.4.33":
+  version: 8.4.33
+  resolution: "postcss@npm:8.4.33"
   dependencies:
     nanoid: "npm:^3.3.7"
     picocolors: "npm:^1.0.0"
     source-map-js: "npm:^1.0.2"
-  checksum: 39308a9195fa34d4dbdd7b58a896cff0c7809f84f7a4ac1b95b68ca86c9138a395addff33075668ed3983d41b90aac05754c445237a9365eb1c3a5602ebd03ad
+  checksum: 16eda83458fcd8a91bece287b5920c7f57164c3ea293e6c80d0ea71ce7843007bcd8592260a5160b9a7f02693e6ac93e2495b02d8c7596d3f3f72c1447e3ba79
   languageName: node
   linkType: hard
 
@@ -5733,16 +5733,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:^1.69.6":
-  version: 1.69.6
-  resolution: "sass@npm:1.69.6"
+"sass@npm:^1.69.7":
+  version: 1.69.7
+  resolution: "sass@npm:1.69.7"
   dependencies:
     chokidar: "npm:>=3.0.0 <4.0.0"
     immutable: "npm:^4.0.0"
     source-map-js: "npm:>=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 8153db8e51e74a9007bb54332e14d122c34288c7d21a5f2eaefef753a1b7bb13f35e042dc6247253dab5b1550b05cea27970371e7548286b4f50f23dd1147d89
+  checksum: 773d0938e7d4ff3972d3fda3132f34fe98a2f712e028a58e28fecd615434795eff3266eddc38d5e13f03b90c0d6360d0e737b30bff2949a47280c64a18e0fb18
   languageName: node
   linkType: hard
 
@@ -6089,9 +6089,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.4.0":
-  version: 3.4.0
-  resolution: "tailwindcss@npm:3.4.0"
+"tailwindcss@npm:^3.4.1":
+  version: 3.4.1
+  resolution: "tailwindcss@npm:3.4.1"
   dependencies:
     "@alloc/quick-lru": "npm:^5.2.0"
     arg: "npm:^5.0.2"
@@ -6118,7 +6118,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 0a1cef7468e6d17c2857d0b3c4017af2cb37ed8ba27dfb14780c517b8a74f6786970227c400ac1325fc8bcfc09099d8e990fa7c60924bf945f3d0a912d63f546
+  checksum: eec3d758f1cd4f51ab3b4c201927c3ecd18e55f8ac94256af60276aaf8d1df78f9dddb5e9fb1e057dfa7cea3c1356add4994cc3d42da9739df874e67047e656f
   languageName: node
   linkType: hard
 
