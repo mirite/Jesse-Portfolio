@@ -1,10 +1,9 @@
 import React from "react";
-import BioImage from "@/app/components/BioImage";
-import Socials from "@/app/components/Socials";
-import { getRichTextContent } from "@/app/helpers/connector";
-import ContactForm from "@/app/components/ContactForm/ContactForm";
-import PageWrapper from "@/app/components/general/PageWrapper";
-import { SnippetSkeleton } from "@/types";
+import BioImage from "@/app/contact/BioImage";
+import Socials from "./Socials";
+import { getRichTextContent, SnippetSkeleton } from "@/lib/";
+import ContactForm from "@/app/contact/ContactForm/ContactForm";
+import { PageWrapper } from "@/app/components/";
 
 const Page = async () => {
   const { title } = await data();

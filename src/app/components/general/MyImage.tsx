@@ -1,5 +1,5 @@
 import React from "react";
-import { getAsset } from "@/app/helpers/connector";
+import { getAsset } from "@/lib/";
 import styles from "./Image.module.css";
 import NextImage, { ImageProps } from "next/image";
 

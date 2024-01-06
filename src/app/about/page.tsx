@@ -1,8 +1,6 @@
 import React from "react";
-import { getContent } from "@/app/helpers/connector";
-import Post from "@/app/components/Posts/Post";
-import { SnippetSkeleton } from "@/types";
-import PageWrapper from "@/app/components/general/PageWrapper";
+import { getContent, SnippetSkeleton } from "@/lib/";
+import { PageWrapper, Post } from "@/app/components/";
 
 const Page = async () => {
   const { content } = await data();

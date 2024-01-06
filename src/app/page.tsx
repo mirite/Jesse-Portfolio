@@ -1,7 +1,5 @@
-import { getRichTextContent } from "@/app/helpers/connector";
-import Posts from "@/app/components/Posts";
-import { getPosts } from "@/app/helpers/posts";
-import PageWrapper from "@/app/components/general/PageWrapper";
+import { getPosts, getRichTextContent } from "@/lib/";
+import { PageWrapper, Posts } from "@/app/components/";
 
 export default async function Home() {
   const { props } = await data();

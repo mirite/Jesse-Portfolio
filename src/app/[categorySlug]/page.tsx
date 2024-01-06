@@ -4,10 +4,10 @@ import {
   createCategoryMetadata,
   getCategories,
   getCategoriesForStaticBuild,
-} from "@/app/helpers/categories";
-import { getPosts } from "@/app/helpers/posts";
-import PageWrapper from "@/app/components/general/PageWrapper";
-import TextWrapper from "@/app/components/general/TextWrapper";
+  getPosts,
+} from "@/lib/";
+import { PageWrapper, TextWrapper } from "@/app/components/";
+
 interface Props {
   params: { categorySlug: string };
 }
