@@ -1,6 +1,6 @@
 import React from "react";
-import Card from "@/app/components/Posts/Card";
-import { Post } from "@/types";
+import { Card } from "@/app/components/";
+import { Post } from "@/lib/";
 interface Props {
   posts: Post[];
 }

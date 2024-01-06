@@ -1,7 +1,5 @@
-import { getRichTextContent } from "@/app/helpers/connector";
-import Posts from "@/app/components/Posts";
-import { getPosts } from "@/app/helpers/posts";
-import PageWrapper from "@/app/components/general/PageWrapper";
+import { getPlainTextContent, getPosts } from "@/lib/";
+import { PageWrapper, Posts } from "@/app/components/";
 
 export default async function Home() {
   const { props } = await data();
@@ -14,10 +12,7 @@ export default async function Home() {
 }
 
 const data = async () => {
-  const title = (await getRichTextContent(
-    "5elXtJ9BtgyNW3u0qrTzxy",
-    "content",
-  )) as string;
+  const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
   const posts = (await getPosts(10)) || [];
   return {
     props: {

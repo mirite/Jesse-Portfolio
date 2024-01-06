@@ -28,6 +28,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@contentful/rich-text-plain-text-renderer@npm:^16.0.7":
+  version: 16.0.7
+  resolution: "@contentful/rich-text-plain-text-renderer@npm:16.0.7"
+  dependencies:
+    "@contentful/rich-text-types": "npm:^16.3.0"
+  checksum: ceeb293d2f941350276808e5e348bc3e4a6eef406d50c66e545d40c293daa546614e851651953a937f358d48ed1b00f55a17e1d24ea2efe242f77d46d17cdc74
+  languageName: node
+  linkType: hard
+
 "@contentful/rich-text-react-renderer@npm:15.19.0":
   version: 15.19.0
   resolution: "@contentful/rich-text-react-renderer@npm:15.19.0"
@@ -3054,6 +3063,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eslint-plugin-unused-imports@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "eslint-plugin-unused-imports@npm:3.0.0"
+  dependencies:
+    eslint-rule-composer: "npm:^0.3.0"
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": ^6.0.0
+    eslint: ^8.0.0
+  peerDependenciesMeta:
+    "@typescript-eslint/eslint-plugin":
+      optional: true
+  checksum: b1a5f3359e6191e6edbb71480242b1f830f4ffe20778fb9df8e6045ac2bf98211206b104cbfecb3a204b1963cf11decbd28c925ce908068d81959bc037a521ea
+  languageName: node
+  linkType: hard
+
+"eslint-rule-composer@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "eslint-rule-composer@npm:0.3.0"
+  checksum: 1f0c40d209e1503a955101a0dbba37e7fc67c8aaa47a5b9ae0b0fcbae7022c86e52b3df2b1b9ffd658e16cd80f31fff92e7222460a44d8251e61d49e0af79a07
+  languageName: node
+  linkType: hard
+
 "eslint-scope@npm:^7.2.2":
   version: 7.2.2
   resolution: "eslint-scope@npm:7.2.2"
@@ -4000,6 +4031,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jesse-next@workspace:."
   dependencies:
+    "@contentful/rich-text-plain-text-renderer": "npm:^16.0.7"
     "@contentful/rich-text-react-renderer": "npm:15.19.0"
     "@formspree/react": "npm:^2.5.1"
     "@fortawesome/fontawesome-svg-core": "npm:^6.5.1"
@@ -4016,6 +4048,7 @@ __metadata:
     eslint: "npm:8.56.0"
     eslint-config-next: "npm:14.0.4"
     eslint-config-prettier: "npm:^9.1.0"
+    eslint-plugin-unused-imports: "npm:^3.0.0"
     next: "npm:14.0.4"
     postcss: "npm:^8.4.33"
     prettier: "npm:3.1.1"
