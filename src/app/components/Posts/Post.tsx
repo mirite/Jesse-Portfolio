@@ -4,7 +4,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { TextWrapper } from "@/app/components";
 
 type Props = Partial<Pick<PostType, "title" | "content" | "posted">> &
-  ComponentProps<typeof TextWrapper>;
+  Omit<ComponentProps<typeof TextWrapper>, "content">;
 
 const Post = (post: Props) => {
   const { title, content, posted, ...rest } = post;
