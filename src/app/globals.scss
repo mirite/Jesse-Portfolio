@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --max-width: 1400px;
   --link-color: 14 165 233;
   --dark-link-color: 56 189 248;
 }
@@ -20,8 +19,9 @@
 html,
 body {
   overflow-x: hidden;
-  font-size: calc(1em + min(calc(1400px / 200), 0.5vw));
+  font-size: 16px;
   font-family:
+  system-ui,
     opensans,
     -apple-system,
     BlinkMacSystemFont,
@@ -47,10 +47,6 @@ a {
   font-weight: 500;
 }
 
-a:hover {
-  filter: brightness(150%);
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -72,12 +68,6 @@ button {
 
   .btn {
     @apply no-underline pill transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400;
-  }
-}
-
-@media (max-width: 1400px) {
-  body {
-    padding-inline: var(--space-s);
   }
 }
 

@@ -1,29 +1,25 @@
-"use client";
 import React from "react";
 import NavLink from "./NavLink";
 import DarkModeToggle from "./ThemeSelect";
 import { Button } from "@/app/components/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import Script from "next/script";
 
 const Nav = () => {
-  const [showing, setShowing] = React.useState(false);
   return (
     <div className="grow flex justify-end">
-      <Button
-        className={"md:hidden " + (showing ? "opacity-0" : "")}
-        onPress={() => setShowing(true)}
-      >
+      <Button className={"md:hidden"} id={"menu-toggle"}>
         <FontAwesomeIcon icon={faBars} />
       </Button>
       <div
+        id={"menu"}
         className={
-          "bg-white dark:bg-black items-center md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 " +
-          (showing ? "block" : "hidden")
+          "bg-white dark:bg-black items-center md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
         }
       >
         <div className="md:hidden">
-          <Button className="float-right" onPress={() => setShowing(false)}>
+          <Button id={"closeToggle"} className="float-right">
             <FontAwesomeIcon icon={faClose} />
           </Button>
         </div>
@@ -40,6 +36,23 @@ const Nav = () => {
           <DarkModeToggle />
         </div>
       </div>
+      <Script id={"menu-toggle"}>
+        {`
+            const toggle = document.getElementById("menu-toggle");
+            const menu = document.getElementById("menu");
+            const close = document.getElementById("closeToggle");
+            toggle.addEventListener("click", () => {
+                menu.classList.remove("hidden");
+                menu.classList.add("block");
+                toggle.classList.add("opacity-0");
+                });
+            close.addEventListener("click", () => {
+                menu.classList.remove("block");
+                menu.classList.add("hidden");
+                toggle.classList.remove("opacity-0");
+                });
+            `}
+      </Script>
     </div>
   );
 };
