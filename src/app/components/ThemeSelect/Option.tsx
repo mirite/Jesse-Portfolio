@@ -9,7 +9,7 @@ type OptionProps = OptionDefinition & {
 };
 
 const Option = (props: OptionProps) => {
-  const { label, icon, onPress, className } = props;
+  const { label, icon, onPress } = props;
   const id = useId();
   return (
     <li>

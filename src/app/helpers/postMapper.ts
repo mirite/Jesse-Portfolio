@@ -1,7 +1,6 @@
-import { Asset, Entry } from "contentful";
-import { CategorySkeleton, Post, PostSkeleton, RawPost } from "@/types";
+import { Asset } from "contentful";
+import { Post, RawPost } from "@/types";
 import { createSlug } from "@/app/helpers/stringTransforms";
-import { Pos } from "@jridgewell/gen-mapping/dist/types/types";
 
 export function postMapper(entry: RawPost): Post {
   const category = getCategory(entry);

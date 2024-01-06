@@ -1,4 +1,4 @@
-import { EntrySkeletonType, type Asset, type Entry } from "contentful";
+import { type Asset, type Entry } from "contentful";
 import type { Document } from "@contentful/rich-text-types";
 
 export type Post = RawPost & {

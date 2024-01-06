@@ -1,11 +1,13 @@
-import React, { RefObject, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { OptionDefinition, options, updateTheme } from "@/app/helpers/theme";
 import Option from "@/app/components/ThemeSelect/Option";
 
-const ThemeSelectModal = (props: {
+type Props = {
   onChange: (newTheme: OptionDefinition) => void;
   onClose: () => void;
-}) => {
+};
+
+const ThemeSelectModal = (props: Props) => {
   const modalRef = useRef<HTMLUListElement>(null); // Ref to store the modal
 
   useEffect(() => {
