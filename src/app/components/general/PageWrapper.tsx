@@ -1,5 +1,7 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import { TextWrapper } from "@/app/components";
+import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const PageWrapper = ({
 	children,
@@ -10,8 +12,12 @@ const PageWrapper = ({
 	const className = twMerge("grow w-full", extendedClassName);
 	return (
 		<main className={className} {...rest}>
-			<h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
-			{children}
+			<MaxWidthContainer>
+				<TextWrapper className={"mb-4"}>
+					<h1 className="text-center">{title}</h1>
+				</TextWrapper>
+				{children}
+			</MaxWidthContainer>
 		</main>
 	);
 };

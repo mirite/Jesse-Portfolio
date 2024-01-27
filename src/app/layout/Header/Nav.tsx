@@ -15,7 +15,7 @@ const Nav = () => {
 			<div
 				id={"menu"}
 				className={
-					"bg-white dark:bg-black items-center md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
+					"items-center md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
 				}
 			>
 				<div className="md:hidden">

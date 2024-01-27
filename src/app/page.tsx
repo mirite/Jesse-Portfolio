@@ -23,9 +23,9 @@ export default async function Home() {
 					frameworks, and tools.
 				</p>
 			</TextWrapper>
-			<h2 className={"text-2xl font-bold mb-3 text-center"}>
-				Most recent posts:
-			</h2>
+			<TextWrapper>
+				<h2 className={"mb-3 text-center"}>Most recent posts:</h2>
+			</TextWrapper>
 			<Posts posts={posts} />
 		</PageWrapper>
 	);

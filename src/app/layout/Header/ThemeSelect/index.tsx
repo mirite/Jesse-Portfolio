@@ -23,7 +23,7 @@ const Index = () => {
 		<div className="relative">
 			<Button
 				className={modalActive ? "opacity-0" : ""}
-				onPress={() => setModalActive(true)}
+				onClick={() => setModalActive(true)}
 				title="Colour Theme"
 			>
 				<FontAwesomeIcon icon={currentMode} />
