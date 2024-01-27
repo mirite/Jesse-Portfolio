@@ -29,7 +29,7 @@ const ThemeSelectModal = (props: Props) => {
 				<Option
 					key={option.label}
 					{...option}
-					onPress={() => props.onChange(option)}
+					onClick={() => props.onChange(option)}
 				/>
 			))}
 		</ul>

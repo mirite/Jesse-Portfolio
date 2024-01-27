@@ -1,6 +1,6 @@
 "use client";
-import React, { ButtonHTMLAttributes, useRef } from "react";
-import { AriaButtonProps, useButton } from "react-aria";
+import React, { ButtonHTMLAttributes } from "react";
+import { AriaButtonProps } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
 const Button = ({
@@ -9,11 +9,9 @@ const Button = ({
 	...props
 }: AriaButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
 	const finalClass = twMerge("btn", className);
-	const ref = useRef<HTMLButtonElement>(null);
-	const { buttonProps } = useButton(props as AriaButtonProps, ref);
 
 	return (
-		<button className={finalClass} {...buttonProps} ref={ref}>
+		<button className={finalClass} {...props}>
 			{children}
 		</button>
 	);
