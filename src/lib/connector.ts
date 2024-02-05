@@ -11,6 +11,8 @@ function getClient() {
 		const space = process.env.SPACE || "";
 		const environment = process.env.ENVIRONMENT || "master"; // defaults to 'master' if not set
 		const accessToken = process.env.ACCESSTOKEN || "";
+		if (!space || !accessToken)
+			throw new Error("Contentful credentials not set");
 		const params: CreateClientParams = {
 			space,
 			environment,
