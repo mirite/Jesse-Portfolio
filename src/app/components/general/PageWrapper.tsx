@@ -1,15 +1,25 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
+import { twMerge } from "tailwind-merge";
+import { TextWrapper } from "@/app/components";
+import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const PageWrapper = ({
-  children,
-  title,
-}: PropsWithChildren & { title: string }) => {
-  return (
-    <main className="flex-1 w-full max-w-[1400px] min-h-[100vh]">
-      <h1 className="text-3xl font-bold mb-4 text-center">{title}</h1>
-      {children}
-    </main>
-  );
+	children,
+	title,
+	className: extendedClassName,
+	...rest
+}: React.HTMLAttributes<HTMLDivElement> & { title: string }) => {
+	const className = twMerge("grow w-full", extendedClassName);
+	return (
+		<main className={className} {...rest}>
+			<MaxWidthContainer>
+				<TextWrapper className={"mb-4"}>
+					<h1 className="text-center">{title}</h1>
+				</TextWrapper>
+				{children}
+			</MaxWidthContainer>
+		</main>
+	);
 };
 
 export default PageWrapper;

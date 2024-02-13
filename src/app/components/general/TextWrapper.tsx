@@ -1,15 +1,20 @@
 import React from "react";
+import { twMerge } from "tailwind-merge";
 
 const TextWrapper = ({
-  children,
-  className,
-  ...props
+	children,
+	className: extendedClassName,
+	...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
-  return (
-    <div className={"prose dark:prose-invert mx-auto " + className} {...props}>
-      {children}
-    </div>
-  );
+	const className = twMerge(
+		"prose prose-neutral dark:prose-invert mx-auto",
+		extendedClassName,
+	);
+	return (
+		<div className={className} {...props}>
+			{children}
+		</div>
+	);
 };
 
 export default TextWrapper;
