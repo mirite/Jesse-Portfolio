@@ -13,20 +13,19 @@ html,
 body {
 	overflow-x: hidden;
 	font-size: 16px;
-	font-family:
-		system-ui,
-		opensans,
-		-apple-system,
-		BlinkMacSystemFont,
-		Segoe UI,
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		Fira Sans,
-		Droid Sans,
-		Helvetica Neue,
-		sans-serif;
+	font-family: system-ui,
+	opensans,
+	-apple-system,
+	BlinkMacSystemFont,
+	Segoe UI,
+	Roboto,
+	Oxygen,
+	Ubuntu,
+	Cantarell,
+	Fira Sans,
+	Droid Sans,
+	Helvetica Neue,
+	sans-serif;
 }
 
 body {
@@ -69,3 +68,47 @@ textarea {
 	border-radius: 6px;
 	color: initial;
 }
+
+.arrow, .arrow-head {
+	display: none;
+
+	a:hover & {
+		&.arrow{
+		animation-name: arrow;
+		}
+		&.arrow-head{
+		animation-name: head;
+		}
+		display: block;
+		animation-duration: 1s;
+		animation-timing-function: ease-in-out;
+		animation-direction: normal;
+		animation-iteration-count: infinite;
+		@media(prefers-reduced-motion) {
+			animation: none;
+		}
+	}
+
+
+}
+
+
+		@keyframes arrow {
+			0% {
+				transform: scale(0, 1);
+			}
+			50% {
+				transform: scale(1, 1);
+			}
+		}
+
+		@keyframes head {
+			0% {
+				transform: translate(-350px, 0);
+			}
+			50% {
+				transform: translate(0, 0);
+			}
+
+		}
+

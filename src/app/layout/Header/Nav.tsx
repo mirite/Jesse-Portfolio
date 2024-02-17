@@ -16,7 +16,7 @@ const Nav = () => {
 						className={"h-full md:h-auto flex items-center justify-center"}
 					>
 						<ul
-							className="flex md:flex-row flex-col gap-4 md:gap-2 items-center"
+							className="flex md:flex-row flex-col gap-4 items-center"
 							id={"nav-links"}
 						>
 							<NavLink path="/projects" label="Projects" />

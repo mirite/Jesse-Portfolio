@@ -1,21 +1,25 @@
 import React from "react";
 import { Card } from "@/app/components/";
 import { Post } from "@/lib/";
+import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 interface Props {
 	posts: Post[];
 }
 const Posts = (props: Props) => {
 	const { posts } = props;
 	return (
-		<div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2 max-w-screen-lg mx-auto">
-			{posts.map((post) => (
-				<Card
-					key={post.slug}
-					title={post.title}
-					link={post.categorySlug + "/" + post.slug}
-				/>
-			))}
-		</div>
+		<MaxWidthContainer>
+			<div className="w-full">
+				{posts.map((post) => (
+					<Card
+						key={post.slug}
+						title={post.title}
+						link={post.categorySlug + "/" + post.slug}
+						excerpt={post.excerpt}
+					/>
+				))}
+			</div>
+		</MaxWidthContainer>
 	);
 };
 

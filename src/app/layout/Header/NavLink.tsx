@@ -6,7 +6,7 @@ import { twMerge } from "tailwind-merge";
 const NavLink = ({ path, label }: { path: string; label: string }) => {
 	const currentPath = usePathname();
 	return (
-		<li className="mr-2 prose-blue-green dark:prose-invert">
+		<li className="prose-blue-green dark:prose-invert">
 			<Link
 				href={path}
 				className={twMerge(
