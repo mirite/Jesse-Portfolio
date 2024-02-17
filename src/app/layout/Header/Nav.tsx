@@ -1,60 +1,32 @@
 import React from "react";
 import NavLink from "./NavLink";
-import { Button } from "@/app/components/";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
-import Script from "next/script";
+import MenuToggle from "@/app/layout/Header/MenuToggle";
 
 const Nav = () => {
 	return (
 		<div className="grow flex justify-end">
-			<Button className={"md:hidden"} id={"menu-toggle"}>
-				<FontAwesomeIcon icon={faBars} />
-			</Button>
-			<div
-				id={"menu"}
-				className={
-					"md:items-center md:items-end justify-between md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
-				}
-			>
-				<div className="md:hidden">
-					<Button id={"closeToggle"} className="float-right">
-						<FontAwesomeIcon icon={faClose} />
-					</Button>
+			<MenuToggle>
+				<div
+					className={
+						"justify-end md:items-baseline items-center flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed inset-0 bg-white dark:bg-blue-green-900 md:bg-transparent w-full"
+					}
+				>
+					<nav
+						aria-label="Main Navigation"
+						className={"h-full md:h-auto flex items-center justify-center"}
+					>
+						<ul
+							className="flex md:flex-row flex-col gap-4 md:gap-2 items-center"
+							id={"nav-links"}
+						>
+							<NavLink path="/projects" label="Projects" />
+							<NavLink path="/skills" label="Skills" />
+							<NavLink path="/about" label="About" />
+							<NavLink path="/contact" label="Contact" />
+						</ul>
+					</nav>
 				</div>
-				<nav aria-label="Main Navigation">
-					<ul className="flex md:flex-row flex-col" id={"nav-links"}>
-						<NavLink path="/projects" label="Projects" />
-						<NavLink path="/skills" label="Skills" />
-						<NavLink path="/about" label="About" />
-						<NavLink path="/contact" label="Contact" />
-					</ul>
-				</nav>
-			</div>
-			<Script id={"menu-toggle"}>
-				{`
-            const toggle = document.getElementById("menu-toggle");
-            const menu = document.getElementById("menu");
-            const close = document.getElementById("closeToggle");
-            toggle.addEventListener("click", () => {
-                menu.classList.remove("hidden");
-                menu.classList.add("block");
-                toggle.classList.add("opacity-0");
-                });
-            close.addEventListener("click", () => {
-                menu.classList.remove("block");
-                menu.classList.add("hidden");
-                toggle.classList.remove("opacity-0");
-                });
-                const navLinks = document.querySelectorAll("#nav-links a");
-                const currentPath = window.location.pathname;
-                navLinks.forEach((link) => {
-       if ("/" + link.href.split("/").pop() === currentPath) {
-            link.classList.remove("no-underline");
-            }
-                });
-            `}
-			</Script>
+			</MenuToggle>
 		</div>
 	);
 };
