@@ -1,6 +1,5 @@
 import React from "react";
 import NavLink from "./NavLink";
-import DarkModeToggle from "./ThemeSelect";
 import { Button } from "@/app/components/";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -15,7 +14,7 @@ const Nav = () => {
 			<div
 				id={"menu"}
 				className={
-					"items-center md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
+					"items-center justify-between md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
 				}
 			>
 				<div className="md:hidden">
@@ -31,10 +30,6 @@ const Nav = () => {
 						<NavLink path="/contact" label="Contact" />
 					</ul>
 				</nav>
-				<div className="flex items-baseline">
-					<span className="block md:hidden mr-2">Theme:</span>
-					<DarkModeToggle />
-				</div>
 			</div>
 			<Script id={"menu-toggle"}>
 				{`

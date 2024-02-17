@@ -7,7 +7,7 @@ const TextWrapper = ({
 	...props
 }: React.HTMLAttributes<HTMLDivElement>) => {
 	const className = twMerge(
-		"prose prose-neutral dark:prose-invert mx-auto",
+		"prose prose-neutral dark:prose-invert mx-auto px-3 md:px-0",
 		extendedClassName,
 	);
 	return (
