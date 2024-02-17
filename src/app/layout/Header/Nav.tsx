@@ -14,7 +14,7 @@ const Nav = () => {
 			<div
 				id={"menu"}
 				className={
-					"items-center justify-between md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
+					"md:items-center md:items-end justify-between md:items-baseline flex-col shadow md:shadow-none md:flex md:flex-row md:static fixed left-4 right-4 hidden"
 				}
 			>
 				<div className="md:hidden">
@@ -58,5 +58,6 @@ const Nav = () => {
 		</div>
 	);
 };
+//rgb(26 46 37 / var(--tw-bg-opacity))
 
 export default Nav;
