@@ -71,6 +71,7 @@ textarea {
 
 .arrow, .arrow-head {
 	display: none;
+	stroke: var(--tw-prose-links);
 
 	a:hover & {
 		&.arrow{

@@ -10,6 +10,7 @@ const MenuToggle = (props: PropsWithChildren) => {
 	const [screenWidth, setScreenWidth] = React.useState(0);
 	const dynamicRoute = usePathname();
 	useEffect(() => {
+		setScreenWidth(window.innerWidth);
 		const handleResize = () => {
 			setScreenWidth(window.innerWidth);
 		};
@@ -25,6 +26,8 @@ const MenuToggle = (props: PropsWithChildren) => {
 			<Button
 				className={"md:hidden fixed top-12 right-4 z-50"}
 				onClick={() => setOpen(!open)}
+				title={open ? "Close Menu" : "Open Menu"}
+				type={"button"}
 			>
 				<FontAwesomeIcon
 					className={"h-6 w-6 "}
