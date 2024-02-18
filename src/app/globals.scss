@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "fonts.css";
 
 *, *::before, *::after {
 	box-sizing: border-box;
@@ -13,7 +14,8 @@ html,
 body {
 	overflow-x: hidden;
 	font-size: 16px;
-	font-family: system-ui,
+	font-family: "Visia Pro",
+	system-ui,
 	opensans,
 	-apple-system,
 	BlinkMacSystemFont,
