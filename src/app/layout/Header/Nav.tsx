@@ -20,6 +20,7 @@ const Nav = () => {
 							id={"nav-links"}
 						>
 							<NavLink path="/projects" label="Projects" />
+							<NavLink path="/blog" label="Blog" />
 							<NavLink path="/skills" label="Skills" />
 							<NavLink path="/about" label="About" />
 							<NavLink path="/contact" label="Contact" />

@@ -16,6 +16,9 @@ module.exports = {
 					800: "#1A2E25",
 					900: "#1A2E25",
 				},
+				high: { DEFAULT: "#709226" },
+				medium: { DEFAULT: "#7cca65" },
+				starter: { DEFAULT: "#2dc2b5" },
 			},
 			typography: ({ theme }) => ({
 				"blue-green": {

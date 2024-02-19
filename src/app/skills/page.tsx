@@ -10,7 +10,9 @@ const Page = async () => {
 	if (!content?.content || !content.label) return <p>Content not found</p>;
 	return (
 		<PageWrapper title={content.label || ""}>
-			<TextWrapper>{documentToReactComponents(content.content)}</TextWrapper>
+			<TextWrapper className={"mb-4"}>
+				{documentToReactComponents(content.content)}
+			</TextWrapper>
 			<Skills skills={skills} />
 		</PageWrapper>
 	);

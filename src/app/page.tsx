@@ -7,7 +7,7 @@ export default async function Home() {
 	const { props } = await data();
 	const { title, posts } = props;
 	return (
-		<PageWrapper title={title}>
+		<PageWrapper title={title} className={"flex gap-4 flex-col"}>
 			<TextWrapper>
 				<p>
 					Welcome to my site! I am a software developer (primarily web) from

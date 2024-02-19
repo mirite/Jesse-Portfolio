@@ -7,9 +7,7 @@ const PillList = ({
 }: React.HTMLAttributes<HTMLUListElement>) => {
 	return (
 		<ul
-			className={
-				"flex flex-wrap p-1 gap-x-3 gap-y-1 justify-center " + className
-			}
+			className={"flex flex-wrap p-1 gap-2 justify-center " + className}
 			{...rest}
 		>
 			{children}

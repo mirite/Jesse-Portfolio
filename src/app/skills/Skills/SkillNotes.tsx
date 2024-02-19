@@ -26,7 +26,7 @@ const SkillNotes = (
 			>
 				<Button
 					className="leading-none p-1 float-right"
-					onPress={props.onClose}
+					onClick={props.onClose}
 				>
 					<FontAwesomeIcon icon={faCircleXmark} />
 				</Button>
