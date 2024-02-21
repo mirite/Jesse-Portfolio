@@ -4,24 +4,23 @@ import Skill from "@/app/skills/Skills/Skill";
 
 interface Props {
 	skills: SkillType[];
-	label: string;
-	searchTerm: string;
 }
 
 const SkillLevel = (props: Props) => {
-	const { skills, label, searchTerm } = props;
-	const filteredSkills = !searchTerm
-		? skills
-		: skills.filter((skill) =>
-				skill.name.toLowerCase().includes(searchTerm.toLowerCase()),
-			);
-	if (!filteredSkills.length) return <></>;
+	const { skills } = props;
+	const stop1 = skills.findIndex((skill) => skill.proficiency === "medium");
+	const stop2 = skills.findIndex((skill) => skill.proficiency === "starter");
+	const mid = Math.round(((stop1 + (stop2 - stop1) / 2) / skills.length) * 100);
 	return (
-		<>
-			{filteredSkills.map((skill) => (
+		//bg-gradient-to-br from-high to-starter via-medium
+		<ul
+			className={`flex flex-wrap p-1 gap-2 justify-start`}
+			style={{ "--tw-gradient-via-position": `${mid}%` }}
+		>
+			{skills.map((skill) => (
 				<Skill key={skill.name} {...skill} />
 			))}
-		</>
+		</ul>
 	);
 };
 

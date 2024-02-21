@@ -1,11 +1,10 @@
 import React from "react";
-import { TextWrapper } from "@/app/components";
 
 const Legend = () => {
 	return (
-		<TextWrapper>
-			<h3>Legend</h3>
-			<ul>
+		<div>
+			<h3 className={"mb-1"}>Legend</h3>
+			<ul className={"p-0 m-0 flex items-center gap-2"}>
 				<li className={"flex gap-2 items-center p-0 m-0"}>
 					<div className={"bg-high w-2 h-2 m-0"}></div>High
 				</li>
@@ -18,7 +17,7 @@ const Legend = () => {
 					Starter
 				</li>
 			</ul>
-		</TextWrapper>
+		</div>
 	);
 };
 
