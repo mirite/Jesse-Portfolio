@@ -21,21 +21,35 @@ const MenuToggle = (props: PropsWithChildren) => {
 	useEffect(() => {
 		setOpen(false);
 	}, [dynamicRoute]);
+
+	const shouldShow = screenWidth >= 1024 || open;
 	return (
-		<>
+		<div
+			className={
+				"grow flex justify-end lg:flex-row flex-col " +
+				(open && screenWidth < 1024
+					? "fixed inset-0 pt-10 pr-4 bg-white dark:bg-blue-green-900 lg:bg-transparent items-end"
+					: "")
+			}
+		>
 			<Button
-				className={"md:hidden fixed top-12 right-4 z-50"}
+				className={"lg:hidden ml-auto"}
 				onClick={() => setOpen(!open)}
 				title={open ? "Close Menu" : "Open Menu"}
 				type={"button"}
 			>
-				<FontAwesomeIcon
-					className={"h-6 w-6 "}
-					icon={open ? faClose : faBars}
-				/>
+				<FontAwesomeIcon className={"h-6 w-6"} icon={open ? faClose : faBars} />
 			</Button>
-			{(screenWidth >= 768 || open) && props.children}
-		</>
+			{shouldShow && (
+				<div
+					className={
+						"justify-end lg:items-baseline items-center flex-col shadow lg:shadow-none lg:flex lg:flex-row w-full grow"
+					}
+				>
+					{props.children}
+				</div>
+			)}
+		</div>
 	);
 };
 
