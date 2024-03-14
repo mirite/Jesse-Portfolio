@@ -7,10 +7,10 @@ const Nav = () => {
 		<MenuToggle>
 			<nav
 				aria-label="Main Navigation"
-				className={"h-full lg:h-auto flex items-center justify-center"}
+				className={"flex h-full items-center justify-center lg:h-auto"}
 			>
 				<menu
-					className="flex lg:flex-row flex-col gap-4 items-center"
+					className="flex flex-col items-center gap-4 lg:flex-row"
 					id={"nav-links"}
 				>
 					<NavLink path="/projects" label="Projects" />

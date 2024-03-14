@@ -7,7 +7,7 @@ interface Props {
 const Search = (props: Props) => {
 	const id = useId();
 	return (
-		<div className="flex flex-col items-center md:flex-row gap-2">
+		<div className="flex flex-col items-center gap-2 md:flex-row">
 			<label htmlFor={id}>Search: </label>
 			<input
 				id={id}

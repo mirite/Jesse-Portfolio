@@ -9,7 +9,7 @@ const Posts = (props: Props) => {
 	const { posts } = props;
 	return (
 		<MaxWidthContainer>
-			<div className="w-full grid gap-4 justify-center grid-cols-[repeat(auto-fit,minmax(300px,560px))]">
+			<div className="grid w-full grid-cols-[repeat(auto-fit,minmax(300px,560px))] justify-center gap-4">
 				{posts.map((post) => (
 					<Card
 						key={post.slug}

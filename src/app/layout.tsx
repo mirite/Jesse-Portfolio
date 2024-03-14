@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="flex justify-center max-w-full bg-white dark:bg-blue-green-900 text-blue-green-900 dark:text-white">
-				<div className="min-h-dvh flex flex-col w-full">
+			<body className="flex max-w-full justify-center bg-white text-blue-green-900 dark:bg-blue-green-900 dark:text-white">
+				<div className="flex min-h-dvh w-full flex-col">
 					<Header />
 					{children}
 					<Footer />

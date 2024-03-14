@@ -7,19 +7,19 @@ import icon from "../../icon.svg";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 const Header = () => {
 	return (
-		<header className="py-2 mt-0 mb-0 flex items-center">
-			<MaxWidthContainer className={"flex justify-between items-center"}>
-				<div className="xs:p-4 p-9" aria-label="Site Title">
+		<header className="mb-0 mt-0 flex items-center py-2">
+			<MaxWidthContainer className={"flex items-center justify-between"}>
+				<div className="p-9 xs:p-4" aria-label="Site Title">
 					<Link href="/" className={""}>
 						<Image
 							src={logo}
 							alt={"Jesse Conner"}
-							className={"hidden xs:block max-w-sm md:max-w-md"}
+							className={"hidden max-w-sm xs:block md:max-w-md"}
 						/>
 						<Image
 							src={icon}
 							alt={"Jesse Conner"}
-							className={" block xs:hidden w-8"}
+							className={" block w-8 xs:hidden"}
 						/>
 					</Link>
 				</div>

@@ -4,16 +4,16 @@ const Legend = () => {
 	return (
 		<div>
 			<h3 className={"mb-1"}>Legend</h3>
-			<ul className={"p-0 m-0 flex items-center gap-2"}>
-				<li className={"flex gap-2 items-center p-0 m-0"}>
-					<div className={"bg-high w-2 h-2 m-0"}></div>High
+			<ul className={"m-0 flex items-center gap-2 p-0"}>
+				<li className={"m-0 flex items-center gap-2 p-0"}>
+					<div className={"m-0 h-2 w-2 bg-high"}></div>High
 				</li>
-				<li className={"flex gap-2 items-center p-0 m-0"}>
-					<div className={"bg-medium w-2 h-2 m-0"}></div>
+				<li className={"m-0 flex items-center gap-2 p-0"}>
+					<div className={"m-0 h-2 w-2 bg-medium"}></div>
 					Medium
 				</li>
-				<li className={"flex gap-2 items-center p-0 m-0"}>
-					<div className={"bg-starter w-2 h-2 m-0"}></div>
+				<li className={"m-0 flex items-center gap-2 p-0"}>
+					<div className={"m-0 h-2 w-2 bg-starter"}></div>
 					Starter
 				</li>
 			</ul>

@@ -10,7 +10,7 @@ const SkillLevel = (props: Props) => {
 	const { skills } = props;
 	return (
 		//bg-gradient-to-br from-high to-starter via-medium
-		<ul className={`flex flex-wrap p-1 gap-2 justify-start`}>
+		<ul className={`flex flex-wrap justify-start gap-2 p-1`}>
 			{skills.map((skill) => (
 				<Skill key={skill.name} {...skill} />
 			))}

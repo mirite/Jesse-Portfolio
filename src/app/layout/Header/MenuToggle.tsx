@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 
+const LARGE_SCREEN_WIDTH = 1024;
+
 const MenuToggle = (props: PropsWithChildren) => {
 	const [open, setOpen] = React.useState(false);
 	const [screenWidth, setScreenWidth] = React.useState(0);
@@ -22,18 +24,19 @@ const MenuToggle = (props: PropsWithChildren) => {
 		setOpen(false);
 	}, [dynamicRoute]);
 
-	const shouldShow = screenWidth >= 1024 || open;
+	const shouldShow = screenWidth >= LARGE_SCREEN_WIDTH || open;
+	const shouldShowMobile = screenWidth < LARGE_SCREEN_WIDTH && open;
 	return (
 		<div
 			className={
-				"grow flex justify-end lg:flex-row flex-col " +
-				(open && screenWidth < 1024
-					? "fixed inset-0 pt-10 pr-4 bg-white dark:bg-blue-green-900 lg:bg-transparent items-end"
+				"flex grow flex-col justify-end lg:flex-row " +
+				(shouldShowMobile
+					? "fixed inset-0 items-end bg-white pr-4 pt-10 lg:bg-transparent dark:bg-blue-green-900"
 					: "")
 			}
 		>
 			<Button
-				className={"lg:hidden ml-auto"}
+				className={"ml-auto lg:hidden"}
 				onClick={() => setOpen(!open)}
 				title={open ? "Close Menu" : "Open Menu"}
 				type={"button"}
@@ -43,7 +46,7 @@ const MenuToggle = (props: PropsWithChildren) => {
 			{shouldShow && (
 				<div
 					className={
-						"justify-end lg:items-baseline items-center flex-col shadow lg:shadow-none lg:flex lg:flex-row w-full grow"
+						"w-full grow flex-col items-center justify-end shadow lg:flex lg:flex-row lg:items-baseline lg:shadow-none"
 					}
 				>
 					{props.children}

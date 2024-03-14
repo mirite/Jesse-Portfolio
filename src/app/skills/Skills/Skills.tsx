@@ -20,10 +20,10 @@ const Skills = (props: Props) => {
 				skill.name.toLowerCase().includes(searchTerm.toLowerCase()),
 			);
 	return (
-		<div className="max-w-prose mx-auto my-4 flex flex-col gap-4 items-center">
+		<div className="mx-auto my-4 flex max-w-prose flex-col items-center gap-4">
 			<div
 				className={
-					"flex flex-col-reverse md:flex-row gap-12 my-4 w-full justify-between"
+					"my-4 flex w-full flex-col-reverse justify-between gap-12 md:flex-row"
 				}
 			>
 				<Legend />

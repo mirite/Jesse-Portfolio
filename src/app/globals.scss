@@ -3,7 +3,9 @@
 @tailwind utilities;
 @import "fonts.css";
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	min-width: 0;
 	min-height: 0;
@@ -14,20 +16,21 @@ html,
 body {
 	overflow-x: hidden;
 	font-size: 16px;
-	font-family: "Visia Pro",
-	system-ui,
-	opensans,
-	-apple-system,
-	BlinkMacSystemFont,
-	Segoe UI,
-	Roboto,
-	Oxygen,
-	Ubuntu,
-	Cantarell,
-	Fira Sans,
-	Droid Sans,
-	Helvetica Neue,
-	sans-serif;
+	font-family:
+		"Visia Pro",
+		system-ui,
+		opensans,
+		-apple-system,
+		BlinkMacSystemFont,
+		Segoe UI,
+		Roboto,
+		Oxygen,
+		Ubuntu,
+		Cantarell,
+		Fira Sans,
+		Droid Sans,
+		Helvetica Neue,
+		sans-serif;
 }
 
 body {
@@ -61,47 +64,43 @@ textarea {
 	color: initial;
 }
 
-.arrow, .arrow-head {
+.arrow,
+.arrow-head {
 	display: none;
 	stroke: var(--tw-prose-links);
 
 	a:hover & {
-		&.arrow{
-		animation-name: arrow;
+		&.arrow {
+			animation-name: arrow;
 		}
-		&.arrow-head{
-		animation-name: head;
+		&.arrow-head {
+			animation-name: head;
 		}
 		display: block;
 		animation-duration: 1s;
 		animation-timing-function: ease-in-out;
 		animation-direction: normal;
 		animation-iteration-count: infinite;
-		@media(prefers-reduced-motion) {
+		@media (prefers-reduced-motion) {
 			animation: none;
 		}
 	}
-
-
 }
 
+@keyframes arrow {
+	0% {
+		transform: scale(0, 1);
+	}
+	50% {
+		transform: scale(1, 1);
+	}
+}
 
-		@keyframes arrow {
-			0% {
-				transform: scale(0, 1);
-			}
-			50% {
-				transform: scale(1, 1);
-			}
-		}
-
-		@keyframes head {
-			0% {
-				transform: translate(-350px, 0);
-			}
-			50% {
-				transform: translate(0, 0);
-			}
-
-		}
-
+@keyframes head {
+	0% {
+		transform: translate(-350px, 0);
+	}
+	50% {
+		transform: translate(0, 0);
+	}
+}

@@ -21,7 +21,7 @@ const MyImage = async (props: Props) => {
 				src={"https:" + meta.url}
 				title={""}
 				alt={""}
-				className={"max-w-full h-auto"}
+				className={"h-auto max-w-full"}
 				{...props}
 			/>
 		</div>

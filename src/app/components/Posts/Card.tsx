@@ -10,16 +10,16 @@ interface Props {
 const Card = (props: Props) => {
 	const { title, image, link, excerpt } = props;
 	return (
-		<div className="shadow rounded-lg outline hover:bg-black  dark:hover:bg-white hover:bg-opacity-10 dark:hover:bg-opacity-10 transition hover:transition w-full">
+		<div className="w-full rounded-lg shadow outline  transition hover:bg-black hover:bg-opacity-10 hover:transition dark:hover:bg-white dark:hover:bg-opacity-10">
 			<Link
 				className={
-					"flex flex-col w-full h-full justify-between items-start no-underline p-4  prose prose-blue-green dark:prose-invert"
+					"prose prose-blue-green flex h-full w-full flex-col items-start justify-between  p-4 no-underline dark:prose-invert"
 				}
 				href={link}
 			>
 				<h3>{title}</h3>
 				<p className={"grow"}>{excerpt}</p>
-				<div className={"flex gap-2 items-center"}>
+				<div className={"flex items-center gap-2"}>
 					<strong className={"underline"}>Read More</strong>
 					<svg viewBox={"0 0 500 500"} width={32} height={32}>
 						<line
