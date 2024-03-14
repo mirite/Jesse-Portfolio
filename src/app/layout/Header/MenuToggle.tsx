@@ -1,5 +1,5 @@
 "use client";
-import React, { PropsWithChildren, useEffect } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import { Button } from "@/app/components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -8,8 +8,8 @@ import { usePathname } from "next/navigation";
 const LARGE_SCREEN_WIDTH = 1024;
 
 const MenuToggle = (props: PropsWithChildren) => {
-	const [open, setOpen] = React.useState(false);
-	const [screenWidth, setScreenWidth] = React.useState(0);
+	const [open, setOpen] = useState(false);
+	const [screenWidth, setScreenWidth] = useState(0);
 	const dynamicRoute = usePathname();
 	useEffect(() => {
 		setScreenWidth(window.innerWidth);
@@ -41,7 +41,7 @@ const MenuToggle = (props: PropsWithChildren) => {
 				title={open ? "Close Menu" : "Open Menu"}
 				type={"button"}
 			>
-				<FontAwesomeIcon className={"h-6 w-6"} icon={open ? faClose : faBars} />
+				<FontAwesomeIcon className={"size-6"} icon={open ? faClose : faBars} />
 			</Button>
 			{shouldShow && (
 				<div

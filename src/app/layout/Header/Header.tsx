@@ -7,7 +7,7 @@ import icon from "../../icon.svg";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 const Header = () => {
 	return (
-		<header className="mb-0 mt-0 flex items-center py-2">
+		<header className="my-0 flex items-center py-2">
 			<MaxWidthContainer className={"flex items-center justify-between"}>
 				<div className="p-9 xs:p-4" aria-label="Site Title">
 					<Link href="/" className={""}>

@@ -32,7 +32,7 @@ const SkillNotes = (
 				</Button>
 				<TextWrapper>
 					<div className="mb-2 flex items-start justify-between font-bold">
-						<h3 className="prose-md">{props.name}</h3>
+						<h3>{props.name}</h3>
 					</div>
 					{props.notes && (
 						<article>{documentToReactComponents(props.notes)}</article>

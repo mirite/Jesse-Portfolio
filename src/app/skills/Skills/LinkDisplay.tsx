@@ -8,7 +8,7 @@ const LinkDisplay = (props: {
 	return (
 		<PillList>
 			{Object.entries(props.links || {}).map(([name, link]) => (
-				<li className="pill" key={name}>
+				<li key={name}>
 					<a href={link}>{name}</a>
 				</li>
 			))}

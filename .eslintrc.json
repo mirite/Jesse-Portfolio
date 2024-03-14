@@ -1,7 +1,11 @@
 {
 	"extends": ["next/core-web-vitals"],
-	"plugins": ["unused-imports"],
+	"plugins": ["unused-imports", "eslint-plugin-tailwindcss"],
 	"rules": {
-		"unused-imports/no-unused-imports": "error"
+		"unused-imports/no-unused-imports": "error",
+		"tailwindcss/enforces-shorthand": "error",
+		"tailwindcss/no-custom-classname": "error",
+		"tailwindcss/no-contradicting-classname": "error",
+		"tailwindcss/no-unnecessary-arbitrary-value": "error"
 	}
 }

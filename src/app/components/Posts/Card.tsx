@@ -13,7 +13,7 @@ const Card = (props: Props) => {
 		<div className="w-full rounded-lg shadow outline  transition hover:bg-black hover:bg-opacity-10 hover:transition dark:hover:bg-white dark:hover:bg-opacity-10">
 			<Link
 				className={
-					"prose prose-blue-green flex h-full w-full flex-col items-start justify-between  p-4 no-underline dark:prose-invert"
+					"prose prose-blue-green flex size-full flex-col items-start justify-between p-4  no-underline dark:prose-invert"
 				}
 				href={link}
 			>
@@ -21,6 +21,7 @@ const Card = (props: Props) => {
 				<p className={"grow"}>{excerpt}</p>
 				<div className={"flex items-center gap-2"}>
 					<strong className={"underline"}>Read More</strong>
+					{/* eslint tailwindcss/no-custom-classname: 0 */}
 					<svg viewBox={"0 0 500 500"} width={32} height={32}>
 						<line
 							className={"arrow"}
