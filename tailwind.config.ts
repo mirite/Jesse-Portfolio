@@ -1,5 +1,6 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
@@ -23,6 +24,7 @@ module.exports = {
 				medium: { DEFAULT: "#7cca65" },
 				starter: { DEFAULT: "#2dc2b5" },
 			},
+			// @ts-expect-error TS7031 TailwindCSS Typography
 			typography: ({ theme }) => ({
 				"blue-green": {
 					css: {
@@ -65,3 +67,5 @@ module.exports = {
 	},
 	plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
+
+export default config;
