@@ -1,7 +1,8 @@
-import { getPlainTextContent, getPosts } from "@/lib/";
-import { PageWrapper, Posts } from "@/app/components/";
 import Link from "next/link";
+
 import { TextWrapper } from "@/app/components";
+import { PageWrapper, Posts } from "@/app/components/";
+import { getPlainTextContent, getPosts } from "@/lib/";
 
 export default async function Home() {
 	const { props } = await data();

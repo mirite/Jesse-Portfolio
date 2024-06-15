@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
-import Field from "@/app/contact/ContactForm/Field";
+import React from "react";
+
 import { Button, TextWrapper } from "@/app/components/";
+import Field from "@/app/contact/ContactForm/Field";
 
 export default function ContactForm() {
 	const [state, handleSubmit] = useForm("mgebderg");

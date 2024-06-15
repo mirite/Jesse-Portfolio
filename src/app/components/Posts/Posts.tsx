@@ -1,7 +1,9 @@
 import React from "react";
+
 import { Card } from "@/app/components/";
-import { Post } from "@/lib/";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
+import type { Post } from "@/lib/";
+
 interface Props {
 	posts: Post[];
 }

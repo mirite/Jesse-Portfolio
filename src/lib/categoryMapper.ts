@@ -1,5 +1,4 @@
-import { Category } from "@/lib/";
-import { createSlug } from "@/lib/";
+import type { Category , createSlug } from "@/lib/";
 
 export function categoryMapper(entry: Category) {
 	const slug = createSlug(entry.name);

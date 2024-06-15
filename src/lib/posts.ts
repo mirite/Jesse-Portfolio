@@ -1,7 +1,7 @@
-import { Metadata } from "next";
-import { getEntries } from "@/lib/";
-import { PostSkeleton } from "@/lib/";
-import { postMapper } from "@/lib/";
+import type { Metadata } from "next";
+
+import type { PostSkeleton } from "@/lib/";
+import { getEntries  , postMapper } from "@/lib/";
 
 export async function createPostMetadata(slug: string): Promise<Metadata> {
 	const post = await getPost(slug);

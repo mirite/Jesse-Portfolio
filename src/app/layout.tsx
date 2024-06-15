@@ -1,6 +1,7 @@
 import "./globals.scss";
-import { Header, Footer } from "@/app/layout/index";
 import React from "react";
+
+import { Header, Footer } from "@/app/layout/index";
 
 export const metadata = {
 	title: "Jesse Conner",

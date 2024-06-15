@@ -1,6 +1,6 @@
-import { Asset } from "contentful";
-import { Post, RawPost } from "@/lib/";
-import { createSlug } from "@/lib/";
+import type { Asset } from "contentful";
+
+import type { Post, RawPost , createSlug } from "@/lib/";
 
 export function postMapper(entry: RawPost): Post {
 	const category = getCategory(entry);

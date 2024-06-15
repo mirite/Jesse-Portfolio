@@ -1,6 +1,7 @@
 import React from "react";
 
 import type { Social } from "@/lib";
+
 const Social = (social: Social) => {
 	return (
 		<li className="flex justify-between">

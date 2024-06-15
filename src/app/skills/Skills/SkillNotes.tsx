@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { SkillSkeleton } from "@/lib/";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Button, TextWrapper } from "@/app/components/";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect } from "react";
+
+import { Button, TextWrapper } from "@/app/components/";
 import LinkDisplay from "@/app/skills/Skills/LinkDisplay";
+import type { SkillSkeleton } from "@/lib/";
 
 const SkillNotes = (
 	props: SkillSkeleton["fields"] & { onClose: () => void },

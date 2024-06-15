@@ -1,12 +1,13 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
+
+import { PageWrapper, TextWrapper } from "@/app/components/";
 import {
 	createCategoryMetadata,
 	getCategories,
 	getCategoriesForStaticBuild,
 	getPosts,
 } from "@/lib/";
-import { PageWrapper, TextWrapper } from "@/app/components/";
 
 interface Props {
 	params: { categorySlug: string };

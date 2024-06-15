@@ -1,6 +1,8 @@
 import React from "react";
+
 import { TextWrapper } from "@/app/components";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
+
 const Footer = () => {
 	return (
 		<MaxWidthContainer className={"mt-2"}>

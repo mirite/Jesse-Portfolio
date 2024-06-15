@@ -1,6 +1,8 @@
 import React from "react";
-import { getEntries, SocialSkeleton } from "@/lib/";
+
 import Social from "@/app/contact/Socials/Social";
+import type { SocialSkeleton } from "@/lib/";
+import { getEntries } from "@/lib/";
 
 const Socials = async () => {
 	const socials = await getEntries<SocialSkeleton>("social");

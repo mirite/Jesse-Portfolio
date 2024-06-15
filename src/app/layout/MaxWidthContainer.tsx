@@ -1,4 +1,5 @@
-import React, { ComponentProps } from "react";
+import type { ComponentProps } from "react";
+import React from "react";
 import { twMerge } from "tailwind-merge";
 
 type Props = ComponentProps<"div">;
@@ -8,7 +9,11 @@ const MaxWidthContainer = (props: Props) => {
 		"max-w-screen-2xl w-full px-3 mx-auto",
 		extendedClassName,
 	);
-	return <div className={className}>{children}</div>;
+	return (
+		<div className={className} {...rest}>
+			{children}
+		</div>
+	);
 };
 
 export default MaxWidthContainer;

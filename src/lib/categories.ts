@@ -1,7 +1,6 @@
-import { CategorySkeleton } from "@/lib/";
-import { categoryMapper } from "@/lib/";
-import { getEntries } from "@/lib/";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
+import type { CategorySkeleton , categoryMapper , getEntries } from "@/lib/";
 
 export async function getCategories() {
 	return (await getEntries<CategorySkeleton>(`category`)).map(categoryMapper);

@@ -1,5 +1,5 @@
-import { getEntries } from "@/lib/";
-import { Skill, SkillSkeleton } from "@/lib/";
+import type { Skill, SkillSkeleton } from "@/lib/";
+import { getEntries  } from "@/lib/";
 
 export async function getSkills() {
 	return (await getEntries<SkillSkeleton>(`skill`)).sort(

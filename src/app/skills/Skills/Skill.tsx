@@ -1,10 +1,12 @@
-import React, { useState } from "react";
-import { Skill as SkillType } from "@/lib/";
-import SkillNotes from "@/app/skills/Skills/SkillNotes";
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Button } from "@/app/components/";
+import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
+
+import { Button } from "@/app/components/";
+import SkillNotes from "@/app/skills/Skills/SkillNotes";
+import type { Skill as SkillType } from "@/lib/";
+
 const Skill = (skill: SkillType) => {
 	const { name, notes, proficiency } = skill;
 	const [showing, setShowing] = useState(false);

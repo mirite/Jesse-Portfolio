@@ -1,6 +1,7 @@
 import React from "react";
-import { createPostMetadata, getPost, getPostsForStaticBuild } from "@/lib/";
+
 import { Post } from "@/app/components/";
+import { createPostMetadata, getPost, getPostsForStaticBuild } from "@/lib/";
 
 interface Props {
 	params: { slug: string; category: string };

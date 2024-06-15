@@ -1,9 +1,12 @@
 "use client";
-import React, { PropsWithChildren, useEffect, useState } from "react";
-import { Button } from "@/app/components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePathname } from "next/navigation";
+import type { PropsWithChildren} from "react";
+import React, { useEffect, useState } from "react";
+
+import { Button } from "@/app/components";
+
 
 const LARGE_SCREEN_WIDTH = 1024;
 

@@ -1,5 +1,6 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES, Document, Node } from "@contentful/rich-text-types";
+import type { Document, Node } from "@contentful/rich-text-types";
+import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 
 const renderOptions = {
 	renderNode: {

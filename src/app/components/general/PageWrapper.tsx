@@ -1,5 +1,6 @@
 import React from "react";
 import { twMerge } from "tailwind-merge";
+
 import { TextWrapper } from "@/app/components";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 

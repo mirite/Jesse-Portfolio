@@ -1,5 +1,7 @@
 import React from "react";
+
 import { MyImage } from "@/app/components/";
+
 const BioImage = () => {
 	return (
 		<div>

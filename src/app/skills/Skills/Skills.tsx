@@ -1,10 +1,12 @@
 "use client";
 
 import React from "react";
-import { Skill, splitSkillsByProficiency } from "@/lib/";
-import SkillLevel from "@/app/skills/Skills/SkillLevel";
-import Search from "@/app/skills/Skills/Search";
+
 import Legend from "@/app/skills/Skills/Legend";
+import Search from "@/app/skills/Skills/Search";
+import SkillLevel from "@/app/skills/Skills/SkillLevel";
+import type { Skill} from "@/lib/";
+import { splitSkillsByProficiency } from "@/lib/";
 
 interface Props {
 	skills: Skill[];

@@ -1,10 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Nav from "./Nav";
-import Image from "next/image";
-import logo from "../../svg/logo.svg";
+
 import icon from "../../icon.svg";
+import logo from "../../svg/logo.svg";
+
+import Nav from "./Nav";
+
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
+
 const Header = () => {
 	return (
 		<header className="my-0 flex items-center py-2">

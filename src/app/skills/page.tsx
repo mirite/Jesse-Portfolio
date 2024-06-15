@@ -1,8 +1,10 @@
-import React from "react";
-import { getContent, getSkills, SnippetSkeleton } from "@/lib/";
-import Skills from "@/app/skills/Skills/Skills";
-import { PageWrapper, TextWrapper } from "@/app/components/";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import React from "react";
+
+import { PageWrapper, TextWrapper } from "@/app/components/";
+import Skills from "@/app/skills/Skills/Skills";
+import type { SnippetSkeleton } from "@/lib/";
+import { getContent, getSkills } from "@/lib/";
 
 const Page = async () => {
 	const { content, skills } = await data();

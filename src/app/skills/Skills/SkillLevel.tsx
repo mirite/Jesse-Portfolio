@@ -1,6 +1,7 @@
-import { Skill as SkillType } from "@/lib/";
 import React from "react";
+
 import Skill from "@/app/skills/Skills/Skill";
+import type { Skill as SkillType } from "@/lib/";
 
 interface Props {
 	skills: SkillType[];

@@ -1,6 +1,8 @@
+import type { ImageProps } from "next/image";
+import NextImage from "next/image";
 import React from "react";
+
 import { getAsset } from "@/lib/";
-import NextImage, { ImageProps } from "next/image";
 
 interface Props extends Omit<ImageProps, "src" | "alt"> {
 	assetid: string;

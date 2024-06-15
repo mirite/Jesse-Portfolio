@@ -1,6 +1,7 @@
 import React from "react";
-import { SkillSkeleton } from "@/lib/";
+
 import { PillList } from "@/app/components/";
+import type { SkillSkeleton } from "@/lib/";
 
 const LinkDisplay = (props: {
 	links: Required<SkillSkeleton>["fields"]["projects"];

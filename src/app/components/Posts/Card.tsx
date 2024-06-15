@@ -1,5 +1,5 @@
-import React from "react";
 import Link from "next/link";
+import React from "react";
 
 interface Props {
 	title: string;
@@ -8,12 +8,12 @@ interface Props {
 	excerpt?: string;
 }
 const Card = (props: Props) => {
-	const { title, image, link, excerpt } = props;
+	const { title, link, excerpt } = props;
 	return (
-		<div className="w-full rounded-lg shadow outline  transition hover:bg-black hover:bg-opacity-10 hover:transition dark:hover:bg-white dark:hover:bg-opacity-10">
+		<div className="w-full rounded-lg shadow outline transition hover:bg-black hover:bg-opacity-10 hover:transition dark:hover:bg-white dark:hover:bg-opacity-10">
 			<Link
 				className={
-					"prose prose-blue-green flex size-full flex-col items-start justify-between p-4  no-underline dark:prose-invert"
+					"prose prose-blue-green flex size-full flex-col items-start justify-between p-4 no-underline dark:prose-invert"
 				}
 				href={link}
 			>

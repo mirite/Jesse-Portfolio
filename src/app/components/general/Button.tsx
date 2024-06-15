@@ -1,6 +1,7 @@
 "use client";
-import React, { ButtonHTMLAttributes } from "react";
-import { AriaButtonProps } from "react-aria";
+import type { ButtonHTMLAttributes } from "react";
+import React from "react";
+import type { AriaButtonProps } from "react-aria";
 import { twMerge } from "tailwind-merge";
 
 const Button = ({

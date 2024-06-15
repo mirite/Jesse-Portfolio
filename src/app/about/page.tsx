@@ -1,8 +1,10 @@
-import React from "react";
-import { getContent, SnippetSkeleton } from "@/lib/";
-import { PageWrapper, Post } from "@/app/components/";
 import Link from "next/link";
+import React from "react";
+
 import { TextWrapper } from "@/app/components";
+import { PageWrapper, Post } from "@/app/components/";
+import type { SnippetSkeleton } from "@/lib/";
+import { getContent } from "@/lib/";
 
 const Page = async () => {
 	const { content } = await data();

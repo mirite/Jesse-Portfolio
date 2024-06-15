@@ -1,5 +1,7 @@
 import React from "react";
+
 import NavLink from "./NavLink";
+
 import MenuToggle from "@/app/layout/Header/MenuToggle";
 
 const Nav = () => {

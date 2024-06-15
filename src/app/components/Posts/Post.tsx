@@ -1,6 +1,9 @@
-import React, { ComponentProps } from "react";
-import { getPrettyDate, Post as PostType } from "@/lib";
+import type { ComponentProps } from "react";
+import React from "react";
+
 import { TextWrapper, RichTextRenderer } from "@/app/components";
+import type { Post as PostType } from "@/lib";
+import { getPrettyDate } from "@/lib";
 
 type Props = Partial<Pick<PostType, "title" | "content" | "posted">> &
 	Omit<ComponentProps<typeof TextWrapper>, "content">;
