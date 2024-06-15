@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
@@ -8,12 +9,13 @@ import {
 	getCategoriesForStaticBuild,
 	getPosts,
 } from "@/lib/";
+import type { Metadata } from "next";
 
 interface Props {
 	params: { categorySlug: string };
 }
 
-const Page = async (props: Props) => {
+const Page = async (props: Props): Promise<ReactElement> => {
 	const { params } = props;
 	const categorySlug = params.categorySlug;
 	const categories = await getCategories();
@@ -39,11 +41,11 @@ const Page = async (props: Props) => {
 	);
 };
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	return await createCategoryMetadata(params.categorySlug);
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ category: string }[]> {
 	return await getCategoriesForStaticBuild();
 }
 

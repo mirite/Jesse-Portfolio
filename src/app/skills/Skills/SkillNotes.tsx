@@ -1,15 +1,15 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { ReactElement } from "react";
 import React, { useEffect } from "react";
 
-import { Button, TextWrapper } from "@/app/components/";
-import LinkDisplay from "@/app/skills/Skills/LinkDisplay";
+import { Button } from "@/app/components/";
 import type { SkillSkeleton } from "@/lib/";
+import NotesContent from "@/app/skills/Skills/NotesContent";
 
 const SkillNotes = (
 	props: SkillSkeleton["fields"] & { onClose: () => void },
-) => {
+): ReactElement => {
 	useEffect(() => {
 		document.body.style.overflowY = "hidden";
 		return () => {
@@ -31,15 +31,11 @@ const SkillNotes = (
 				>
 					<FontAwesomeIcon icon={faCircleXmark} />
 				</Button>
-				<TextWrapper>
-					<div className="mb-2 flex items-start justify-between font-bold">
-						<h3>{props.name}</h3>
-					</div>
-					{props.notes && (
-						<article>{documentToReactComponents(props.notes)}</article>
-					)}
-					{props.projects && <LinkDisplay links={props.projects} />}
-				</TextWrapper>
+				<NotesContent
+					name={props.name}
+					notes={props.notes}
+					projects={props.projects}
+				/>
 			</div>
 		</div>
 	);

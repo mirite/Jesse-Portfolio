@@ -1,10 +1,11 @@
+import type { ReactElement } from "react";
 import React, { useId } from "react";
 
 interface Props {
 	searchTerm: string;
 	onChange: (searchTerm: string) => void;
 }
-const Search = (props: Props) => {
+const Search = (props: Props): ReactElement => {
 	const id = useId();
 	return (
 		<div className="flex flex-col items-center gap-2 md:flex-row">

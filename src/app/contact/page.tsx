@@ -10,7 +10,10 @@ import type { SnippetSkeleton } from "@/lib/";
 import { getPlainTextContent } from "@/lib/";
 
 const Page = async (): Promise<ReactElement> => {
-	const { title } = await data();
+	const title = await getPlainTextContent<SnippetSkeleton>(
+		"6hDDlcnlG9gdoL8QClVPOw",
+		"content",
+	);
 	return (
 		<PageWrapper title={title}>
 			<div className="container">
@@ -22,14 +25,6 @@ const Page = async (): Promise<ReactElement> => {
 			</div>
 		</PageWrapper>
 	);
-};
-
-const data = async () => {
-	const title = await getPlainTextContent<SnippetSkeleton>(
-		"6hDDlcnlG9gdoL8QClVPOw",
-		"content",
-	);
-	return { title };
 };
 
 export function generateMetadata(): { title: string; description: string } {

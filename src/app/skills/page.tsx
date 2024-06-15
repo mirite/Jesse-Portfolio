@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { ReactElement } from "react";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
@@ -6,7 +7,7 @@ import Skills from "@/app/skills/Skills/Skills";
 import type { SnippetSkeleton } from "@/lib/";
 import { getContent, getSkills } from "@/lib/";
 
-const Page = async () => {
+const Page = async (): Promise<ReactElement> => {
 	const { content, skills } = await data();
 
 	if (!content?.content || !content.label) return <p>Content not found</p>;
@@ -26,7 +27,7 @@ const data = async () => {
 	return { content, skills };
 };
 
-export async function generateMetadata() {
+export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Skills",
 		description: "",

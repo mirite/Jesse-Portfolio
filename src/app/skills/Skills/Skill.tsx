@@ -1,5 +1,6 @@
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { ReactElement } from "react";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -7,7 +8,7 @@ import { Button } from "@/app/components/";
 import SkillNotes from "@/app/skills/Skills/SkillNotes";
 import type { Skill as SkillType } from "@/lib/";
 
-const Skill = (skill: SkillType) => {
+const Skill = (skill: SkillType): ReactElement => {
 	const { name, notes, proficiency } = skill;
 	const [showing, setShowing] = useState(false);
 	let className =
@@ -15,7 +16,7 @@ const Skill = (skill: SkillType) => {
 	if (notes) {
 		className = twMerge(
 			className,
-			" no-underline pill transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400",
+			" no-underline transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400",
 		);
 	}
 

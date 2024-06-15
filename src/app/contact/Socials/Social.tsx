@@ -1,8 +1,8 @@
-import React from "react";
+import React, { type ReactElement } from "react";
 
 import type { Social } from "@/lib";
 
-const Social = (social: Social) => {
+const Social = (social: Social): ReactElement => {
 	return (
 		<li className="flex justify-between">
 			<span className="mr-3">

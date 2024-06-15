@@ -2,15 +2,14 @@
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { usePathname } from "next/navigation";
-import type { PropsWithChildren} from "react";
+import type { PropsWithChildren, ReactElement } from "react";
 import React, { useEffect, useState } from "react";
 
 import { Button } from "@/app/components";
 
-
 const LARGE_SCREEN_WIDTH = 1024;
 
-const MenuToggle = (props: PropsWithChildren) => {
+const MenuToggle = (props: PropsWithChildren): ReactElement => {
 	const [open, setOpen] = useState(false);
 	const [screenWidth, setScreenWidth] = useState(0);
 	const dynamicRoute = usePathname();

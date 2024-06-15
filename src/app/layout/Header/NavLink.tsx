@@ -1,10 +1,16 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React from "react";
+import React, { type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
-const NavLink = ({ path, label }: { path: string; label: string }) => {
+const NavLink = ({
+	path,
+	label,
+}: {
+	path: string;
+	label: string;
+}): ReactElement => {
 	const currentPath = usePathname();
 	return (
 		<li className="prose-blue-green dark:prose-invert">

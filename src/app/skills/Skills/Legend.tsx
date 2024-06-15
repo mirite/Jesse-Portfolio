@@ -1,6 +1,7 @@
+import type { ReactElement } from "react";
 import React from "react";
 
-const Legend = () => {
+const Legend = (): ReactElement => {
 	return (
 		<div>
 			<h3 className={"mb-1"}>Legend</h3>

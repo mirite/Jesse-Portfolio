@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import React from "react";
 
 import Skill from "@/app/skills/Skills/Skill";
@@ -7,7 +8,7 @@ interface Props {
 	skills: SkillType[];
 }
 
-const SkillLevel = (props: Props) => {
+const SkillLevel = (props: Props): ReactElement => {
 	const { skills } = props;
 	return (
 		//bg-gradient-to-br from-high to-starter via-medium

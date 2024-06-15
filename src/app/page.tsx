@@ -3,10 +3,11 @@ import Link from "next/link";
 import { TextWrapper } from "@/app/components";
 import { PageWrapper, Posts } from "@/app/components/";
 import { getPlainTextContent, getPosts } from "@/lib/";
+import type { ReactElement } from "react";
 
-export default async function Home() {
-	const { props } = await data();
-	const { title, posts } = props;
+export default async function Home(): Promise<ReactElement> {
+	const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
+	const posts = (await getPosts(10)) || [];
 	return (
 		<PageWrapper title={title} className={"flex flex-col gap-4"}>
 			<TextWrapper>
@@ -32,18 +33,7 @@ export default async function Home() {
 	);
 }
 
-const data = async () => {
-	const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
-	const posts = (await getPosts(10)) || [];
-	return {
-		props: {
-			title,
-			posts,
-		},
-	};
-};
-
-export async function generateMetadata() {
+export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Jesse Conner",
 		description:
