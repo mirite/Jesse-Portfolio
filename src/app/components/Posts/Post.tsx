@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactElement } from "react";
 import React from "react";
 
 import { TextWrapper, RichTextRenderer } from "@/app/components";
@@ -8,7 +8,7 @@ import { getPrettyDate } from "@/lib";
 type Props = Partial<Pick<PostType, "title" | "content" | "posted">> &
 	Omit<ComponentProps<typeof TextWrapper>, "content">;
 
-const Post = (post: Props) => {
+const Post = (post: Props): ReactElement => {
 	const { title, content, posted, ...rest } = post;
 	return (
 		<TextWrapper {...rest}>

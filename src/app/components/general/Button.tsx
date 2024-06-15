@@ -1,5 +1,5 @@
 "use client";
-import type { ButtonHTMLAttributes } from "react";
+import type { ButtonHTMLAttributes, ReactElement } from "react";
 import React from "react";
 import type { AriaButtonProps } from "react-aria";
 import { twMerge } from "tailwind-merge";
@@ -8,11 +8,11 @@ const Button = ({
 	children,
 	className = "",
 	...props
-}: AriaButtonProps & ButtonHTMLAttributes<HTMLButtonElement>) => {
-	const finalClass = twMerge("btn", className);
+}: AriaButtonProps & ButtonHTMLAttributes<HTMLButtonElement>): ReactElement => {
+	const finalClass = twMerge("cursor-pointer", className);
 
 	return (
-		<button className={finalClass} {...props}>
+		<button className={finalClass} type={"button"} {...props}>
 			{children}
 		</button>
 	);

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-import type { PostSkeleton } from "@/lib/";
-import { getEntries  , postMapper } from "@/lib/";
+import type { Post, PostSkeleton } from "@/lib/";
+import { getEntries, postMapper } from "@/lib/";
 
 export async function createPostMetadata(slug: string): Promise<Metadata> {
 	const post = await getPost(slug);
@@ -16,7 +16,9 @@ export async function createPostMetadata(slug: string): Promise<Metadata> {
 	};
 }
 
-export async function getPostsForStaticBuild() {
+export async function getPostsForStaticBuild(): Promise<
+	Pick<Post, "category" | "slug">[]
+> {
 	const posts = await getPosts(100);
 
 	return posts.map((post) => ({
@@ -25,7 +27,7 @@ export async function getPostsForStaticBuild() {
 	}));
 }
 
-export async function getPost(postSlug: string) {
+export async function getPost(postSlug: string): Promise<Post | undefined> {
 	const allPosts = await getPosts();
 	const post = allPosts.find(({ slug }) => {
 		return slug.toLowerCase() === postSlug.toLowerCase();
@@ -35,7 +37,10 @@ export async function getPost(postSlug: string) {
 	}
 }
 
-export async function getPosts(count: number = 9999, categorySlug?: string) {
+export async function getPosts(
+	count: number = 9999,
+	categorySlug?: string,
+): Promise<Post[]> {
 	return (await getEntries<PostSkeleton>(`blogPost`))
 		.map(postMapper)
 		.filter((post) => !categorySlug || post.categorySlug === categorySlug)

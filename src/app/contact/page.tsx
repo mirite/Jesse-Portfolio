@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import React from "react";
 
 import Socials from "./Socials";
@@ -8,7 +9,7 @@ import ContactForm from "@/app/contact/ContactForm/ContactForm";
 import type { SnippetSkeleton } from "@/lib/";
 import { getPlainTextContent } from "@/lib/";
 
-const Page = async () => {
+const Page = async (): Promise<ReactElement> => {
 	const { title } = await data();
 	return (
 		<PageWrapper title={title}>
@@ -31,7 +32,7 @@ const data = async () => {
 	return { title };
 };
 
-export async function generateMetadata() {
+export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Contact",
 		description: "",

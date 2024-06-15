@@ -1,6 +1,7 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Document, Node } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
+import type { ReactElement } from "react";
 
 const renderOptions = {
 	renderNode: {
@@ -54,7 +55,9 @@ const renderOptions = {
 	},
 };
 
-export default function RichTextRenderer(props: { content: Document }) {
+export default function RichTextRenderer(props: {
+	content: Document;
+}): ReactElement {
 	const { content } = props;
 
 	return <>{documentToReactComponents(content, renderOptions)}</>;

@@ -1,4 +1,4 @@
-import "./globals.scss";
+import "./globals.css";
 import React from "react";
 
 import { Header, Footer } from "@/app/layout/index";

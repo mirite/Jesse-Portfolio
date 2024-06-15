@@ -1,5 +1,6 @@
 import type { ImageProps } from "next/image";
 import NextImage from "next/image";
+import type { ReactElement } from "react";
 import React from "react";
 
 import { getAsset } from "@/lib/";
@@ -8,7 +9,7 @@ interface Props extends Omit<ImageProps, "src" | "alt"> {
 	assetid: string;
 }
 
-const MyImage = async (props: Props) => {
+const MyImage = async (props: Props): Promise<ReactElement> => {
 	const asset = await getAsset(props.assetid);
 	if (!asset) return <>Asset not found</>;
 

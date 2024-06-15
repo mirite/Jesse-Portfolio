@@ -1,10 +1,11 @@
+import type { ReactElement } from "react";
 import React from "react";
 
 const PillList = ({
 	children,
 	className,
 	...rest
-}: React.HTMLAttributes<HTMLUListElement>) => {
+}: React.HTMLAttributes<HTMLUListElement>): ReactElement => {
 	return (
 		<ul
 			className={

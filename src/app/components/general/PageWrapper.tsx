@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -9,7 +10,7 @@ const PageWrapper = ({
 	title,
 	className: extendedClassName,
 	...rest
-}: React.HTMLAttributes<HTMLDivElement> & { title: string }) => {
+}: React.HTMLAttributes<HTMLDivElement> & { title: string }): ReactElement => {
 	const className = twMerge("grow w-full", extendedClassName);
 	return (
 		<main className={"w-full grow"} {...rest}>

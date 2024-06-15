@@ -9,7 +9,7 @@ export const options = [
 
 export type OptionDefinition = (typeof options)[number];
 export type OptionIcon = OptionDefinition["icon"];
-export function updateTheme() {
+export function updateTheme(): void {
 	if (
 		localStorage.theme === "dark" ||
 		(!("theme" in localStorage) &&
@@ -21,7 +21,7 @@ export function updateTheme() {
 	}
 }
 
-export function setTheme(mode: OptionDefinition["className"]) {
+export function setTheme(mode: OptionDefinition["className"]): void {
 	if (mode) {
 		localStorage.theme = mode;
 	} else {

@@ -21,25 +21,6 @@ const config = [
 			"import/no-useless-path-segments": "error",
 			"import/newline-after-import": "error",
 			"import/no-duplicates": "error",
-			"import/order": [
-				"warn",
-				{
-					groups: [
-						"builtin",
-						"external",
-						"internal",
-						"parent",
-						"sibling",
-						"index",
-					],
-					pathGroupsExcludedImportTypes: ["builtin"],
-					"newlines-between": "always",
-					alphabetize: {
-						order: "asc",
-						caseInsensitive: true,
-					},
-				},
-			],
 		},
 	},
 	{
@@ -98,12 +79,9 @@ const config = [
 		...reactLint,
 		rules: {
 			"react/react-in-jsx-scope": "off",
-			"react/jsx-no-target-blank": "off",
-			"react/boolean-prop-naming": "warn",
 			"react/button-has-type": "warn",
 			"react/jsx-max-depth": ["warn", { max: 3 }],
-			"react/jsx-no-useless-fragment": "warn",
-			"react/no-unstable-nested-components": "warn",
+			"react/no-unstable-nested-components": "error",
 			"react/no-unused-prop-types": "warn",
 		},
 		settings: {
@@ -122,7 +100,8 @@ const config = [
 				"warn",
 				{
 					callees: ["twMerge"],
-					cssFiles: [],
+					config: path.resolve(__dirname, "./tailwind.config.cjs"),
+					cssFiles: ["**/*.css"],
 				},
 			],
 		},
@@ -130,14 +109,7 @@ const config = [
 			tailwindcss: {
 				callees: ["classnames", "clsx", "ctl", "twMerge"],
 				config: path.resolve(__dirname, "./tailwind.config.cjs"),
-				cssFiles: [
-					"**/*.css",
-					"!**/node_modules",
-					"!**/vendor",
-					"!**/.*",
-					"!**/dist",
-					"!**/build",
-				],
+				cssFiles: ["**/*.css", "!**/node_modules"],
 				cssFilesRefreshRate: 5_000,
 				removeDuplicates: true,
 				skipClassAttribute: false,

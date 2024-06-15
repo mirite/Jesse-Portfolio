@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import React from "react";
 
 import { Card } from "@/app/components/";
@@ -7,7 +8,7 @@ import type { Post } from "@/lib/";
 interface Props {
 	posts: Post[];
 }
-const Posts = (props: Props) => {
+const Posts = (props: Props): ReactElement => {
 	const { posts } = props;
 	return (
 		<MaxWidthContainer>
