@@ -6,6 +6,7 @@ import type { PropsWithChildren, ReactElement } from "react";
 import React, { useEffect, useState } from "react";
 
 import { Button } from "@/app/components";
+import { twMerge } from "tailwind-merge";
 
 const LARGE_SCREEN_WIDTH = 1024;
 
@@ -30,12 +31,11 @@ const MenuToggle = (props: PropsWithChildren): ReactElement => {
 	const shouldShowMobile = screenWidth < LARGE_SCREEN_WIDTH && open;
 	return (
 		<div
-			className={
-				"flex grow flex-col justify-end lg:flex-row " +
-				(shouldShowMobile
-					? "fixed inset-0 items-end bg-white pr-4 pt-10 lg:bg-transparent dark:bg-blue-green-900"
-					: "")
-			}
+			className={twMerge(
+				"flex grow flex-col justify-end lg:flex-row",
+				shouldShowMobile &&
+					"fixed inset-0 h-dvh w-dvw items-end bg-white pr-4 pt-10 lg:bg-transparent dark:bg-blue-green-900",
+			)}
 		>
 			<Button
 				className={"ml-auto lg:hidden"}

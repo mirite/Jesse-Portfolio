@@ -15,7 +15,6 @@
 
 html,
 body {
-	overflow-x: hidden;
 	font-size: 16px;
 	font-family:
 		"Visia Pro",
@@ -56,13 +55,6 @@ img {
 label,
 button {
 	cursor: pointer;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-	border-radius: 6px;
-	color: initial;
 }
 
 .arrow,

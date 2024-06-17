@@ -11,7 +11,7 @@ const Logo = (): ReactElement => {
 			<Image
 				src={logo}
 				alt={"Jesse Conner"}
-				className={"hidden max-w-sm xs:block md:max-w-md"}
+				className={"hidden max-w-sm xs:block"}
 			/>
 			<Image
 				src={icon}

@@ -23,15 +23,9 @@ const Skills = (props: Props): ReactElement => {
 				skill.name.toLowerCase().includes(searchTerm.toLowerCase()),
 			);
 	return (
-		<div className="mx-auto my-4 flex max-w-prose flex-col items-center gap-4">
-			<div
-				className={
-					"my-4 flex w-full flex-col-reverse justify-between gap-12 md:flex-row"
-				}
-			>
-				<Legend />
-				<Search searchTerm={searchTerm} onChange={setSearchTerm} />
-			</div>
+		<div className="mx-auto my-8 flex max-w-prose flex-col items-center gap-4">
+			<Search searchTerm={searchTerm} onChange={setSearchTerm} />
+			<Legend />
 			<SkillLevel skills={filteredSkills} />
 		</div>
 	);

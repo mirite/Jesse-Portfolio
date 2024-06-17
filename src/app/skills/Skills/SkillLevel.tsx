@@ -12,7 +12,7 @@ const SkillLevel = (props: Props): ReactElement => {
 	const { skills } = props;
 	return (
 		//bg-gradient-to-br from-high to-starter via-medium
-		<ul className={`flex flex-wrap justify-start gap-2 p-1`}>
+		<ul className={`flex flex-wrap justify-center gap-2 p-1`}>
 			{skills.map((skill) => (
 				<Skill key={skill.name} {...skill} />
 			))}
