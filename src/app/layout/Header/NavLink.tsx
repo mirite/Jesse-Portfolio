@@ -17,7 +17,7 @@ const NavLink = ({
 			<Link
 				href={path}
 				className={twMerge(
-					"text-2xl leading-none no-underline transition hover:underline",
+					"leading-none no-underline transition hover:underline",
 					currentPath === path ? "underline" : "",
 				)}
 			>
