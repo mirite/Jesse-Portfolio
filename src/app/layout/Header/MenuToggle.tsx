@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 
 import { Button } from "@/app/components";
 import { twMerge } from "tailwind-merge";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
 
 const LARGE_SCREEN_WIDTH = 1024;
 
@@ -18,6 +19,8 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	const { children, className, forceOpen, ...rest } = props;
 	const [open, setOpen] = useState(forceOpen || false);
 	const [screenWidth, setScreenWidth] = useState(0);
+	const [scope, animate] = useAnimate();
+
 	const dynamicRoute = usePathname();
 	useEffect(() => {
 		setScreenWidth(window.innerWidth);
@@ -35,8 +38,37 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	const shouldShow = forceOpen || screenWidth >= LARGE_SCREEN_WIDTH || open;
 	const shouldShowMobile =
 		forceOpen || (screenWidth < LARGE_SCREEN_WIDTH && open);
+	useEffect(() => {
+		if (!scope.current || !scope.current.querySelector(".me")) return;
+
+		if (shouldShowMobile) {
+			animate(
+				[
+					[".me", { opacity: 0 }],
+					[".me", { opacity: 100 }],
+				],
+				{
+					duration: 5,
+					ease: "easeInOut",
+				},
+			);
+		} else {
+			animate(
+				[
+					[".me", { opacity: 100 }],
+					[".me", { opacity: 0 }],
+				],
+				{
+					duration: 5,
+					ease: "easeInOut",
+				},
+			);
+		}
+	}, [shouldShowMobile, scope, animate]);
+
 	return (
 		<div
+			ref={scope}
 			className={twMerge(
 				"flex grow flex-col justify-end lg:flex-row",
 				shouldShowMobile &&
@@ -58,15 +90,18 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 					/>
 				</Button>
 			)}
-			{shouldShow && (
-				<div
-					className={
-						"w-full grow flex-col items-center justify-end lg:flex lg:flex-row lg:items-baseline"
-					}
-				>
-					{props.children}
-				</div>
-			)}
+			<AnimatePresence>
+				{shouldShow && (
+					<div
+						key={shouldShowMobile ? "mobile" : "desktop"}
+						className={
+							"me w-full grow flex-col items-center justify-end lg:flex lg:flex-row lg:items-baseline"
+						}
+					>
+						{props.children}
+					</div>
+				)}
+			</AnimatePresence>
 		</div>
 	);
 };
