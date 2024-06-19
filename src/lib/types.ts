@@ -1,5 +1,6 @@
 import type { Document } from "@contentful/rich-text-types";
 import { type Asset, type Entry } from "contentful";
+import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 export type Post = RawPost & {
 	slug: string;
@@ -54,4 +55,5 @@ export type Social = {
 	platform: string;
 	link: string;
 	username: string;
+	icon?: IconProp;
 };
