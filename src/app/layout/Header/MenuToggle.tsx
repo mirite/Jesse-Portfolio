@@ -38,33 +38,33 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	const shouldShow = forceOpen || screenWidth >= LARGE_SCREEN_WIDTH || open;
 	const shouldShowMobile =
 		forceOpen || (screenWidth < LARGE_SCREEN_WIDTH && open);
-	useEffect(() => {
-		if (!scope.current || !scope.current.querySelector(".me")) return;
-
-		if (shouldShowMobile) {
-			animate(
-				[
-					[".me", { opacity: 0 }],
-					[".me", { opacity: 100 }],
-				],
-				{
-					duration: 5,
-					ease: "easeInOut",
-				},
-			);
-		} else {
-			animate(
-				[
-					[".me", { opacity: 100 }],
-					[".me", { opacity: 0 }],
-				],
-				{
-					duration: 5,
-					ease: "easeInOut",
-				},
-			);
-		}
-	}, [shouldShowMobile, scope, animate]);
+	// useEffect(() => {
+	// 	if (!scope.current || !scope.current.querySelector(".me")) return;
+	//
+	// 	if (shouldShowMobile) {
+	// 		animate(
+	// 			[
+	// 				[".me", { opacity: 0 }],
+	// 				[".me", { opacity: 100 }],
+	// 			],
+	// 			{
+	// 				duration: 5,
+	// 				ease: "easeInOut",
+	// 			},
+	// 		);
+	// 	} else {
+	// 		animate(
+	// 			[
+	// 				[".me", { opacity: 100 }],
+	// 				[".me", { opacity: 0 }],
+	// 			],
+	// 			{
+	// 				duration: 5,
+	// 				ease: "easeInOut",
+	// 			},
+	// 		);
+	// 	}
+	// }, [shouldShowMobile, scope, animate]);
 
 	return (
 		<div
