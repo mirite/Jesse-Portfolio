@@ -1,4 +1,4 @@
-import React, { type ReactElement } from "react";
+import React, { type HTMLAttributes, type ReactElement } from "react";
 
 import Social from "@/app/contact/Socials/Social";
 import type { Social as SocialType } from "@/lib/";
@@ -9,8 +9,15 @@ import {
 	faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope as faEmail } from "@fortawesome/free-solid-svg-icons";
+import { twMerge } from "tailwind-merge";
 
-const Socials = async (): Promise<ReactElement> => {
+type SocialsProps = {
+	iconsOnly?: boolean;
+} & HTMLAttributes<HTMLUListElement>;
+
+const Socials = async (props: SocialsProps): Promise<ReactElement> => {
+	const { iconsOnly, className, ...rest } = props;
+
 	const socials: SocialType[] = [
 		{
 			platform: "GitHub",
@@ -44,9 +51,14 @@ const Socials = async (): Promise<ReactElement> => {
 		},
 	];
 	return (
-		<ul className="flex max-w-fit flex-col gap-1 p-0">
+		<ul
+			className={twMerge("flex max-w-fit flex-col gap-1 p-0", className)}
+			{...rest}
+		>
 			{socials.map((social) => {
-				return <Social key={social.platform} {...social} />;
+				return (
+					<Social key={social.platform} iconsOnly={iconsOnly} {...social} />
+				);
 			})}
 		</ul>
 	);

@@ -15,6 +15,7 @@
 
 html,
 body {
+	scroll-behavior: smooth;
 	font-size: 16px;
 	font-family:
 		"Visia Pro",

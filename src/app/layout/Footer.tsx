@@ -8,9 +8,10 @@ import Socials from "@/app/contact/Socials";
 const Footer = (): ReactElement => {
 	return (
 		<MaxWidthContainer className={"mt-2"}>
-			<footer className="flex flex-col items-center justify-center gap-12 p-4 text-center xs:flex-row xs:items-start">
-				<div className={"flex flex-col items-center justify-end gap-2"}>
-					<Logo className={"w-32 xs:w-32"} />
+			<footer className="flex flex-col items-center justify-center gap-4 p-4 text-center xs:flex-row xs:items-start xs:gap-12">
+				<div className={"flex flex-col items-center justify-end gap-4"}>
+					<Logo className={"w-32 xs:w-64"} />
+					<Socials iconsOnly={true} className={"flex-row gap-4"} />
 					<div>Copyright ©{new Date().getFullYear()} Jesse Conner</div>
 				</div>
 				<Nav
@@ -22,7 +23,6 @@ const Footer = (): ReactElement => {
 						className: "text-lg columns-2 block text-center xs:text-left",
 					}}
 				/>
-				<Socials />
 			</footer>
 		</MaxWidthContainer>
 	);
