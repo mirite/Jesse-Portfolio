@@ -5,6 +5,7 @@ import NavLink from "./NavLink";
 import type { MenuToggleProps } from "@/app/layout/Header/MenuToggle";
 import MenuToggle from "@/app/layout/Header/MenuToggle";
 import { twMerge } from "tailwind-merge";
+import ThemeToggle from "@/app/layout/Header/ThemeToggle";
 
 type Props = {
 	menuToggleProps?: Omit<MenuToggleProps, "children">;
@@ -32,6 +33,7 @@ const Nav = (props: Props): ReactElement => {
 					<NavLink path="/skills" label="Skills" />
 					<NavLink path="/about" label="About" />
 					<NavLink path="/contact" label="Contact" />
+					<ThemeToggle />
 				</menu>
 			</nav>
 		</MenuToggle>

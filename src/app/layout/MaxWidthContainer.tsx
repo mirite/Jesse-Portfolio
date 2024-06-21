@@ -6,7 +6,7 @@ type Props = ComponentProps<"div">;
 const MaxWidthContainer = (props: Props): ReactElement => {
 	const { className: extendedClassName, children, ...rest } = props;
 	const className = twMerge(
-		"max-w-screen-2xl w-full px-3 mx-auto",
+		"max-w-screen-xl w-full px-3 xl:px-0 mx-auto",
 		extendedClassName,
 	);
 	return (

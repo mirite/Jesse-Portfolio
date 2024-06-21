@@ -3,6 +3,7 @@ import type { ReactElement } from "react";
 import React from "react";
 
 import { Header, Footer } from "@/app/layout/index";
+import Theme from "@/app/layout/Theme";
 
 export const metadata = {
 	title: "Jesse Conner",
@@ -17,10 +18,12 @@ export default function RootLayout({
 }): ReactElement {
 	return (
 		<html lang="en">
-			<body className="relative flex min-h-dvh max-w-full flex-col justify-center bg-white text-blue-green-900 dark:bg-blue-green-900 dark:text-white">
-				<Header />
-				<main className="w-full grow">{children}</main>
-				<Footer />
+			<body>
+				<Theme>
+					<Header />
+					<main className="w-full grow">{children}</main>
+					<Footer />
+				</Theme>
 			</body>
 		</html>
 	);
