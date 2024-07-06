@@ -8,12 +8,12 @@ export async function getCategories(): Promise<
 	return (await getEntries<CategorySkeleton>(`category`)).map(categoryMapper);
 }
 
-export async function getCategoriesForStaticBuild(): Promise<
-	{ category: string }[]
+export async function generateStaticParams(): Promise<
+	CategoryPageProps["params"][]
 > {
 	const categories = await getCategories();
 	return categories.map((category) => ({
-		category: category.slug,
+		categorySlug: category.slug,
 	}));
 }
 
@@ -29,11 +29,18 @@ export async function getCategory(
 	}
 }
 
-export async function createCategoryMetadata(slug: string): Promise<Metadata> {
+export async function generateMetadata(
+	props: CategoryPageProps,
+): Promise<Metadata> {
+	const { categorySlug: slug } = props.params;
 	const category = await getCategory(slug);
 	if (!category) {
 		return {};
 	}
 	const { name, description } = category;
 	return { title: name, description };
+}
+
+export interface CategoryPageProps {
+	params: { categorySlug: string };
 }

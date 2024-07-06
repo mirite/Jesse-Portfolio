@@ -8,7 +8,9 @@ import { getEntries, postMapper } from "@/lib/";
  * @param params The post's static parameters.
  * @returns The metadata for the post.
  */
-export async function generateMetadata(props: PostProps): Promise<Metadata> {
+export async function generateMetadata(
+	props: PostPageProps,
+): Promise<Metadata> {
 	const { slug } = props.params;
 	const post = await getPost(slug);
 	if (!post) {
@@ -27,14 +29,15 @@ export async function generateMetadata(props: PostProps): Promise<Metadata> {
  * @returns The static parameters for all posts.
  */
 export async function generateStaticParams(): Promise<
-	Pick<Post, "category" | "slug">[]
+	PostPageProps["params"][]
 > {
 	const posts = await getPosts(100);
 
-	return posts.map((post) => ({
-		category: post.category,
+	const paths = posts.map((post) => ({
+		categorySlug: post.categorySlug,
 		slug: post.slug,
 	}));
+	return paths;
 }
 
 export async function getPost(postSlug: string): Promise<Post | undefined> {
@@ -57,6 +60,6 @@ export async function getPosts(
 		.slice(0, count);
 }
 
-export interface PostProps {
-	params: { slug: string; category: string };
+export interface PostPageProps {
+	params: { slug: string; categorySlug: string };
 }

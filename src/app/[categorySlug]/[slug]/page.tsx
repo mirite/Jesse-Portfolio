@@ -2,10 +2,10 @@ import type { ReactElement } from "react";
 import React from "react";
 
 import { Post } from "@/app/components/";
-import type { PostProps } from "@/lib/";
+import type { PostPageProps } from "@/lib/";
 import { getPost } from "@/lib/";
 
-const Page = async (props: PostProps): Promise<ReactElement> => {
+const Page = async (props: PostPageProps): Promise<ReactElement> => {
 	const { params } = props;
 	const { slug } = params;
 	const post = await getPost(slug);
@@ -15,6 +15,6 @@ const Page = async (props: PostProps): Promise<ReactElement> => {
 	return <Post {...post} />;
 };
 
-export { generateStaticParams, generateMetadata } from "@/lib/";
+export { generateStaticParams, generateMetadata } from "@/lib/posts";
 
 export default Page;
