@@ -7,6 +7,8 @@ describe("categoryMapper", () => {
 		const input: Category = {
 			name: "Test Category",
 			id: 1,
+			slug: "",
+			description: "",
 		};
 		const output = categoryMapper(input);
 		expect(output.slug).toBe("test-category");
