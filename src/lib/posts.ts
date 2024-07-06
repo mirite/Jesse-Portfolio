@@ -3,7 +3,13 @@ import type { Metadata } from "next";
 import type { Post, PostSkeleton } from "@/lib/";
 import { getEntries, postMapper } from "@/lib/";
 
-export async function createPostMetadata(slug: string): Promise<Metadata> {
+/**
+ * Generates the Next metadata for a post.
+ * @param params The post's static parameters.
+ * @returns The metadata for the post.
+ */
+export async function generateMetadata(props: PostProps): Promise<Metadata> {
+	const { slug } = props.params;
 	const post = await getPost(slug);
 	if (!post) {
 		return {};
@@ -16,7 +22,11 @@ export async function createPostMetadata(slug: string): Promise<Metadata> {
 	};
 }
 
-export async function getPostsForStaticBuild(): Promise<
+/**
+ * Generates the static parameters for all posts.
+ * @returns The static parameters for all posts.
+ */
+export async function generateStaticParams(): Promise<
 	Pick<Post, "category" | "slug">[]
 > {
 	const posts = await getPosts(100);
@@ -45,4 +55,8 @@ export async function getPosts(
 		.map(postMapper)
 		.filter((post) => !categorySlug || post.categorySlug === categorySlug)
 		.slice(0, count);
+}
+
+export interface PostProps {
+	params: { slug: string; category: string };
 }
