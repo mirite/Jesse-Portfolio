@@ -15,9 +15,7 @@ export type ThemeOption = keyof typeof options;
 export type OptionDefinition = (typeof options)[keyof typeof options];
 export type OptionIcon = OptionDefinition["icon"];
 
-/**
- * Get the current theme from local storage.
- */
+/** Get the current theme from local storage. */
 function getThemeFromLocalStorage(): OptionDefinition {
 	if (typeof window === "undefined") {
 		return options.System;
@@ -48,9 +46,7 @@ function subscribe(callback: () => void) {
 	};
 }
 
-/**
- * Get the current theme from local storage, and provide a function to set it.
- */
+/** Get the current theme from local storage, and provide a function to set it. */
 export function useTheme(): [
 	activeTheme: OptionDefinition,
 	themeSetter: (theme: ThemeOption) => void,

@@ -72,7 +72,7 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 			className={twMerge(
 				"flex grow flex-col justify-end lg:flex-row",
 				shouldShowMobile &&
-					"fixed inset-0 h-dvh w-dvw items-end bg-white pr-4 pt-10 lg:bg-transparent dark:bg-blue-green-900",
+					"fixed inset-0 h-dvh w-dvw items-end bg-white pr-4 pt-10 dark:bg-blue-green-900 lg:bg-transparent",
 				className,
 			)}
 			{...rest}

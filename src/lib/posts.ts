@@ -5,7 +5,8 @@ import { getEntries, postMapper } from "@/lib/";
 
 /**
  * Generates the Next metadata for a post.
- * @param params The post's static parameters.
+ *
+ * @param props The props for the post.
  * @returns The metadata for the post.
  */
 export async function generateMetadata(
@@ -26,6 +27,7 @@ export async function generateMetadata(
 
 /**
  * Generates the static parameters for all posts.
+ *
  * @returns The static parameters for all posts.
  */
 export async function generateStaticParams(): Promise<
@@ -33,13 +35,18 @@ export async function generateStaticParams(): Promise<
 > {
 	const posts = await getPosts(100);
 
-	const paths = posts.map((post) => ({
+	return posts.map((post) => ({
 		categorySlug: post.categorySlug,
 		slug: post.slug,
 	}));
-	return paths;
 }
 
+/**
+ * Gets a post by its slug.
+ *
+ * @param postSlug The slug of the post.
+ * @returns The post with the given slug, or undefined if not found.
+ */
 export async function getPost(postSlug: string): Promise<Post | undefined> {
 	const allPosts = await getPosts();
 	const post = allPosts.find(({ slug }) => {
@@ -50,6 +57,13 @@ export async function getPost(postSlug: string): Promise<Post | undefined> {
 	}
 }
 
+/**
+ * Gets all posts.
+ *
+ * @param count The number of posts to get. Defaults to 9999.
+ * @param categorySlug The slug of the category to filter by.
+ * @returns All posts.
+ */
 export async function getPosts(
 	count: number = 9999,
 	categorySlug?: string,
