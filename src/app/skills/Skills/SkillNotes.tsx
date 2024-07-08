@@ -16,25 +16,26 @@ const SkillNotes = (
 			document.body.style.overflowY = "unset";
 		};
 	}, []);
+	const { name, notes, projects } = props;
 	return (
 		<div
 			className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm"
 			onClick={props.onClose}
 		>
 			<div
-				className="w-2/3 rounded-md bg-white p-3 dark:bg-black"
+				className="max-w-fit min-w-96 rounded-md bg-white p-6 dark:bg-black shadow-2xl"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<Button
 					className="float-right p-1 leading-none"
 					onClick={props.onClose}
 				>
-					<FontAwesomeIcon icon={faCircleXmark} />
+					<FontAwesomeIcon className={"size-8 hover:bg-transparent"} icon={faCircleXmark} />
 				</Button>
 				<NotesContent
-					name={props.name}
-					notes={props.notes}
-					projects={props.projects}
+					name={name}
+					notes={notes}
+					projects={projects}
 				/>
 			</div>
 		</div>

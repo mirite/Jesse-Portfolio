@@ -1,12 +1,23 @@
 import type { Skill, SkillSkeleton } from "@/lib/";
 import { getEntries } from "@/lib/";
 
+/**
+ * Gets all the skills.
+ *
+ * @returns All the skills.
+ */
 export async function getSkills(): Promise<Skill[]> {
 	return (await getEntries<SkillSkeleton>(`skill`)).sort(
 		(a, b) => b.interestingness - a.interestingness,
 	);
 }
 
+/**
+ * Splits the skills by proficiency.
+ *
+ * @param allSkills All the skills.
+ * @returns The skills split by proficiency.
+ */
 export function splitSkillsByProficiency(allSkills: Skill[]): {
 	high: Skill[];
 	medium: Skill[];

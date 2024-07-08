@@ -23,7 +23,7 @@ export default function NotesContent(props: Props): ReactElement {
 				<h3>{props.name}</h3>
 			</div>
 			{props.notes && (
-				<article>{documentToReactComponents(props.notes)}</article>
+				<div><h4>Details</h4><article>{documentToReactComponents(props.notes)}</article></div>
 			)}
 			{props.projects && <LinkDisplay links={props.projects} />}
 		</TextWrapper>
