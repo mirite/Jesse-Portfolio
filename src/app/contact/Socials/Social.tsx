@@ -1,7 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { type ReactElement } from "react";
 
 import type { Social } from "@/lib";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 type Props = Social & {
 	iconsOnly: boolean | undefined;

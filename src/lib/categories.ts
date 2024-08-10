@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import type { Category, CategorySkeleton } from "@/lib";
 import { categoryMapper, getEntries } from "@/lib/";
 
@@ -17,6 +18,7 @@ export async function generateStaticParams(): Promise<
 	}));
 }
 
+/** @param categorySlug */
 export async function getCategory(
 	categorySlug: string,
 ): Promise<Category | undefined> {
@@ -29,6 +31,7 @@ export async function getCategory(
 	}
 }
 
+/** @param props */
 export async function generateMetadata(
 	props: CategoryPageProps,
 ): Promise<Metadata> {

@@ -1,7 +1,3 @@
-import React, { type HTMLAttributes, type ReactElement } from "react";
-
-import Social from "@/app/contact/Socials/Social";
-import type { Social as SocialType } from "@/lib/";
 import {
 	faGithub,
 	faLinkedin,
@@ -9,7 +5,11 @@ import {
 	faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope as faEmail } from "@fortawesome/free-solid-svg-icons";
+import React, { type HTMLAttributes, type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
+
+import Social from "@/app/contact/Socials/Social";
+import type { Social as SocialType } from "@/lib/";
 
 type SocialsProps = {
 	iconsOnly?: boolean;

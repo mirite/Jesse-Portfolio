@@ -1,8 +1,9 @@
-import React, { type ReactElement } from "react";
-import { TextWrapper } from "@/app/components";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import LinkDisplay from "@/app/skills/Skills/LinkDisplay";
 import type { Document } from "@contentful/rich-text-types";
+import React, { type ReactElement } from "react";
+
+import { TextWrapper } from "@/app/components";
+import LinkDisplay from "@/app/skills/Skills/LinkDisplay";
 
 type Props = {
 	name: string;
@@ -23,7 +24,10 @@ export default function NotesContent(props: Props): ReactElement {
 				<h3>{props.name}</h3>
 			</div>
 			{props.notes && (
-				<div><h4>Details</h4><article>{documentToReactComponents(props.notes)}</article></div>
+				<div>
+					<h4>Details</h4>
+					<article>{documentToReactComponents(props.notes)}</article>
+				</div>
 			)}
 			{props.projects && <LinkDisplay links={props.projects} />}
 		</TextWrapper>

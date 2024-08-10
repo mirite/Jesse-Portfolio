@@ -36,6 +36,7 @@ function getMediaMatcher() {
 
 const prefersDarkQuery = "(prefers-color-scheme: dark)";
 
+/** @param callback */
 function subscribe(callback: () => void) {
 	const mql = getMediaMatcher();
 	window.addEventListener("storage", callback);

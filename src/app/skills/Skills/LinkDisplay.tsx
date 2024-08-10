@@ -9,13 +9,13 @@ const LinkDisplay = (props: {
 	return (
 		<div>
 			<h4>Projects</h4>
-		<ul>
-			{Object.entries(props.links || {}).map(([name, link]) => (
-				<li key={name}>
-					<a href={link}>{name}</a>
-				</li>
-			))}
-		</ul>
+			<ul>
+				{Object.entries(props.links || {}).map(([name, link]) => (
+					<li key={name}>
+						<a href={link}>{name}</a>
+					</li>
+				))}
+			</ul>
 		</div>
 	);
 };

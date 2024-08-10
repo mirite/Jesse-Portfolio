@@ -11,6 +11,10 @@ export const metadata = {
 		"Welcome to my site! I am a software developer (primarily web) from Toronto, Ontario. This site is a place for me to share my skills, projects, and tell a little about myself.",
 };
 
+/**
+ * @param root0
+ * @param root0.children
+ */
 export default function RootLayout({
 	children,
 }: {

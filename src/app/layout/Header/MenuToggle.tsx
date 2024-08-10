@@ -1,13 +1,13 @@
 "use client";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { AnimatePresence, motion, useAnimate } from "framer-motion";
 import { usePathname } from "next/navigation";
 import type { HTMLAttributes, ReactElement } from "react";
 import React, { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 import { Button } from "@/app/components";
-import { twMerge } from "tailwind-merge";
-import { AnimatePresence, motion, useAnimate } from "framer-motion";
 
 const LARGE_SCREEN_WIDTH = 1024;
 

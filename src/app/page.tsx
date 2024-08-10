@@ -1,9 +1,9 @@
 import Link from "next/link";
+import type { ReactElement } from "react";
 
 import { TextWrapper } from "@/app/components";
 import { PageWrapper, Posts } from "@/app/components/";
 import { getPlainTextContent, getPosts } from "@/lib/";
-import type { ReactElement } from "react";
 
 export default async function Home(): Promise<ReactElement> {
 	const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");

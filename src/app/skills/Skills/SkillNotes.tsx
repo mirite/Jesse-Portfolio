@@ -4,8 +4,8 @@ import type { ReactElement } from "react";
 import React, { useEffect } from "react";
 
 import { Button } from "@/app/components/";
-import type { SkillSkeleton } from "@/lib/";
 import NotesContent from "@/app/skills/Skills/NotesContent";
+import type { SkillSkeleton } from "@/lib/";
 
 const SkillNotes = (
 	props: SkillSkeleton["fields"] & { onClose: () => void },
@@ -23,20 +23,19 @@ const SkillNotes = (
 			onClick={props.onClose}
 		>
 			<div
-				className="max-w-fit min-w-96 rounded-md bg-white p-6 dark:bg-black shadow-2xl"
+				className="min-w-96 max-w-fit rounded-md bg-white p-6 shadow-2xl dark:bg-black"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<Button
 					className="float-right p-1 leading-none"
 					onClick={props.onClose}
 				>
-					<FontAwesomeIcon className={"size-8 hover:bg-transparent"} icon={faCircleXmark} />
+					<FontAwesomeIcon
+						className={"size-8 hover:bg-transparent"}
+						icon={faCircleXmark}
+					/>
 				</Button>
-				<NotesContent
-					name={name}
-					notes={notes}
-					projects={projects}
-				/>
+				<NotesContent name={name} notes={notes} projects={projects} />
 			</div>
 		</div>
 	);

@@ -52,6 +52,7 @@ const Skill = (skill: SkillType): ReactElement => {
 
 export default Skill;
 
+/** @param skill */
 function hasNotesOrLinks(skill: SkillType) {
 	return skill.notes !== undefined || skill.projects !== undefined;
 }

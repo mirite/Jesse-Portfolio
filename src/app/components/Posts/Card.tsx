@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactElement } from "react";
 import React from "react";
+
 import Arrow from "@/app/components/Posts/Arrow";
 
 interface Props {

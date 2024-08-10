@@ -55,6 +55,10 @@ const renderOptions = {
 	},
 };
 
+/**
+ * @param props
+ * @param props.content
+ */
 export default function RichTextRenderer(props: {
 	content: Document;
 }): ReactElement {

@@ -1,9 +1,9 @@
 import React, { type ReactElement } from "react";
 
-import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
-import Nav from "@/app/layout/Header/Nav";
-import Logo from "@/app/layout/Header/Logo";
 import Socials from "@/app/contact/Socials";
+import Logo from "@/app/layout/Header/Logo";
+import Nav from "@/app/layout/Header/Nav";
+import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const Footer = (): ReactElement => {
 	return (

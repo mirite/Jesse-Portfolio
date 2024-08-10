@@ -28,6 +28,7 @@ function getClient() {
 	return _client;
 }
 
+/** @param id */
 export async function getContent<T extends EntrySkeletonType>(
 	id: string,
 ): Promise<T["fields"] | undefined> {
@@ -38,6 +39,7 @@ export async function getContent<T extends EntrySkeletonType>(
 		console.error(e);
 	}
 }
+/** @param id */
 export async function getAsset(id: string): Promise<AssetFields | undefined> {
 	const client = getClient();
 	try {
@@ -47,6 +49,7 @@ export async function getAsset(id: string): Promise<AssetFields | undefined> {
 	}
 }
 
+/** @param id */
 export async function getEntries<T extends EntrySkeletonType>(
 	id: string,
 ): Promise<T["fields"][]> {
@@ -65,6 +68,11 @@ export async function getRichTextContent<T extends EntrySkeletonType>(
 	field: keyof T["fields"],
 	raw?: false,
 ): Promise<ReactNode>;
+/**
+ * @param id
+ * @param field
+ * @param raw
+ */
 export async function getRichTextContent<T extends EntrySkeletonType>(
 	id: string,
 	field: keyof T["fields"],
@@ -81,6 +89,10 @@ export async function getRichTextContent<T extends EntrySkeletonType>(
 	return "";
 }
 
+/**
+ * @param id
+ * @param field
+ */
 export async function getPlainTextContent<T extends EntrySkeletonType>(
 	id: string,
 	field: keyof T["fields"],

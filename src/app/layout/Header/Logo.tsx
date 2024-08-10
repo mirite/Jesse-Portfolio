@@ -1,10 +1,11 @@
+import Image from "next/image";
+import Link from "next/link";
 import type { ComponentProps, ReactElement } from "react";
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import logo from "@/app/svg/logo.svg";
-import icon from "@/app/icon.svg";
 import { twMerge } from "tailwind-merge";
+
+import icon from "@/app/icon.svg";
+import logo from "@/app/svg/logo.svg";
 
 const Logo = (props: Partial<ComponentProps<typeof Link>>): ReactElement => {
 	const { className, href, ...rest } = props;

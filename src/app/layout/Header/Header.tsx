@@ -2,8 +2,8 @@ import React, { type ReactElement } from "react";
 
 import Nav from "./Nav";
 
-import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 import Logo from "@/app/layout/Header/Logo";
+import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const Header = (): ReactElement => {
 	return (

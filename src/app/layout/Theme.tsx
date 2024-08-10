@@ -6,6 +6,7 @@ import React, {
 	useState,
 	useEffect,
 } from "react";
+
 import type { OptionDefinition, ThemeOption } from "@/lib";
 import { useTheme } from "@/lib";
 

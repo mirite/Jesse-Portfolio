@@ -1,4 +1,5 @@
 import { describe, it, expect } from "vitest";
+
 import type { Category } from "../src/lib";
 import { categoryMapper } from "../src/lib";
 
