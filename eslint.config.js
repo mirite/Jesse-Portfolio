@@ -100,7 +100,7 @@ const config = [
 				"warn",
 				{
 					callees: ["twMerge"],
-					config: path.resolve(__dirname, "./tailwind.config.cjs"),
+					config: path.resolve(__dirname, "./tailwind.config.ts"),
 					cssFiles: ["**/*.css"],
 				},
 			],
@@ -108,7 +108,7 @@ const config = [
 		settings: {
 			tailwindcss: {
 				callees: ["classnames", "clsx", "ctl", "twMerge"],
-				config: path.resolve(__dirname, "./tailwind.config.cjs"),
+				config: "tailwind.config.ts",
 				cssFiles: ["**/*.css", "!**/node_modules"],
 				cssFilesRefreshRate: 5_000,
 				removeDuplicates: true,
