@@ -7,12 +7,15 @@ import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const Footer = (): ReactElement => {
 	return (
-		<MaxWidthContainer className={"mt-2"}>
-			<footer className="flex flex-col items-center justify-center gap-4 p-4 text-center xs:flex-row xs:items-start xs:gap-12">
-				<div className={"flex flex-col items-center justify-end gap-4"}>
+		<MaxWidthContainer className={"mt-2 p-4"} Element={"footer"}>
+			<div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:items-start sm:gap-12">
+				<div
+					className={
+						"flex flex-col items-center justify-end gap-4 sm:items-start"
+					}
+				>
 					<Logo className={"w-32 xs:w-64"} />
 					<Socials iconsOnly={true} className={"flex-row gap-4"} />
-					<div>Copyright ©{new Date().getFullYear()} Jesse Conner</div>
 				</div>
 				<Nav
 					menuToggleProps={{
@@ -23,7 +26,10 @@ const Footer = (): ReactElement => {
 						className: "text-lg columns-2 block text-center xs:text-left",
 					}}
 				/>
-			</footer>
+			</div>
+			<div className={"text-center"}>
+				Copyright ©{new Date().getFullYear()} Jesse Conner
+			</div>
 		</MaxWidthContainer>
 	);
 };

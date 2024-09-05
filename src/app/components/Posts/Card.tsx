@@ -20,7 +20,7 @@ const Card = (props: Props): ReactElement => {
 				href={link}
 			>
 				<h3>{title}</h3>
-				<p className={"grow"}>{excerpt}</p>
+				<p className={"line-clamp-4 grow"}>{excerpt}</p>
 				<div className={"flex items-center gap-2"}>
 					<strong className={"underline"}>Read More</strong>
 					<Arrow />

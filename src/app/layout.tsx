@@ -25,7 +25,7 @@ export default function RootLayout({
 			<body>
 				<Theme>
 					<Header />
-					<main className="w-full grow">{children}</main>
+					{children}
 					<Footer />
 				</Theme>
 			</body>

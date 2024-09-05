@@ -11,17 +11,15 @@ interface Props {
 const Posts = (props: Props): ReactElement => {
 	const { posts } = props;
 	return (
-		<MaxWidthContainer>
-			<div className="grid w-full grid-cols-[repeat(auto-fit,minmax(300px,560px))] justify-center gap-4">
-				{posts.map((post) => (
-					<Card
-						key={post.slug}
-						title={post.title}
-						link={post.categorySlug + "/" + post.slug}
-						excerpt={post.excerpt}
-					/>
-				))}
-			</div>
+		<MaxWidthContainer className="grid w-full justify-center gap-8 lg:grid-cols-2">
+			{posts.map((post) => (
+				<Card
+					key={post.slug}
+					title={post.title}
+					link={post.categorySlug + "/" + post.slug}
+					excerpt={post.excerpt}
+				/>
+			))}
 		</MaxWidthContainer>
 	);
 };
