@@ -22,7 +22,7 @@ export default function RootLayout({
 }): ReactElement {
 	return (
 		<html lang="en">
-			<body>
+			<body className={"min-h-dvh overflow-x-hidden"}>
 				<Theme>
 					<Header />
 					{children}

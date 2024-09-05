@@ -23,7 +23,7 @@ const Footer = (): ReactElement => {
 						className: "static h-auto w-auto p-0 grow-0",
 					}}
 					menuProps={{
-						className: "text-lg columns-2 block text-center xs:text-left",
+						className: "text-lg columns-2 block text-center sm:text-left",
 					}}
 				/>
 			</div>

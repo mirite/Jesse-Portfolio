@@ -16,10 +16,9 @@ export type MenuToggleProps = HTMLAttributes<HTMLDivElement> & {
 };
 
 const MenuToggle = (props: MenuToggleProps): ReactElement => {
-	const { children, className, forceOpen, ...rest } = props;
+	const { children, className, forceOpen } = props;
 	const [open, setOpen] = useState(forceOpen || false);
 	const [screenWidth, setScreenWidth] = useState(0);
-	const [scope, animate] = useAnimate();
 
 	const dynamicRoute = usePathname();
 	useEffect(() => {
@@ -38,48 +37,37 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	const shouldShow = forceOpen || screenWidth >= LARGE_SCREEN_WIDTH || open;
 	const shouldShowMobile =
 		forceOpen || (screenWidth < LARGE_SCREEN_WIDTH && open);
-	// useEffect(() => {
-	// 	if (!scope.current || !scope.current.querySelector(".me")) return;
-	//
-	// 	if (shouldShowMobile) {
-	// 		animate(
-	// 			[
-	// 				[".me", { opacity: 0 }],
-	// 				[".me", { opacity: 100 }],
-	// 			],
-	// 			{
-	// 				duration: 5,
-	// 				ease: "easeInOut",
-	// 			},
-	// 		);
-	// 	} else {
-	// 		animate(
-	// 			[
-	// 				[".me", { opacity: 100 }],
-	// 				[".me", { opacity: 0 }],
-	// 			],
-	// 			{
-	// 				duration: 5,
-	// 				ease: "easeInOut",
-	// 			},
-	// 		);
-	// 	}
-	// }, [shouldShowMobile, scope, animate]);
 
 	return (
-		<div
-			ref={scope}
-			className={twMerge(
-				"flex grow flex-col justify-end lg:flex-row",
-				shouldShowMobile &&
-					"fixed inset-0 h-dvh w-dvw items-end bg-white pr-4 pt-10 dark:bg-blue-green-900 lg:bg-transparent",
-				className,
-			)}
-			{...rest}
-		>
+		<div className={"relative"}>
+			<AnimatePresence>
+				{shouldShow && (
+					<motion.div
+						key={"menu"}
+						className={twMerge(
+							"flex flex-col justify-end lg:flex-row",
+							shouldShowMobile &&
+								"fixed inset-0 h-dvh max-h-dvh w-dvw items-center justify-center bg-white pr-4 pt-10 dark:bg-blue-green-900 lg:bg-transparent",
+							className,
+						)}
+						initial={{
+							left: screenWidth >= LARGE_SCREEN_WIDTH ? 0 : "100%",
+							display: "none",
+						}}
+						transition={{ duration: 0.3, ease: "easeInOut" }}
+						animate={{ left: "0", display: "flex" }}
+						exit={{
+							left: screenWidth >= LARGE_SCREEN_WIDTH ? 0 : "100%",
+							display: "none",
+						}}
+					>
+						{children}
+					</motion.div>
+				)}
+			</AnimatePresence>
 			{!forceOpen && (
 				<Button
-					className={"ml-auto lg:hidden"}
+					className={"relative ml-auto lg:hidden"}
 					onClick={() => setOpen(!open)}
 					title={open ? "Close Menu" : "Open Menu"}
 					type={"button"}
@@ -90,18 +78,6 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 					/>
 				</Button>
 			)}
-			<AnimatePresence>
-				{shouldShow && (
-					<div
-						key={shouldShowMobile ? "mobile" : "desktop"}
-						className={
-							"me w-full grow flex-col items-center justify-end lg:flex lg:flex-row lg:items-baseline"
-						}
-					>
-						{props.children}
-					</div>
-				)}
-			</AnimatePresence>
 		</div>
 	);
 };

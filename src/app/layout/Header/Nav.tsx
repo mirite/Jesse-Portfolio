@@ -18,14 +18,13 @@ const Nav = (props: Props): ReactElement => {
 		<MenuToggle {...menuToggleProps}>
 			<nav
 				aria-label="Main Navigation"
-				className={"flex h-full items-center justify-center lg:h-auto"}
+				className={"flex items-center justify-center"}
 			>
 				<menu
 					className={twMerge(
 						"flex flex-col items-center gap-4 text-2xl lg:flex-row",
 						className,
 					)}
-					id={"nav-links"}
 					{...rest}
 				>
 					<NavLink path="/projects" label="Projects" />
