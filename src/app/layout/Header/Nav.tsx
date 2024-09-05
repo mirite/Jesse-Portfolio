@@ -32,7 +32,7 @@ const Nav = (props: Props): ReactElement => {
 					<NavLink path="/skills" label="Skills" />
 					<NavLink path="/about" label="About" />
 					<NavLink path="/contact" label="Contact" />
-					<ThemeToggle />
+					{!menuToggleProps?.forceOpen && <ThemeToggle />}
 				</menu>
 			</nav>
 		</MenuToggle>

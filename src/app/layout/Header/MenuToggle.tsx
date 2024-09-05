@@ -35,31 +35,23 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	}, [dynamicRoute]);
 
 	const shouldShow = forceOpen || screenWidth >= LARGE_SCREEN_WIDTH || open;
-	const shouldShowMobile =
-		forceOpen || (screenWidth < LARGE_SCREEN_WIDTH && open);
-
+	const hiddenState = {
+		left: screenWidth >= LARGE_SCREEN_WIDTH ? 0 : "100%",
+	};
 	return (
-		<div className={"relative"}>
+		<>
 			<AnimatePresence>
 				{shouldShow && (
 					<motion.div
 						key={"menu"}
 						className={twMerge(
-							"flex flex-col justify-end lg:flex-row",
-							shouldShowMobile &&
-								"fixed inset-0 h-dvh max-h-dvh w-dvw items-center justify-center bg-white pr-4 pt-10 dark:bg-blue-green-900 lg:bg-transparent",
+							"fixed inset-0 flex h-dvh w-dvw flex-col items-center justify-center bg-white dark:bg-blue-green-900 lg:static lg:size-auto lg:flex-row lg:justify-end lg:bg-transparent lg:dark:bg-transparent",
 							className,
 						)}
-						initial={{
-							left: screenWidth >= LARGE_SCREEN_WIDTH ? 0 : "100%",
-							display: "none",
-						}}
+						initial={hiddenState}
 						transition={{ duration: 0.3, ease: "easeInOut" }}
-						animate={{ left: "0", display: "flex" }}
-						exit={{
-							left: screenWidth >= LARGE_SCREEN_WIDTH ? 0 : "100%",
-							display: "none",
-						}}
+						animate={{ left: "0" }}
+						exit={hiddenState}
 					>
 						{children}
 					</motion.div>
@@ -73,12 +65,12 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 					type={"button"}
 				>
 					<FontAwesomeIcon
-						className={"size-6"}
+						className={"size-8"}
 						icon={open ? faClose : faBars}
 					/>
 				</Button>
 			)}
-		</div>
+		</>
 	);
 };
 
