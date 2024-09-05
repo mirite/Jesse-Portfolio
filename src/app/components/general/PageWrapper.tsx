@@ -11,7 +11,7 @@ const PageWrapper = ({
 	className: extendedClassName,
 	...rest
 }: React.HTMLAttributes<HTMLDivElement> & { title: string }): ReactElement => {
-	const className = twMerge("grow w-full", extendedClassName);
+	const className = twMerge("w-full grow", extendedClassName);
 	return (
 		<MaxWidthContainer className={className} Element={"main"} {...rest}>
 			<TextWrapper className={"mb-4"}>
