@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import React from "react";
 
+import { PageWrapper } from "@/app/components";
 import { Post } from "@/app/components/";
 import type { PostPageProps } from "@/lib/";
 import { getPost } from "@/lib/";
@@ -12,7 +13,11 @@ const Page = async (props: PostPageProps): Promise<ReactElement> => {
 	if (!post) {
 		return <p>Post not found {slug}</p>;
 	}
-	return <Post {...post} />;
+	return (
+		<PageWrapper title={post.title}>
+			<Post {...post} />
+		</PageWrapper>
+	);
 };
 
 export { generateStaticParams, generateMetadata } from "@/lib/posts";
