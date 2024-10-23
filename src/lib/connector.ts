@@ -11,6 +11,9 @@ import type { ReactNode } from "react";
 
 let _client: ReturnType<typeof createClient>;
 
+/**
+ *
+ */
 function getClient() {
 	if (!_client) {
 		const space = process.env.SPACE || "";

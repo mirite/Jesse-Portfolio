@@ -5,6 +5,9 @@ import { TextWrapper } from "@/app/components";
 import { PageWrapper, Posts } from "@/app/components/";
 import { getPlainTextContent, getPosts } from "@/lib/";
 
+/**
+ *
+ */
 export default async function Home(): Promise<ReactElement> {
 	const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
 	const posts = (await getPosts(10)) || [];
@@ -33,6 +36,9 @@ export default async function Home(): Promise<ReactElement> {
 	);
 }
 
+/**
+ *
+ */
 export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Jesse Conner",

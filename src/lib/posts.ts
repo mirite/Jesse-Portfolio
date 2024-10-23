@@ -12,7 +12,7 @@ import { getEntries, postMapper } from "@/lib/";
 export async function generateMetadata(
 	props: PostPageProps,
 ): Promise<Metadata> {
-	const { slug } = props.params;
+	const { slug } = await props.params;
 	const post = await getPost(slug);
 	if (!post) {
 		return {};
@@ -31,7 +31,7 @@ export async function generateMetadata(
  * @returns The static parameters for all posts.
  */
 export async function generateStaticParams(): Promise<
-	PostPageProps["params"][]
+	Awaited<PostPageProps["params"]>[]
 > {
 	const posts = await getPosts(100);
 
@@ -75,5 +75,5 @@ export async function getPosts(
 }
 
 export interface PostPageProps {
-	params: { slug: string; categorySlug: string };
+	params: Promise<{ slug: string; categorySlug: string }>;
 }

@@ -8,7 +8,7 @@ import LinkDisplay from "@/app/skills/Skills/LinkDisplay";
 type Props = {
 	name: string;
 	notes: Document | undefined;
-	projects: Record<string, string> | undefined;
+	projects: string[] | undefined;
 };
 
 /**

@@ -1,3 +1,4 @@
+//TODO: Fix the case to string[] the type in SkillSkeleton is wrong
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ReactElement } from "react";
@@ -35,7 +36,11 @@ const SkillNotes = (
 						icon={faCircleXmark}
 					/>
 				</Button>
-				<NotesContent name={name} notes={notes} projects={projects} />
+				<NotesContent
+					name={name}
+					notes={notes}
+					projects={projects as unknown as string[]}
+				/>
 			</div>
 		</div>
 	);

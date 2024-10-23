@@ -13,9 +13,12 @@ export const options = {
 export type ThemeOption = keyof typeof options;
 
 export type OptionDefinition = (typeof options)[keyof typeof options];
-export type OptionIcon = OptionDefinition["icon"];
 
-/** Get the current theme from local storage. */
+/**
+ * Get the current theme from local storage.
+ *
+ * @returns The current theme from local storage.
+ */
 function getThemeFromLocalStorage(): OptionDefinition {
 	if (typeof window === "undefined") {
 		return options.System;
@@ -30,13 +33,23 @@ function getThemeFromLocalStorage(): OptionDefinition {
 	}
 }
 
+/**
+ * Get the media matcher for the prefers dark mode query.
+ *
+ * @returns The media matcher for the prefers dark mode query.
+ */
 function getMediaMatcher() {
 	return window.matchMedia(prefersDarkQuery);
 }
 
 const prefersDarkQuery = "(prefers-color-scheme: dark)";
 
-/** @param callback */
+/**
+ * Subscribe to changes in the theme.
+ *
+ * @param callback The callback to call when the theme changes.
+ * @returns A function to unsubscribe from the theme changes.
+ */
 function subscribe(callback: () => void) {
 	const mql = getMediaMatcher();
 	window.addEventListener("storage", callback);
@@ -47,7 +60,11 @@ function subscribe(callback: () => void) {
 	};
 }
 
-/** Get the current theme from local storage, and provide a function to set it. */
+/**
+ * Get the current theme from local storage, and provide a function to set it.
+ *
+ * @returns The current theme and a function to set it.
+ */
 export function useTheme(): [
 	activeTheme: OptionDefinition,
 	themeSetter: (theme: ThemeOption) => void,

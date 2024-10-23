@@ -1,18 +1,18 @@
 import type { ReactElement } from "react";
 import React from "react";
 
-import type { SkillSkeleton } from "@/lib/";
+type Props = {
+	links: string[]; // Required<SkillSkeleton>["fields"]["projects"];
+};
 
-const LinkDisplay = (props: {
-	links: Required<SkillSkeleton>["fields"]["projects"];
-}): ReactElement => {
+const LinkDisplay = (props: Props): ReactElement => {
 	return (
 		<div>
 			<h4>Projects</h4>
 			<ul>
-				{Object.entries(props.links || {}).map(([name, link]) => (
-					<li key={name}>
-						<a href={link}>{name}</a>
+				{props.links.map((link) => (
+					<li key={link}>
+						<a href={link}>{link}</a>
 					</li>
 				))}
 			</ul>

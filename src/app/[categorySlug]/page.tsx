@@ -7,7 +7,7 @@ import type { CategoryPageProps } from "@/lib/";
 import { getCategories, getPosts } from "@/lib/";
 
 const Page = async (props: CategoryPageProps): Promise<ReactElement> => {
-	const { params } = props;
+	const params = await props.params;
 	const categorySlug = params.categorySlug;
 	const categories = await getCategories();
 	const categoryDetails = categories.find(

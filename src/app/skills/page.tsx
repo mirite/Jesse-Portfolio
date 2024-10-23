@@ -27,6 +27,9 @@ const data = async () => {
 	return { content, skills };
 };
 
+/**
+ *
+ */
 export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Skills",

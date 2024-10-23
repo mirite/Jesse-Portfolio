@@ -8,7 +8,7 @@ import { getPost } from "@/lib/";
 
 const Page = async (props: PostPageProps): Promise<ReactElement> => {
 	const { params } = props;
-	const { slug } = params;
+	const { slug } = await params;
 	const post = await getPost(slug);
 	if (!post) {
 		return <p>Post not found {slug}</p>;

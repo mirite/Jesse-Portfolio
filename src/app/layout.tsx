@@ -1,5 +1,5 @@
 import "./globals.css";
-import type { ReactElement } from "react";
+import type { ReactElement, PropsWithChildren } from "react";
 import React from "react";
 
 import { Header, Footer } from "@/app/layout/index";
@@ -17,8 +17,12 @@ type Props = PropsWithChildren;
  * @param props The component props.
  * @returns The component
  */
+/**
+ *
+ * @param props
+ */
 export default function RootLayout(props : Props): ReactElement {
-const {children} = props:
+const {children} = props;
 	return (
 		<html lang="en">
 			<body className={"min-h-dvh overflow-x-hidden"}>

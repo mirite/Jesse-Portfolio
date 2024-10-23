@@ -27,6 +27,9 @@ const Page = async (): Promise<ReactElement> => {
 	);
 };
 
+/**
+ *
+ */
 export function generateMetadata(): { title: string; description: string } {
 	return {
 		title: "Contact",

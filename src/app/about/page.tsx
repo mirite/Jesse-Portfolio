@@ -20,6 +20,9 @@ const Page = async (): Promise<ReactElement> => {
 	);
 };
 
+/**
+ *
+ */
 export function generateMetadata(): { title: "About"; description: "" } {
 	return {
 		title: "About",
