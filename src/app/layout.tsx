@@ -11,15 +11,14 @@ export const metadata = {
 		"Welcome to my site! I am a software developer (primarily web) from Toronto, Ontario. This site is a place for me to share my skills, projects, and tell a little about myself.",
 };
 
-/**
- * @param root0
- * @param root0.children
+type Props = PropsWithChildren;
+/*
+ * The root layout.
+ * @param props The component props.
+ * @returns The component
  */
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}): ReactElement {
+export default function RootLayout(props : Props): ReactElement {
+const {children} = props:
 	return (
 		<html lang="en">
 			<body className={"min-h-dvh overflow-x-hidden"}>
