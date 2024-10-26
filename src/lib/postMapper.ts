@@ -2,10 +2,19 @@ import type { Asset } from "contentful";
 
 import { type Post, type RawPost, createSlug } from "@/lib/";
 
-/** @param entry */
+/**
+ * Takes a post from Contentful and maps it to a post for the app.
+ *
+ * @param entry The post from Contentful.
+ * @returns The post for the app.
+ * @throws Error An error if the category name isn't found.
+ */
 export function postMapper(entry: RawPost): Post {
 	const category = getCategory(entry);
-	const categoryName = (category?.fields.name as string) || "";
+	const categoryName = category?.fields.name as string;
+	if (!categoryName) {
+		throw new Error(`Category name not found for post ${entry.title}`);
+	}
 	const slug = getSlug(entry);
 	const excerpt = getExcerpt(entry);
 	const assets = getAssets(entry);
@@ -18,7 +27,12 @@ export function postMapper(entry: RawPost): Post {
 	};
 }
 
-/** @param entry */
+/**
+ * Creates an excerpt from a post.
+ *
+ * @param entry The post from Contentful.
+ * @returns The excerpt for the post.
+ */
 function getExcerpt(entry: RawPost): string {
 	const content = entry.content.content;
 	const firstParagraph = content.find(
@@ -32,22 +46,42 @@ function getExcerpt(entry: RawPost): string {
 	return "";
 }
 
-/** @param entry */
+/**
+ * Creates a slug from a post's title.
+ *
+ * @param entry The post from Contentful.
+ * @returns The slug for the post.
+ */
 export function getSlug(entry: RawPost): string {
 	return createSlug(entry.title);
 }
 
-/** @param entry */
+/**
+ * Gets the category for a post.
+ *
+ * @param entry The post from Contentful.
+ * @returns The category for the post, or undefined if not found.
+ */
 function getCategory(entry: RawPost) {
-	return getCategories(entry)[0];
+	return getCategories(entry)?.[0];
 }
 
-/** @param entry */
+/**
+ * Gets the categories for a post.
+ *
+ * @param entry The post from Contentful.
+ * @returns Gets the categories for a post.
+ */
 function getCategories(entry: RawPost) {
 	return entry.category;
 }
 
-/** @param entry */
+/**
+ * Gets the assets for a post.
+ *
+ * @param entry The post from Contentful.
+ * @returns The assets for the post.
+ */
 function getAssets(entry: RawPost): Asset[] {
 	const assetBlocks = entry.content.content.filter(
 		({ nodeType }) => nodeType === "embedded-asset-block",
