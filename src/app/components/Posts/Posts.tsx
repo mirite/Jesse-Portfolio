@@ -12,14 +12,19 @@ const Posts = (props: Props): ReactElement => {
 	const { posts } = props;
 	return (
 		<MaxWidthContainer className="grid w-full justify-center gap-8 lg:grid-cols-2">
-			{posts.map((post) => (
-				<Card
-					key={post.slug}
-					title={post.title}
-					link={post.categorySlug + "/" + post.slug}
-					excerpt={post.excerpt}
-				/>
-			))}
+			{posts
+				.sort(
+					(a, b) => new Date(b.posted).getTime() - new Date(a.posted).getTime(),
+				)
+				.map((post) => (
+					<Card
+						key={post.slug}
+						title={post.title}
+						link={post.categorySlug + "/" + post.slug}
+						excerpt={post.excerpt}
+						date={post.posted}
+					/>
+				))}
 		</MaxWidthContainer>
 	);
 };

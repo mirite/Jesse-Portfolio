@@ -4,46 +4,8 @@
 @tailwind components;
 @tailwind utilities;
 
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-	min-width: 0;
-	min-height: 0;
-	transition-property: all;
-	transition-duration: 0.2s;
-	transition-timing-function: ease-in-out;
-}
-
-html,
-body {
-	scroll-behavior: smooth;
-	font-size: 16px;
-	font-family:
-		"Visia Pro",
-		system-ui,
-		opensans,
-		-apple-system,
-		BlinkMacSystemFont,
-		Segoe UI,
-		Roboto,
-		Oxygen,
-		Ubuntu,
-		Cantarell,
-		Fira Sans,
-		Droid Sans,
-		Helvetica Neue,
-		sans-serif;
-}
-
-body {
-	-webkit-font-smoothing: antialiased;
-}
-
 a {
-	color: var(--tw-prose-links);
-	text-decoration: underline;
-	font-weight: 500;
+	@apply font-medium underline text-[--tw-prose-links];
 }
 
 img {

@@ -34,7 +34,7 @@ export default function Theme(props: Props): ReactElement {
 	return (
 		<ThemeContext.Provider value={{ setTheme, theme }}>
 			<div className={bodyClass}>
-				<div className="relative flex min-h-dvh max-w-full flex-col justify-center bg-white text-blue-green-900 dark:bg-blue-green-900 dark:text-white">
+				<div className="relative flex min-h-dvh max-w-full flex-col justify-center bg-white text-blue-green-900 transition-all dark:bg-blue-green-900 dark:text-white">
 					{props.children}
 				</div>
 			</div>

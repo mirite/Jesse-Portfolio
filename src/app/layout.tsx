@@ -12,20 +12,21 @@ export const metadata = {
 };
 
 type Props = PropsWithChildren;
-/*
+/**
  * The root layout.
+ *
  * @param props The component props.
  * @returns The component
  */
-/**
- *
- * @param props
- */
-export default function RootLayout(props : Props): ReactElement {
-const {children} = props;
+export default function RootLayout(props: Props): ReactElement {
+	const { children } = props;
 	return (
 		<html lang="en">
-			<body className={"min-h-dvh overflow-x-hidden"}>
+			<body
+				className={
+					"min-h-dvh overflow-x-hidden scroll-smooth text-base subpixel-antialiased"
+				}
+			>
 				<Theme>
 					<Header />
 					{children}

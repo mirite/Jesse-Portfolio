@@ -9,6 +9,9 @@ const config: Config = {
 			screens: {
 				xs: "475px",
 			},
+			fontFamily: {
+				sans: ["Visia Pro", "system-ui", "sans-serif"],
+			},
 			colors: {
 				"blue-green": {
 					50: "#1A2E25",

@@ -9,10 +9,12 @@ type Props = Partial<Pick<PostType, "title" | "content" | "posted">> &
 	Omit<ComponentProps<typeof TextWrapper>, "content">;
 
 const Post = (post: Props): ReactElement => {
-	const { content, posted, ...rest } = post;
+	const { content, posted } = post;
 	return (
-		<TextWrapper {...rest}>
-			{posted && <p>Posted: {getPrettyDate(posted)}</p>}
+		<TextWrapper>
+			{posted && (
+				<div className={"text-center"}>Posted: {getPrettyDate(posted)}</div>
+			)}
 			{content && <RichTextRenderer content={content} />}
 		</TextWrapper>
 	);
