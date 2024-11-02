@@ -15,7 +15,7 @@ const PageWrapper = ({
 	return (
 		<MaxWidthContainer className={className} Element={"main"} {...rest}>
 			<TextWrapper className={"mb-4"}>
-				<h1 className="text-center">{title}</h1>
+				<h1 className={"text-balance"}>{title}</h1>
 			</TextWrapper>
 			{children}
 		</MaxWidthContainer>
