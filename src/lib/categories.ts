@@ -55,7 +55,7 @@ export async function getCategory(
  */
 export async function generateMetadata(
 	props: CategoryPageProps,
-	parentData: Promise<ResolvingMetadata>,
+	parentData: ResolvingMetadata,
 ): Promise<Metadata> {
 	const { categorySlug: slug } = await props.params;
 	const { title } = await parentData;
