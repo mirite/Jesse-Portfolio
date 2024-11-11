@@ -11,10 +11,8 @@ type Props = Partial<Pick<PostType, "title" | "content" | "posted">> &
 const Post = (post: Props): ReactElement => {
 	const { content, posted } = post;
 	return (
-		<TextWrapper>
-			{posted && (
-				<div className={"text-center"}>Posted: {getPrettyDate(posted)}</div>
-			)}
+		<TextWrapper className={"mx-auto"}>
+			{posted && <div>Posted: {getPrettyDate(posted)}</div>}
 			{content && <RichTextRenderer content={content} />}
 		</TextWrapper>
 	);

@@ -1,4 +1,5 @@
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
 import React from "react";
 
@@ -28,12 +29,20 @@ const data = async () => {
 };
 
 /**
+ * Generates the metadata for the page.
  *
+ * @param _ The page parameters.
+ * @param parent The parent metadata.
+ * @returns The metadata.
  */
-export function generateMetadata(): { title: string; description: string } {
+export async function generateMetadata(
+	_: unknown,
+	parent: Promise<ResolvedMetadata>,
+): Promise<Metadata> {
+	const parentMetadata = await parent;
 	return {
-		title: "Skills",
-		description: "",
+		title: `${parentMetadata.title?.absolute} - Skills`,
+		description: "A subset of the skills I have.",
 	};
 }
 

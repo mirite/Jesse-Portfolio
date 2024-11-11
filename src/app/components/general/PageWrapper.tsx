@@ -11,11 +11,11 @@ const PageWrapper = ({
 	className: extendedClassName,
 	...rest
 }: React.HTMLAttributes<HTMLDivElement> & { title: string }): ReactElement => {
-	const className = twMerge("w-full grow", extendedClassName);
+	const className = twMerge("grow", extendedClassName);
 	return (
 		<MaxWidthContainer className={className} Element={"main"} {...rest}>
-			<TextWrapper className={"mb-4"}>
-				<h1 className={"text-balance"}>{title}</h1>
+			<TextWrapper className={"mx-auto mb-4"}>
+				<h1 className={"text-balance text-center"}>{title}</h1>
 			</TextWrapper>
 			{children}
 		</MaxWidthContainer>

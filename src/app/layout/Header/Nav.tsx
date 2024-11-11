@@ -27,7 +27,7 @@ const Nav = (props: Props): ReactElement => {
 					)}
 					{...rest}
 				>
-					<NavLink path="/projects" label="Projects" />
+					<NavLink path="/apps" label="Apps" />
 					<NavLink path="/blog" label="Blog" />
 					<NavLink path="/skills" label="Skills" />
 					<NavLink path="/about" label="About" />

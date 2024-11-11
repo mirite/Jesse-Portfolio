@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvedMetadata } from "next";
 
 import type { Post, PostSkeleton } from "@/lib/";
 import { getEntries, postMapper } from "@/lib/";
@@ -7,20 +7,23 @@ import { getEntries, postMapper } from "@/lib/";
  * Generates the Next metadata for a post.
  *
  * @param props The props for the post.
+ * @param parent The parent metadata.
  * @returns The metadata for the post.
  */
 export async function generateMetadata(
 	props: PostPageProps,
+	parent: Promise<ResolvedMetadata>,
 ): Promise<Metadata> {
 	const { slug } = await props.params;
+	const { title: parentTitle } = await parent;
 	const post = await getPost(slug);
 	if (!post) {
 		return {};
 	}
 
-	const { title, excerpt, category } = post;
+	const { title, excerpt } = post;
 	return {
-		title: category[0].fields.name + " > " + title,
+		title: `${parentTitle?.absolute} - ${title}`,
 		description: excerpt,
 	};
 }

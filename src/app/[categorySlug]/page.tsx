@@ -16,7 +16,7 @@ const Page = async (props: CategoryPageProps): Promise<ReactElement> => {
 	if (!categoryDetails) {
 		return <div>Category not found</div>;
 	}
-	const posts = await getPosts(100, categorySlug);
+	const posts = await getPosts(100);
 	return (
 		<PageWrapper title={categoryDetails.name}>
 			<TextWrapper>

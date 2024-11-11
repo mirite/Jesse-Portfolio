@@ -1,3 +1,4 @@
+import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
 import React from "react";
 
@@ -28,12 +29,20 @@ const Page = async (): Promise<ReactElement> => {
 };
 
 /**
+ * Generates the metadata for the page.
  *
+ * @param _ The page parameters.
+ * @param parent The parent metadata.
+ * @returns The metadata.
  */
-export function generateMetadata(): { title: string; description: string } {
+export async function generateMetadata(
+	_: unknown,
+	parent: Promise<ResolvedMetadata>,
+): Promise<Metadata> {
+	const parentMetadata = await parent;
 	return {
-		title: "Contact",
-		description: "",
+		title: `${parentMetadata.title?.absolute} - Contact`,
+		description: "How to get in touch with me.",
 	};
 }
 

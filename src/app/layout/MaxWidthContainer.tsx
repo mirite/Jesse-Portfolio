@@ -13,7 +13,7 @@ const MaxWidthContainer = (props: Props): ReactElement => {
 		...rest
 	} = props;
 	const className = twMerge(
-		"mx-auto w-full max-w-screen-lg px-3 xl:px-0",
+		"mx-auto max-w-screen-lg px-3 xl:px-0",
 		extendedClassName,
 	);
 	const Element = substituteElement || "div";

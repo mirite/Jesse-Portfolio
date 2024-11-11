@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 
 import type { Category, CategorySkeleton } from "@/lib";
 import { categoryMapper, getEntries } from "@/lib/";
@@ -50,18 +50,21 @@ export async function getCategory(
  * Generates the metadata for a category.
  *
  * @param props The props for the category.
+ * @param parentData The parent metadata.
  * @returns The metadata for the category.
  */
 export async function generateMetadata(
 	props: CategoryPageProps,
+	parentData: Promise<ResolvingMetadata>,
 ): Promise<Metadata> {
 	const { categorySlug: slug } = await props.params;
+	const { title } = await parentData;
 	const category = await getCategory(slug);
 	if (!category) {
 		return {};
 	}
 	const { name, description } = category;
-	return { title: name, description };
+	return { title: `${title?.absolute} - ${name}`, description };
 }
 
 export interface CategoryPageProps {

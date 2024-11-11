@@ -7,7 +7,7 @@ import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const Footer = (): ReactElement => {
 	return (
-		<MaxWidthContainer className={"mt-2 p-4"} Element={"footer"}>
+		<MaxWidthContainer className={"mt-2 w-full p-4"} Element={"footer"}>
 			<div className="flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:items-start sm:gap-12">
 				<div
 					className={
