@@ -11,3 +11,7 @@ export * from "./skills";
 export * from "./stringTransforms";
 export * from "./useTheme";
 export * from "./types";
+export { ContentType } from "@/lib/sources/contentful";
+export { CategorySkeleton } from "@/lib/sources/contentful";
+export { RawPost } from "@/lib/sources/contentful";
+export { PostSkeleton } from "@/lib/sources/contentful";

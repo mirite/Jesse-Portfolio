@@ -1,26 +1,24 @@
 import type { Document } from "@contentful/rich-text-types";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { type Asset, type Entry } from "contentful";
+import { type Asset } from "contentful";
+import type { ReactElement } from "react";
 
-export type Post = (RawPost | RawMDPost) & {
+import type { ContentType } from "@/lib/sources/contentful";
+
+export type Post = {
+	posted: string;
+	title: string;
+	content: () => ReactElement;
 	slug: string;
 	categorySlug: string;
 	excerpt: string;
-	assets?: Asset[];
+	assets?: Asset[]; //TODO: This belongs with the contentful source
 };
-
-export type PostSkeleton = ContentType<"blogPost", RawPost>;
 
 export type RawMDPost = {
 	posted: string;
 	content: string;
 	title: string;
-};
-export type RawPost = {
-	posted: string;
-	content: Document;
-	title: string;
-	category: Entry<CategorySkeleton, undefined>[];
 };
 
 export type SnippetSkeleton = ContentType<"snippet", Snippet>;
@@ -29,8 +27,6 @@ export type Snippet = {
 	content: Document;
 	label: string;
 };
-
-export type CategorySkeleton = ContentType<"category", Category>;
 
 export type Category = {
 	name: string;
@@ -51,10 +47,6 @@ export type Skill = {
 	projects?: Record<string, string>;
 };
 
-export type ContentType<S extends string, T extends object> = {
-	contentTypeId: S;
-	fields: T;
-};
 export type SocialSkeleton = ContentType<"social", Social>;
 export type Social = {
 	platform: string;

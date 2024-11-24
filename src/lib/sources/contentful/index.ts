@@ -22,3 +22,7 @@ async function getPosts(): Promise<Post[]> {
 
 const source: Source = { getCategories, getPosts };
 export default source;
+export { ContentType } from "@/lib/sources/contentful/types";
+export { CategorySkeleton } from "@/lib/sources/contentful/types";
+export { RawPost } from "@/lib/sources/contentful/types";
+export { PostSkeleton } from "@/lib/sources/contentful/types";
