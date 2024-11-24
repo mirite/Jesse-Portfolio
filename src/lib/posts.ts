@@ -1,8 +1,7 @@
 import type { Metadata, ResolvedMetadata } from "next";
 
-import type { Post, PostSkeleton } from "@/lib/";
-import { getEntries, postMapper } from "@/lib/";
-import { getLocalPosts } from "@/lib/markdown";
+import type { Post } from "@/lib/index";
+import { sources } from "@/lib/sources";
 
 /**
  * Generates the Next metadata for a post.
@@ -72,9 +71,12 @@ export async function getPosts(
 	count: number = 9999,
 	categorySlug?: string,
 ): Promise<Post[]> {
-	return (await getEntries<PostSkeleton>(`blogPost`))
-		.map(postMapper)
-		.concat(await getLocalPosts())
+	let posts: Post[] = [];
+	for (const source of sources) {
+		const postsFromSource = await source.getPosts();
+		posts = posts.concat(postsFromSource);
+	}
+	return posts
 		.filter((post) => !categorySlug || post.categorySlug === categorySlug)
 		.slice(0, count);
 }

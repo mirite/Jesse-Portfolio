@@ -1,6 +1,6 @@
 import type { Asset } from "contentful";
 
-import { type Post, type RawPost, createSlug } from "@/lib/";
+import { type Post, type RawPost, createSlug } from "@/lib";
 
 /**
  * Takes a post from Contentful and maps it to a post for the app.
