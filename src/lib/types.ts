@@ -2,15 +2,20 @@ import type { Document } from "@contentful/rich-text-types";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { type Asset, type Entry } from "contentful";
 
-export type Post = RawPost & {
+export type Post = (RawPost | RawMDPost) & {
 	slug: string;
 	categorySlug: string;
 	excerpt: string;
-	assets: Asset[];
+	assets?: Asset[];
 };
 
 export type PostSkeleton = ContentType<"blogPost", RawPost>;
 
+export type RawMDPost = {
+	posted: string;
+	content: string;
+	title: string;
+};
 export type RawPost = {
 	posted: string;
 	content: Document;

@@ -13,7 +13,12 @@ const Post = (post: Props): ReactElement => {
 	return (
 		<TextWrapper className={"mx-auto"}>
 			{posted && <div>Posted: {getPrettyDate(posted)}</div>}
-			{content && <RichTextRenderer content={content} />}
+			{content && typeof content === "object" && (
+				<RichTextRenderer content={content} />
+			)}
+			{content && typeof content === "string" && (
+				<div dangerouslySetInnerHTML={{ __html: content }} />
+			)}
 		</TextWrapper>
 	);
 };

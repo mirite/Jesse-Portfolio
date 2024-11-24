@@ -16,6 +16,7 @@ export default async function Home(): Promise<ReactElement> {
 	const posts = (await getPosts(6)) || [];
 	return (
 		<PageWrapper title={title} className={"flex flex-col gap-4"}>
+			{JSON.stringify(posts)}
 			<div className={"flex flex-col items-center gap-4 lg:flex-row"}>
 				<Image
 					src={""}
