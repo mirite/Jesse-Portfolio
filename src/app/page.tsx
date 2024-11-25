@@ -4,7 +4,8 @@ import type { ReactElement } from "react";
 
 import { TextWrapper } from "@/app/components";
 import { PageWrapper, Posts } from "@/app/components/";
-import { getPlainTextContent, getPosts } from "@/lib/";
+import { getPosts } from "@/lib";
+import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
 /**
  * The home page.
@@ -16,7 +17,6 @@ export default async function Home(): Promise<ReactElement> {
 	const posts = (await getPosts(6)) || [];
 	return (
 		<PageWrapper title={title} className={"flex flex-col gap-4"}>
-			{JSON.stringify(posts)}
 			<div className={"flex flex-col items-center gap-4 lg:flex-row"}>
 				<Image
 					src={""}

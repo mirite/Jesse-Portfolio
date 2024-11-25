@@ -1,6 +1,9 @@
+import type { Document } from "@contentful/rich-text-types";
 import type { Asset } from "contentful";
 
-import { type Post, type RawPost, createSlug } from "@/lib";
+import type { RawPost } from "./types.js";
+
+import { type Post, createSlug } from "@/lib";
 
 /**
  * Takes a post from Contentful and maps it to a post for the app.
@@ -9,7 +12,7 @@ import { type Post, type RawPost, createSlug } from "@/lib";
  * @returns The post for the app.
  * @throws Error An error if the category name isn't found.
  */
-export function postMapper(entry: RawPost): Post {
+export function postMapper(entry: RawPost): Omit<Post<Document>, "source"> {
 	const category = getCategory(entry);
 	const categoryName = category?.fields.name as string;
 	if (!categoryName) {
@@ -23,7 +26,6 @@ export function postMapper(entry: RawPost): Post {
 		slug,
 		categorySlug: categoryName.toLowerCase(),
 		excerpt,
-		assets,
 	};
 }
 

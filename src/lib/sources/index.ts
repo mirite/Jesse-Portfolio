@@ -1,10 +1,7 @@
 import contentful from "./contentful";
 import markdown from "./markdown";
 
-import type { Category, Post } from "@/lib";
+import type { Source } from "@/lib";
 
-export type Source = {
-	getCategories: () => Promise<Category[]>;
-	getPosts: () => Promise<Post[]>;
-};
-export const sources: Source[] = [contentful, markdown];
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const sources: Source<any>[] = [contentful, markdown];

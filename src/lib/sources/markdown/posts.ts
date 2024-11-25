@@ -14,9 +14,9 @@ const postsDirectory = path.resolve("src", "blogs");
  *
  * @returns The local posts.
  */
-export async function getLocalPosts(): Promise<Post[]> {
+export async function getLocalPosts(): Promise<Omit<Post<string>, "source">[]> {
 	const files = await fs.promises.readdir(postsDirectory);
-	const posts: Post[] = [];
+	const posts: Omit<Post<string>, "source">[] = [];
 
 	for (const file of files) {
 		const content = await fs.promises.readFile(

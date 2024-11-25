@@ -6,7 +6,7 @@ import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 import type { Post } from "@/lib/";
 
 interface Props {
-	posts: Post[];
+	posts: Post<unknown>[];
 }
 const Posts = (props: Props): ReactElement => {
 	const { posts } = props;

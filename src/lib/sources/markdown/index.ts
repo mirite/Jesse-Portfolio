@@ -1,11 +1,15 @@
-import type { Source } from "@/lib/sources";
+import MdPost from "@/lib/sources/markdown/MDPost";
 import { getLocalPosts } from "@/lib/sources/markdown/posts";
+import type { Source } from "@/lib/types";
 
-const source: Source = {
+const source: Source<string> = {
 	getCategories: async () => {
 		return [];
 	},
-	getPosts: getLocalPosts,
+	getPosts: async function () {
+		return (await getLocalPosts()).map((p) => ({ ...p, source: this }));
+	},
+	Component: MdPost,
 };
 
 export default source;

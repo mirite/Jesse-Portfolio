@@ -1,31 +1,15 @@
 import type { Document } from "@contentful/rich-text-types";
 import type { IconProp } from "@fortawesome/fontawesome-svg-core";
-import { type Asset } from "contentful";
-import type { ReactElement } from "react";
+import type { ComponentType } from "react";
 
-import type { ContentType } from "@/lib/sources/contentful";
-
-export type Post = {
+export type Post<T> = {
 	posted: string;
 	title: string;
-	content: () => ReactElement;
+	content: T;
 	slug: string;
 	categorySlug: string;
 	excerpt: string;
-	assets?: Asset[]; //TODO: This belongs with the contentful source
-};
-
-export type RawMDPost = {
-	posted: string;
-	content: string;
-	title: string;
-};
-
-export type SnippetSkeleton = ContentType<"snippet", Snippet>;
-
-export type Snippet = {
-	content: Document;
-	label: string;
+	source: Source<T>;
 };
 
 export type Category = {
@@ -37,8 +21,21 @@ export type Category = {
 
 export type Proficiency = "high" | "medium" | "starter";
 
+export type Source<T> = {
+	getCategories: () => Promise<Category[]>;
+	getPosts: () => Promise<Post<T>[]>;
+	Component: ComponentType<{ content: T }>;
+};
+export type ContentType<S extends string, T extends object> = {
+	contentTypeId: S;
+	fields: T;
+};
 export type SkillSkeleton = ContentType<"skill", Skill>;
-
+export type SnippetSkeleton = ContentType<"snippet", Snippet>;
+export type Snippet = {
+	content: Document;
+	label: string;
+};
 export type Skill = {
 	name: string;
 	proficiency: Proficiency;
@@ -46,7 +43,6 @@ export type Skill = {
 	notes?: Document;
 	projects?: Record<string, string>;
 };
-
 export type SocialSkeleton = ContentType<"social", Social>;
 export type Social = {
 	platform: string;

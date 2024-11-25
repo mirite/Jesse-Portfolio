@@ -1,13 +1,19 @@
-import type { Category, CategorySkeleton, Post, PostSkeleton } from "@/lib";
-import { categoryMapper, getEntries, postMapper } from "@/lib";
-import type { Source } from "@/lib/sources";
+import type { Document } from "@contentful/rich-text-types";
+
+import { categoryMapper } from "./categoryMapper";
+import { getEntries } from "./connector";
+import { postMapper } from "./postMapper";
+import RichTextRenderer from "./RichTextRenderer";
+import type { CategorySkeleton, PostSkeleton } from "./types";
+
+import type { Category, Source } from "@/lib/types";
 
 /**
  * Gets the categories from Contentful and maps them to the app's categories.
  *
  * @returns The categories.
  */
-async function getCategories(): Promise<(Category & { slug: string })[]> {
+async function getCategories(): Promise<Category[]> {
 	return (await getEntries<CategorySkeleton>(`category`)).map(categoryMapper);
 }
 
@@ -16,13 +22,15 @@ async function getCategories(): Promise<(Category & { slug: string })[]> {
  *
  * @returns The posts.
  */
-async function getPosts(): Promise<Post[]> {
+async function getPosts() {
 	return (await getEntries<PostSkeleton>(`blogPost`)).map(postMapper);
 }
 
-const source: Source = { getCategories, getPosts };
+const source: Source<Document> = {
+	getCategories,
+	getPosts: async function () {
+		return (await getPosts()).map((p) => ({ ...p, source: this }));
+	},
+	Component: RichTextRenderer,
+};
 export default source;
-export { ContentType } from "@/lib/sources/contentful/types";
-export { CategorySkeleton } from "@/lib/sources/contentful/types";
-export { RawPost } from "@/lib/sources/contentful/types";
-export { PostSkeleton } from "@/lib/sources/contentful/types";

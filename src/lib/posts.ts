@@ -1,7 +1,7 @@
 import type { Metadata, ResolvedMetadata } from "next";
 
-import type { Post } from "@/lib/index";
 import { sources } from "@/lib/sources";
+import type { Post } from "@/lib/types";
 
 /**
  * Generates the Next metadata for a post.
@@ -50,7 +50,9 @@ export async function generateStaticParams(): Promise<
  * @param postSlug The slug of the post.
  * @returns The post with the given slug, or undefined if not found.
  */
-export async function getPost(postSlug: string): Promise<Post | undefined> {
+export async function getPost(
+	postSlug: string,
+): Promise<Post<unknown> | undefined> {
 	const allPosts = await getPosts();
 	const post = allPosts.find(({ slug }) => {
 		return slug.toLowerCase() === postSlug.toLowerCase();
@@ -70,8 +72,8 @@ export async function getPost(postSlug: string): Promise<Post | undefined> {
 export async function getPosts(
 	count: number = 9999,
 	categorySlug?: string,
-): Promise<Post[]> {
-	let posts: Post[] = [];
+): Promise<Post<unknown>[]> {
+	let posts: Post<unknown>[] = [];
 	for (const source of sources) {
 		const postsFromSource = await source.getPosts();
 		posts = posts.concat(postsFromSource);
