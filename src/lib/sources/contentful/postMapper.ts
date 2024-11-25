@@ -1,5 +1,4 @@
 import type { Document } from "@contentful/rich-text-types";
-import type { Asset } from "contentful";
 
 import type { RawPost } from "./types.js";
 
@@ -20,7 +19,6 @@ export function postMapper(entry: RawPost): Omit<Post<Document>, "source"> {
 	}
 	const slug = getSlug(entry);
 	const excerpt = getExcerpt(entry);
-	const assets = getAssets(entry);
 	return {
 		...entry,
 		slug,
@@ -76,17 +74,4 @@ function getCategory(entry: RawPost) {
  */
 function getCategories(entry: RawPost) {
 	return entry.category;
-}
-
-/**
- * Gets the assets for a post.
- *
- * @param entry The post from Contentful.
- * @returns The assets for the post.
- */
-function getAssets(entry: RawPost): Asset[] {
-	const assetBlocks = entry.content.content.filter(
-		({ nodeType }) => nodeType === "embedded-asset-block",
-	);
-	return assetBlocks.map((block) => block.data.target);
 }
