@@ -1,7 +1,10 @@
-import React, { type ReactElement } from "react";
+import type { ReactElement } from "react";
+import type { Root } from "remark-parse/lib";
+
+import { ChildTree } from "./ChildTree";
 
 type Props = {
-	content: string;
+	content: Root;
 };
 
 /**
@@ -12,5 +15,5 @@ type Props = {
  */
 export default function MdPost(props: Props): ReactElement {
 	const { content } = props;
-	return <div dangerouslySetInnerHTML={{ __html: content }} />;
+	return <div>{ChildTree(content.children)}</div>;
 }
