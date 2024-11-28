@@ -1,6 +1,8 @@
-import type { Asset } from "contentful";
+import type { Document } from "@contentful/rich-text-types";
 
-import { type Post, type RawPost, createSlug } from "@/lib/";
+import type { RawPost } from "./types.js";
+
+import { type Post, createSlug } from "@/lib";
 
 /**
  * Takes a post from Contentful and maps it to a post for the app.
@@ -9,7 +11,7 @@ import { type Post, type RawPost, createSlug } from "@/lib/";
  * @returns The post for the app.
  * @throws Error An error if the category name isn't found.
  */
-export function postMapper(entry: RawPost): Post {
+export function postMapper(entry: RawPost): Omit<Post<Document>, "source"> {
 	const category = getCategory(entry);
 	const categoryName = category?.fields.name as string;
 	if (!categoryName) {
@@ -17,13 +19,11 @@ export function postMapper(entry: RawPost): Post {
 	}
 	const slug = getSlug(entry);
 	const excerpt = getExcerpt(entry);
-	const assets = getAssets(entry);
 	return {
 		...entry,
 		slug,
 		categorySlug: categoryName.toLowerCase(),
 		excerpt,
-		assets,
 	};
 }
 
@@ -74,17 +74,4 @@ function getCategory(entry: RawPost) {
  */
 function getCategories(entry: RawPost) {
 	return entry.category;
-}
-
-/**
- * Gets the assets for a post.
- *
- * @param entry The post from Contentful.
- * @returns The assets for the post.
- */
-function getAssets(entry: RawPost): Asset[] {
-	const assetBlocks = entry.content.content.filter(
-		({ nodeType }) => nodeType === "embedded-asset-block",
-	);
-	return assetBlocks.map((block) => block.data.target);
 }

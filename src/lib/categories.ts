@@ -1,17 +1,20 @@
 import type { Metadata, ResolvingMetadata } from "next";
 
-import type { Category, CategorySkeleton } from "@/lib";
-import { categoryMapper, getEntries } from "@/lib/";
+import type { Category } from "@/lib";
+import { sources } from "@/lib/sources";
 
 /**
  * Gets the categories.
  *
  * @returns The categories.
  */
-export async function getCategories(): Promise<
-	(Category & { slug: string })[]
-> {
-	return (await getEntries<CategorySkeleton>(`category`)).map(categoryMapper);
+export async function getCategories(): Promise<Category[]> {
+	const categories: Category[] = [];
+	for (const source of sources) {
+		const sourceCategories = await source.getCategories();
+		categories.push(...sourceCategories);
+	}
+	return categories;
 }
 
 /**

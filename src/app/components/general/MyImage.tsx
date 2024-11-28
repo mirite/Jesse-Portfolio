@@ -3,7 +3,7 @@ import NextImage from "next/image";
 import type { ReactElement } from "react";
 import React from "react";
 
-import { getAsset } from "@/lib/";
+import { getAsset } from "@/lib/sources/contentful/connector";
 
 interface Props extends Omit<ImageProps, "src" | "alt"> {
 	assetid: string;

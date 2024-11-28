@@ -8,7 +8,7 @@ import { PageWrapper } from "@/app/components/";
 import BioImage from "@/app/contact/BioImage";
 import ContactForm from "@/app/contact/ContactForm/ContactForm";
 import type { SnippetSkeleton } from "@/lib/";
-import { getPlainTextContent } from "@/lib/";
+import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
 const Page = async (): Promise<ReactElement> => {
 	const title = await getPlainTextContent<SnippetSkeleton>(

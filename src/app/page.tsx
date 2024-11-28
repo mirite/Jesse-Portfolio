@@ -4,7 +4,8 @@ import type { ReactElement } from "react";
 
 import { TextWrapper } from "@/app/components";
 import { PageWrapper, Posts } from "@/app/components/";
-import { getPlainTextContent, getPosts } from "@/lib/";
+import { getPosts } from "@/lib";
+import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
 /**
  * The home page.

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import type { Category } from "../src/lib";
-import { categoryMapper } from "../src/lib";
+import { categoryMapper } from "../src/lib/sources/contentful/categoryMapper";
+import type { Category } from "../src/lib/types";
 
 describe("categoryMapper", () => {
 	it("Should attach a slug to a category", () => {

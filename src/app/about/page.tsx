@@ -5,13 +5,22 @@ import React, { type ReactElement } from "react";
 import { TextWrapper } from "@/app/components";
 import { PageWrapper, Post } from "@/app/components/";
 import type { SnippetSkeleton } from "@/lib/";
-import { getContent } from "@/lib/";
+import contentful from "@/lib/sources/contentful";
+import { getContent } from "@/lib/sources/contentful/connector";
 
 const Page = async (): Promise<ReactElement> => {
 	const content = await getContent<SnippetSkeleton>("iG7QQEKWeFbtsHLGpFvN9");
+
+	if (!content?.content || !content.label) return <p>Content not found</p>;
 	return (
-		<PageWrapper title={content?.label || ""}>
-			<Post content={content?.content} className={"mb-4"} />
+		<PageWrapper title={content.label || ""}>
+			<Post
+				content={content.content}
+				className={"mb-4"}
+				title={""}
+				source={contentful}
+				posted={""}
+			/>
 			<TextWrapper>
 				<p>
 					<Link href={"/contact"}>Want to get in touch?</Link>

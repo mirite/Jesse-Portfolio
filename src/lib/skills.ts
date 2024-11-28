@@ -1,5 +1,5 @@
 import type { Skill, SkillSkeleton } from "@/lib/";
-import { getEntries } from "@/lib/";
+import { getEntries } from "@/lib/sources/contentful/connector";
 
 /**
  * Gets all the skills.
