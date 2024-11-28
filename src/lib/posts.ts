@@ -80,6 +80,7 @@ export async function getPosts(
 	}
 	return posts
 		.filter((post) => !categorySlug || post.categorySlug === categorySlug)
+		.sort((a, b) => new Date(b.posted).getTime() - new Date(a.posted).getTime())
 		.slice(0, count);
 }
 
