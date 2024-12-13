@@ -5,9 +5,6 @@ import React, { type ReactElement } from "react";
 import { Button, TextWrapper } from "@/app/components/";
 import Field from "@/app/contact/ContactForm/Field";
 
-/**
- *
- */
 export default function ContactForm(): ReactElement {
 	const [state, handleSubmit] = useForm("mgebderg");
 	if (state.succeeded) {

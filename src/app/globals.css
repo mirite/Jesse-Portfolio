@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 a {
-	@apply font-medium underline text-[--tw-prose-links];
+	@apply font-medium text-[--tw-prose-links] underline;
 }
 
 img {
