@@ -73,5 +73,4 @@ const config: Config = {
 	darkMode: "class",
 	plugins: [typography, forms],
 };
-
 export default config;

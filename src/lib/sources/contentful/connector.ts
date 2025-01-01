@@ -11,6 +11,11 @@ import type { ReactNode } from "react";
 
 let _client: ReturnType<typeof createClient>;
 
+/**
+ * Gets the instance of the contentful client.
+ *
+ * @returns The instance of the client
+ */
 function getClient() {
 	if (!_client) {
 		const space = process.env.SPACE || "";
