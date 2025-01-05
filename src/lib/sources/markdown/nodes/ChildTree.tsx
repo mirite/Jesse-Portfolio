@@ -19,6 +19,8 @@ export function ChildTree(props: Props): ReactElement {
 		<>
 			{children.map((node, index) => {
 				const Handler = getHandler(node.type);
+				// This won't change after initial render.
+				// eslint-disable-next-line react/no-array-index-key
 				return <Handler key={index} {...node} />;
 			})}
 		</>

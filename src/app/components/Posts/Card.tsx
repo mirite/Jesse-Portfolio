@@ -23,7 +23,7 @@ const Card = (props: Props): ReactElement => {
 			>
 				<div className={"flex w-full items-baseline justify-between"}>
 					<h3 className={"m-0"}>{title}</h3>
-					<time>{date && getPrettyDate(date)}</time>
+					<time>{date ? getPrettyDate(date) : null}</time>
 				</div>
 				<p className={"line-clamp-4 grow"}>{excerpt}</p>
 				<div className={"flex w-full items-center justify-end gap-2"}>

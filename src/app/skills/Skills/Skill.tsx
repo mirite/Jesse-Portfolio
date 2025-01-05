@@ -39,7 +39,9 @@ const Skill = (skill: SkillType): ReactElement => {
 					<span className="mr-1">{name}</span>
 					<FontAwesomeIcon icon={faCommentDots} />
 				</Button>
-				{showing && <SkillNotes {...skill} onClose={() => setShowing(false)} />}
+				{showing ? (
+					<SkillNotes {...skill} onClose={() => setShowing(false)} />
+				) : null}
 			</li>
 		);
 	}
@@ -52,7 +54,12 @@ const Skill = (skill: SkillType): ReactElement => {
 
 export default Skill;
 
-/** @param skill */
+/**
+ * Check if a skill has any notes or projects associated with it.
+ *
+ * @param skill The skill to check
+ * @returns True if the skill has notes or projects.
+ */
 function hasNotesOrLinks(skill: SkillType) {
 	return skill.notes !== undefined || skill.projects !== undefined;
 }

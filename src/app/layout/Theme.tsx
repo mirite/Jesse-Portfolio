@@ -5,6 +5,7 @@ import React, {
 	createContext,
 	useState,
 	useEffect,
+	useMemo,
 } from "react";
 
 import type { OptionDefinition, ThemeOption } from "@/lib";
@@ -22,17 +23,24 @@ export const ThemeContext = createContext<null | {
  * @param props The props for the component.
  * @returns The component.
  */
-export default function Theme(props: Props): ReactElement {
+export default function Theme(props: Props): ReactElement | null {
 	const [theme, setTheme, bodyClass] = useTheme();
 	const [client, setClient] = useState(false);
 	useEffect(() => {
 		setClient(true);
 	}, []);
+	const contextValue = useMemo(
+		() => ({
+			setTheme,
+			theme,
+		}),
+		[theme, setTheme],
+	);
 	if (!client) {
-		return <></>;
+		return null;
 	}
 	return (
-		<ThemeContext.Provider value={{ setTheme, theme }}>
+		<ThemeContext.Provider value={contextValue}>
 			<div className={bodyClass}>
 				<div className="relative flex min-h-dvh max-w-full flex-col justify-center bg-white text-blue-green-900 transition-all dark:bg-blue-green-900 dark:text-white">
 					{props.children}

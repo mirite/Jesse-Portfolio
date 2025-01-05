@@ -17,9 +17,7 @@ const Social = (social: Props): ReactElement => {
 				rel="noopener noreferrer"
 				className="flex items-center justify-start gap-2"
 			>
-				{icon && (
-					<FontAwesomeIcon icon={icon} className={"size-6"} title={platform} />
-				)}
+				{icon ? <FontAwesomeIcon icon={icon} className={"size-6"} title={platform} /> : null}
 				{!icon && <span>{platform}</span>}
 				{!iconsOnly && <span>{username}</span>}
 			</a>

@@ -34,24 +34,20 @@ export default function App(props: Props): ReactElement {
 					className={"size-6"}
 				/>
 			</Link>
-			{app.blog && (
-				<Link href={app.blog} target={"_blank"}>
+			{app.blog ? <Link href={app.blog} target={"_blank"}>
 					<FontAwesomeIcon
 						title={"Blog Post"}
 						icon={faNoteSticky}
 						className={"size-6"}
 					/>
-				</Link>
-			)}
-			{app.npm && (
-				<Link href={app.npm} target={"_blank"}>
+				</Link> : null}
+			{app.npm ? <Link href={app.npm} target={"_blank"}>
 					<FontAwesomeIcon
 						title={"NPM Package"}
 						icon={faNpm}
 						className={"size-6"}
 					/>
-				</Link>
-			)}
+				</Link> : null}
 		</div>
 	);
 }

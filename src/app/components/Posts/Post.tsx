@@ -8,14 +8,20 @@ import { getPrettyDate } from "@/lib";
 type Props<T> = Pick<PostType<T>, "title" | "content" | "posted" | "source"> &
 	Omit<ComponentProps<typeof TextWrapper>, "content">;
 
-/** @param post */
+/**
+ * The display of a single post
+ *
+ * @template T The PostType
+ * @param post The post to display
+ * @returns The Post component
+ */
 function Post<T>(post: Props<T>): ReactElement {
 	const { content, posted, source } = post;
 	const Component = source.Component;
 	return (
 		<TextWrapper className={"mx-auto"}>
-			{posted && <div>Posted: {getPrettyDate(posted)}</div>}
-			{content && <Component content={content} />}
+			{posted ? <div>Posted: {getPrettyDate(posted)}</div> : null}
+			{content ? <Component content={content} /> : null}
 		</TextWrapper>
 	);
 }

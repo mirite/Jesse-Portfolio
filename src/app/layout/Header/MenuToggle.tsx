@@ -41,8 +41,7 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 	return (
 		<>
 			<AnimatePresence>
-				{shouldShow && (
-					<motion.div
+				{shouldShow ? <motion.div
 						key={"menu"}
 						className={twMerge(
 							"fixed inset-0 flex h-dvh w-dvw flex-col items-center justify-center bg-white dark:bg-blue-green-900 lg:static lg:size-auto lg:flex-row lg:justify-end lg:bg-transparent lg:dark:bg-transparent",
@@ -54,8 +53,7 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 						exit={hiddenState}
 					>
 						{children}
-					</motion.div>
-				)}
+					</motion.div> : null}
 			</AnimatePresence>
 			{!forceOpen && (
 				<Button
