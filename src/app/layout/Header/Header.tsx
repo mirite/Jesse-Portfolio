@@ -1,9 +1,10 @@
 import React, { type ReactElement } from "react";
 
-import Nav from "./Nav";
 
 import Logo from "@/app/layout/Header/Logo";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
+
+import Nav from "./Nav";
 
 const Header = (): ReactElement => {
 	return (

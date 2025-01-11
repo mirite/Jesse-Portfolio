@@ -2,8 +2,7 @@ import type { Metadata, ResolvedMetadata } from "next";
 import Link from "next/link";
 import React, { type ReactElement } from "react";
 
-import { TextWrapper } from "@/app/components";
-import { PageWrapper, Post } from "@/app/components/";
+import { TextWrapper , PageWrapper, Post } from "@/app/components";
 import type { SnippetSkeleton } from "@/lib/";
 import contentful from "@/lib/sources/contentful";
 import { getContent } from "@/lib/sources/contentful/connector";

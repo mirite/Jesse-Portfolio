@@ -1,8 +1,7 @@
 import type { ReactElement } from "react";
 import React from "react";
 
-import { PageWrapper } from "@/app/components";
-import { Post } from "@/app/components/";
+import { PageWrapper , Post } from "@/app/components";
 import type { PostPageProps } from "@/lib/";
 import { getPost } from "@/lib/";
 

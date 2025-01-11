@@ -1,9 +1,10 @@
 import type { Metadata, ResolvedMetadata } from "next";
 import { type ReactElement } from "react";
 
+import PageWrapper from "@/app/components/general/PageWrapper";
+
 import App from "./App";
 
-import PageWrapper from "@/app/components/general/PageWrapper";
 
 const defaultURLSuffix = ".app.jesseconner.ca";
 const defaultGithubPrefix = "https://github.com/mirite/";

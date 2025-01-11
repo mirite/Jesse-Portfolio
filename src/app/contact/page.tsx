@@ -2,13 +2,14 @@ import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
 import React from "react";
 
-import Socials from "./Socials";
 
 import { PageWrapper } from "@/app/components/";
 import BioImage from "@/app/contact/BioImage";
 import ContactForm from "@/app/contact/ContactForm/ContactForm";
 import type { SnippetSkeleton } from "@/lib/";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
+
+import Socials from "./Socials";
 
 const Page = async (): Promise<ReactElement> => {
 	const title = await getPlainTextContent<SnippetSkeleton>(
