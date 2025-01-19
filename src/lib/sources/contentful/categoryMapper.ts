@@ -1,4 +1,5 @@
-import { type Category, createSlug } from "@/lib";
+import { type Category } from "../types";
+import { createSlug } from "../../stringTransforms";
 
 /**
  * Takes a category from Contentful and maps it to a category for the app.

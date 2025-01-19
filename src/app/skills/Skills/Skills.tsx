@@ -6,16 +6,14 @@ import React from "react";
 import Legend from "@/app/skills/Skills/Legend";
 import Search from "@/app/skills/Skills/Search";
 import SkillLevel from "@/app/skills/Skills/SkillLevel";
-import type { Skill } from "@/lib/";
-import { splitSkillsByProficiency } from "@/lib/";
+import type { Skill } from "@/lib/skills";
 
 interface Props {
 	skills: Skill[];
 }
 
 const Skills = (props: Props): ReactElement => {
-	const { high, medium, starter } = splitSkillsByProficiency(props.skills);
-	const skills = [...high, ...medium, ...starter];
+	const { skills } = props;
 	const [searchTerm, setSearchTerm] = React.useState("");
 	const filteredSkills = !searchTerm
 		? skills

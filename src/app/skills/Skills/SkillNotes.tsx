@@ -1,4 +1,4 @@
-//TODO: Fix the case to string[] the type in SkillSkeleton is wrong
+//TODO: Fix the cast to string[] the type in SkillSkeleton is wrong
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { ReactElement } from "react";
@@ -6,7 +6,7 @@ import React, { useEffect } from "react";
 
 import { Button } from "@/app/components/";
 import NotesContent from "@/app/skills/Skills/NotesContent";
-import type { SkillSkeleton } from "@/lib/";
+import type { SkillSkeleton } from "@/lib/skills";
 
 const SkillNotes = (
 	props: SkillSkeleton["fields"] & { onClose: () => void },

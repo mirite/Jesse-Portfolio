@@ -1,9 +1,8 @@
 import type { Document } from "@contentful/rich-text-types";
 
-import { type Post, createSlug } from "@/lib";
-
+import { type Post } from "../index";
+import { createSlug } from "../../stringTransforms";
 import type { RawPost } from "./types.js";
-
 
 /**
  * Takes a post from Contentful and maps it to a post for the app.

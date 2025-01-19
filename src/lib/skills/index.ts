@@ -46,3 +46,9 @@ export function splitSkillsByProficiency(allSkills: Skill[]): {
 		starter: Skill[];
 	};
 }
+
+export async function getSplitSkills(): Promise<Skill[]> {
+	const { high, medium, starter } = splitSkillsByProficiency(await getSkills());
+	const skills = [...high, ...medium, ...starter];
+	return skills;
+}

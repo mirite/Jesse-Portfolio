@@ -2,7 +2,7 @@ import type { ComponentProps, ReactElement } from "react";
 import React from "react";
 
 import { TextWrapper } from "@/app/components";
-import type { Post as PostType } from "@/lib";
+import type { Post as PostType } from "@/lib/sources";
 import { getPrettyDate } from "@/lib";
 
 type Props<T> = Pick<PostType<T>, "title" | "content" | "posted" | "source"> &

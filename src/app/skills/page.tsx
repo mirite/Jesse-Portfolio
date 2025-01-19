@@ -4,7 +4,7 @@ import type { ReactElement } from "react";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
-import { getSkills } from "@/lib/skills";
+import { getSplitSkills } from "@/lib/skills";
 import { getSnippet } from "@/lib/snippets";
 
 import Skills from "./Skills/Skills";
@@ -24,7 +24,7 @@ const Page = async (): Promise<ReactElement> => {
 
 const data = async () => {
 	const content = await getSnippet("6F9MM2vNuE8Vc26iLFKnCO");
-	const skills = await getSkills();
+	const skills = await getSplitSkills();
 	return { content, skills };
 };
 
