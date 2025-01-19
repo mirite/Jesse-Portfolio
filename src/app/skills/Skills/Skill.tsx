@@ -5,8 +5,9 @@ import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { Button } from "@/app/components/";
-import SkillNotes from "@/app/skills/Skills/SkillNotes";
-import type { Skill as SkillType } from "@/lib/";
+import type { Skill as SkillType } from "@/lib/skills";
+
+import SkillNotes from "./SkillNotes";
 
 const Skill = (skill: SkillType): ReactElement => {
 	const { name, notes, proficiency } = skill;

@@ -8,7 +8,7 @@ import parser from "remark-parse";
 import type { Root } from "remark-parse/lib";
 import { unified } from "unified";
 
-import type { Post } from "@/lib/types";
+import type { Post } from "../types";
 
 const postsDirectory = path.resolve("src", "blogs");
 /**

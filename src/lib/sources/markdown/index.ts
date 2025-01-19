@@ -1,8 +1,9 @@
 import type { Root } from "remark-parse/lib";
 
-import MdPost from "@/lib/sources/markdown/MDPost";
-import { getLocalPosts } from "@/lib/sources/markdown/posts";
-import type { Source } from "@/lib/types";
+import type { Source } from "../types";
+
+import MdPost from "./MDPost";
+import { getLocalPosts } from "./posts";
 
 const source: Source<Root> = {
 	getCategories: async () => {

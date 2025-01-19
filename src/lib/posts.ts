@@ -1,7 +1,6 @@
 import type { Metadata, ResolvedMetadata } from "next";
 
-import { sources } from "@/lib/sources";
-import type { Post } from "@/lib/types";
+import { sources, type Post } from "@/lib/sources";
 
 /**
  * Generates the Next metadata for a post.

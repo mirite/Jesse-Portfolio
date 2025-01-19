@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import type { Skill } from "@/lib";
-import { splitSkillsByProficiency } from "@/lib";
+import type { Skill } from "@/lib/skills";
+import { splitSkillsByProficiency } from "@/lib/skills";
 
 describe("skills", () => {
 	it("should split skills by proficiency", () => {

@@ -1,7 +1,9 @@
 import type { Document } from "@contentful/rich-text-types";
 import type { Entry } from "contentful";
 
-import type { Category, ContentType } from "@/lib";
+import type { ContentType } from "@/lib/supplementalData";
+
+import type { Category } from "../types";
 
 export type PostSkeleton = ContentType<"blogPost", RawPost>;
 export type RawPost = {

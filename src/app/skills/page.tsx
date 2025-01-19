@@ -4,10 +4,11 @@ import type { ReactElement } from "react";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
-import Skills from "@/app/skills/Skills/Skills";
-import type { SnippetSkeleton } from "@/lib/";
-import { getSkills } from "@/lib/";
+import { getSkills } from "@/lib/skills";
 import { getContent } from "@/lib/sources/contentful/connector";
+import type { SnippetSkeleton } from "@/lib/supplementalData";
+
+import Skills from "./Skills/Skills";
 
 const Page = async (): Promise<ReactElement> => {
 	const { content, skills } = await data();

@@ -9,7 +9,7 @@ import React, { type HTMLAttributes, type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 import Social from "@/app/contact/Socials/Social";
-import type { Social as SocialType } from "@/lib/";
+import type { Social as SocialType } from "@/lib/supplementalData";
 
 type SocialsProps = {
 	iconsOnly?: boolean;
