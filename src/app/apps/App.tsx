@@ -4,14 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import React, { type ReactElement } from "react";
 
-import type { AppListing } from "./page";
+import type { AppListing } from "@/lib/apps";
 
 type Props = {
 	app: AppListing;
 };
 
 /**
- *
+ * An app that I've made.
  *
  * @param props The props for the component.
  * @returns The component.
@@ -34,20 +34,24 @@ export default function App(props: Props): ReactElement {
 					className={"size-6"}
 				/>
 			</Link>
-			{app.blog ? <Link href={app.blog} target={"_blank"}>
+			{app.blog ? (
+				<Link href={app.blog} target={"_blank"}>
 					<FontAwesomeIcon
 						title={"Blog Post"}
 						icon={faNoteSticky}
 						className={"size-6"}
 					/>
-				</Link> : null}
-			{app.npm ? <Link href={app.npm} target={"_blank"}>
+				</Link>
+			) : null}
+			{app.npm ? (
+				<Link href={app.npm} target={"_blank"}>
 					<FontAwesomeIcon
 						title={"NPM Package"}
 						icon={faNpm}
 						className={"size-6"}
 					/>
-				</Link> : null}
+				</Link>
+			) : null}
 		</div>
 	);
 }
