@@ -1,7 +1,8 @@
 import type { Document } from "@contentful/rich-text-types";
 
-import { type Post } from "../index";
 import { createSlug } from "../../stringTransforms";
+import { type Post } from "../index";
+
 import type { RawPost } from "./types.js";
 
 /**

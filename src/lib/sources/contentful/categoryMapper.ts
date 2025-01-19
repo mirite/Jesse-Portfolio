@@ -1,5 +1,5 @@
-import { type Category } from "../types";
 import { createSlug } from "../../stringTransforms";
+import { type Category } from "../types";
 
 /**
  * Takes a category from Contentful and maps it to a category for the app.
