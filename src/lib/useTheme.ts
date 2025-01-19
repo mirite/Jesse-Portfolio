@@ -23,10 +23,10 @@ function getThemeFromLocalStorage(): OptionDefinition {
 	if (typeof window === "undefined") {
 		return options.System;
 	}
-	if (!("theme" in localStorage)) {
+	if (!localStorage.getItem("theme")) {
 		return options.System;
 	}
-	if (localStorage.theme === darkModeClass) {
+	if (localStorage.getItem("theme") === darkModeClass) {
 		return options.Dark;
 	} else {
 		return options.Light;
@@ -76,7 +76,7 @@ export function useTheme(): [
 	const handleSetTheme = (newTheme: ThemeOption) => {
 		const newOption = options[newTheme];
 		if (newOption !== options.System) {
-			localStorage.theme = newOption.slug;
+			localStorage.setItem("theme", newOption.slug);
 		} else {
 			localStorage.removeItem("theme");
 		}
