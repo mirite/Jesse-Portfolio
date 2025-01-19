@@ -5,18 +5,12 @@ import React from "react";
 import { PageWrapper } from "@/app/components/";
 import BioImage from "@/app/contact/BioImage";
 import ContactForm from "@/app/contact/ContactForm/ContactForm";
-import { getPlainTextContent } from "@/lib/sources/contentful/connector";
-import type { SnippetSkeleton } from "@/lib/supplementalData";
 
 import Socials from "./Socials";
 
 const Page = async (): Promise<ReactElement> => {
-	const title = await getPlainTextContent<SnippetSkeleton>(
-		"6hDDlcnlG9gdoL8QClVPOw",
-		"content",
-	);
 	return (
-		<PageWrapper title={title}>
+		<PageWrapper title={"Contact"}>
 			<div className="container">
 				<div className="mx-auto flex w-max flex-col items-center justify-between space-x-0 space-y-4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
 					<BioImage />

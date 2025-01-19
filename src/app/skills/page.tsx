@@ -5,15 +5,13 @@ import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
 import { getSkills } from "@/lib/skills";
-import { getContent } from "@/lib/sources/contentful/connector";
-import type { SnippetSkeleton } from "@/lib/supplementalData";
+import { getSnippet } from "@/lib/snippets";
 
 import Skills from "./Skills/Skills";
 
 const Page = async (): Promise<ReactElement> => {
 	const { content, skills } = await data();
 
-	if (!content?.content || !content.label) return <p>Content not found</p>;
 	return (
 		<PageWrapper title={content.label || ""}>
 			<TextWrapper className={"mb-4"}>
@@ -25,7 +23,7 @@ const Page = async (): Promise<ReactElement> => {
 };
 
 const data = async () => {
-	const content = await getContent<SnippetSkeleton>("6F9MM2vNuE8Vc26iLFKnCO");
+	const content = await getSnippet("6F9MM2vNuE8Vc26iLFKnCO");
 	const skills = await getSkills();
 	return { content, skills };
 };
