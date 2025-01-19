@@ -291,6 +291,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/types@npm:^7.19.0, @babel/types@npm:^7.25.9, @babel/types@npm:^7.26.0, @babel/types@npm:^7.26.5":
+  version: 7.26.5
+  resolution: "@babel/types@npm:7.26.5"
+  dependencies:
+    "@babel/helper-string-parser": "npm:^7.25.9"
+    "@babel/helper-validator-identifier": "npm:^7.25.9"
+  checksum: 10c0/0278053b69d7c2b8573aa36dc5242cad95f0d965e1c0ed21ccacac6330092e59ba5949753448f6d6eccf6ad59baaef270295cc05218352e060ea8c68388638c4
+  languageName: node
+  linkType: hard
+
 "@babel/types@npm:^7.25.4, @babel/types@npm:^7.26.3":
   version: 7.26.3
   resolution: "@babel/types@npm:7.26.3"
@@ -298,16 +308,6 @@ __metadata:
     "@babel/helper-string-parser": "npm:^7.25.9"
     "@babel/helper-validator-identifier": "npm:^7.25.9"
   checksum: 10c0/966c5242c5e55c8704bf7a7418e7be2703a0afa4d19a8480999d5a4ef13d095dd60686615fe5983cb7593b4b06ba3a7de8d6ca501c1d78bdd233a10d90be787b
-  languageName: node
-  linkType: hard
-
-"@babel/types@npm:^7.25.9, @babel/types@npm:^7.26.0, @babel/types@npm:^7.26.5":
-  version: 7.26.5
-  resolution: "@babel/types@npm:7.26.5"
-  dependencies:
-    "@babel/helper-string-parser": "npm:^7.25.9"
-    "@babel/helper-validator-identifier": "npm:^7.25.9"
-  checksum: 10c0/0278053b69d7c2b8573aa36dc5242cad95f0d965e1c0ed21ccacac6330092e59ba5949753448f6d6eccf6ad59baaef270295cc05218352e060ea8c68388638c4
   languageName: node
   linkType: hard
 
@@ -1218,6 +1218,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:^3.0.2"
     "@vitest/ui": "npm:^3.0.2"
     autoprefixer: "npm:^10.4.20"
+    babel-plugin-react-compiler: "npm:^19.0.0-beta-e552027-20250112"
     contentful: "npm:^11.4.3"
     eslint: "npm:9.18.0"
     eslint-config-next: "npm:^15.1.5"
@@ -3988,6 +3989,15 @@ __metadata:
   version: 4.1.0
   resolution: "axobject-query@npm:4.1.0"
   checksum: 10c0/c470e4f95008f232eadd755b018cb55f16c03ccf39c027b941cd8820ac6b68707ce5d7368a46756db4256fbc91bb4ead368f84f7fb034b2b7932f082f6dc0775
+  languageName: node
+  linkType: hard
+
+"babel-plugin-react-compiler@npm:^19.0.0-beta-e552027-20250112":
+  version: 19.0.0-beta-e552027-20250112
+  resolution: "babel-plugin-react-compiler@npm:19.0.0-beta-e552027-20250112"
+  dependencies:
+    "@babel/types": "npm:^7.19.0"
+  checksum: 10c0/f64c8f11b893b6bd355a8b3f20b4f15486cee18f98560f2df991abb315b4b037fbf6ccda832eede446fac6140a942e73984a6c5e7e8f5ea5fe1fb0b45d560482
   languageName: node
   linkType: hard
 
