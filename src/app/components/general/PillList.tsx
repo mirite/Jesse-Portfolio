@@ -9,7 +9,7 @@ const PillList = ({
 	return (
 		<ul
 			className={
-				"flex flex-wrap justify-start gap-2 bg-gradient-to-br from-high to-starter p-1 " +
+				"flex flex-wrap justify-start gap-2 bg-linear-to-br from-high to-starter p-1 " +
 				className
 			}
 			{...rest}

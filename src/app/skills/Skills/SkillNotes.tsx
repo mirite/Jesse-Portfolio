@@ -20,7 +20,7 @@ const SkillNotes = (
 	const { name, notes, projects } = props;
 	return (
 		<div
-			className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-sm"
+			className="fixed inset-0 flex items-center justify-center bg-black/10 backdrop-blur-xs"
 			onClick={props.onClose}
 		>
 			<div

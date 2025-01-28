@@ -14,7 +14,7 @@ const Search = (props: Props): ReactElement => {
 				id={id}
 				type={"text"}
 				value={props.searchTerm}
-				className={"grow !rounded-full"}
+				className={"grow rounded-full!"}
 				placeholder={"Search for a skill"}
 				onInput={(e) => props.onChange(e.currentTarget.value)}
 			/>
