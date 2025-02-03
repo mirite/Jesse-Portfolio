@@ -24,7 +24,7 @@ const SkillNotes = (
 			onClick={props.onClose}
 		>
 			<div
-				className="min-w-96 max-w-fit rounded-md bg-white p-6 shadow-2xl dark:bg-black"
+				className="max-w-fit min-w-96 rounded-md bg-white p-6 shadow-2xl dark:bg-black"
 				onClick={(e) => e.stopPropagation()}
 			>
 				<Button

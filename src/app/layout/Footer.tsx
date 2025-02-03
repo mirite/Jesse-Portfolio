@@ -14,7 +14,7 @@ const Footer = (): ReactElement => {
 						"flex flex-col items-center justify-end gap-4 sm:items-start"
 					}
 				>
-					<Logo className={"w-32 xs:w-64"} />
+					<Logo className={"xs:w-64 w-32"} />
 					<Socials iconsOnly={true} className={"flex-row gap-4"} />
 				</div>
 				<Nav

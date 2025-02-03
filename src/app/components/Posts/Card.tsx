@@ -17,7 +17,7 @@ const Card = (props: Props): ReactElement => {
 		<div className="w-full rounded-lg border shadow-sm transition-all hover:bg-black/10 dark:hover:bg-white/10">
 			<Link
 				className={
-					"prose prose-blue-green flex size-full flex-col items-start justify-between p-2 no-underline dark:prose-invert"
+					"prose prose-blue-green dark:prose-invert flex size-full flex-col items-start justify-between p-2 no-underline"
 				}
 				href={link}
 			>

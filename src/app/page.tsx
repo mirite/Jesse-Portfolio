@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
 
-import { TextWrapper , PageWrapper, Posts } from "@/app/components";
+import { TextWrapper, PageWrapper, Posts } from "@/app/components";
 import { getPosts } from "@/lib";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 

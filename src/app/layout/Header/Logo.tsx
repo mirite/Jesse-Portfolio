@@ -12,19 +12,19 @@ const Logo = (props: Partial<ComponentProps<typeof Link>>): ReactElement => {
 	return (
 		<Link
 			href={href || "/"}
-			className={twMerge("block w-8 max-w-full xs:w-64", className)}
+			className={twMerge("xs:w-64 block w-8 max-w-full", className)}
 			title={"Jesse Conner"}
 			{...rest}
 		>
 			<Image
 				src={logo}
 				alt={"Jesse Conner"}
-				className={"m-0 hidden max-w-full xs:block"}
+				className={"xs:block m-0 hidden max-w-full"}
 			/>
 			<Image
 				src={icon}
 				alt={"Jesse Conner"}
-				className={"m-0 block max-w-full xs:hidden"}
+				className={"xs:hidden m-0 block max-w-full"}
 			/>
 		</Link>
 	);

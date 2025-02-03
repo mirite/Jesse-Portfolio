@@ -12,7 +12,7 @@ const Page = async (): Promise<ReactElement> => {
 	return (
 		<PageWrapper title={"Contact"}>
 			<div className="container">
-				<div className="mx-auto flex w-max flex-col items-center justify-between space-x-0 space-y-4 md:flex-row md:items-start md:space-x-4 md:space-y-0">
+				<div className="mx-auto flex w-max flex-col items-center justify-between space-y-4 space-x-0 md:flex-row md:items-start md:space-y-0 md:space-x-4">
 					<BioImage />
 					<Socials />
 				</div>
