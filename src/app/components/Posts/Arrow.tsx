@@ -11,7 +11,7 @@ const Arrow = (): ReactElement => {
 				y1={250}
 				y2={250}
 				strokeWidth={40}
-			 />
+			/>
 			<line
 				className={"arrow-head"}
 				x1={350}
@@ -19,7 +19,7 @@ const Arrow = (): ReactElement => {
 				y1={250}
 				y2={150}
 				strokeWidth={40}
-			 />
+			/>
 			<line
 				className={"arrow-head"}
 				x1={350}
@@ -27,7 +27,7 @@ const Arrow = (): ReactElement => {
 				y1={250}
 				y2={350}
 				strokeWidth={40}
-			 />
+			/>
 		</svg>
 	);
 };

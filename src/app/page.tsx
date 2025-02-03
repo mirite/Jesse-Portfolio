@@ -2,10 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactElement } from "react";
 
-import { TextWrapper , PageWrapper, Posts } from "@/app/components";
+import { TextWrapper, PageWrapper, Posts } from "@/app/components";
 import { getPosts } from "@/lib";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
+import pic from "../../public/Jesse-2.png";
 /**
  * The home page.
  *
@@ -18,7 +19,7 @@ export default async function Home(): Promise<ReactElement> {
 		<PageWrapper title={title} className={"flex flex-col gap-4"}>
 			<div className={"flex flex-col items-center gap-4 lg:flex-row"}>
 				<Image
-					src={""}
+					src={pic}
 					width={300}
 					height={300}
 					alt={""}

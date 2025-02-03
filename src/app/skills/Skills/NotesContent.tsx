@@ -23,10 +23,12 @@ export default function NotesContent(props: Props): ReactElement {
 			<div className="mb-2 flex items-start justify-between font-bold">
 				<h3>{props.name}</h3>
 			</div>
-			{props.notes ? <div>
+			{props.notes ? (
+				<div>
 					<h4>Details</h4>
 					<article>{documentToReactComponents(props.notes)}</article>
-				</div> : null}
+				</div>
+			) : null}
 			{props.projects ? <LinkDisplay links={props.projects} /> : null}
 		</TextWrapper>
 	);
