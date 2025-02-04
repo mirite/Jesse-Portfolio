@@ -1,8 +1,7 @@
 import forms from "@tailwindcss/forms";
 import typography from "@tailwindcss/typography";
-import type { Config } from "tailwindcss";
 
-const config: Config = {
+const config = {
 	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
@@ -29,7 +28,6 @@ const config: Config = {
 				medium: { DEFAULT: "#7cca65" },
 				starter: { DEFAULT: "#2dc2b5" },
 			},
-			// @ts-expect-error TS7031 TailwindCSS Typography
 			typography: ({ theme }) => ({
 				"blue-green": {
 					css: {
