@@ -1,64 +1,66 @@
-@import "fonts.css";
+@import "./fonts.css" layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-a {
-	@apply font-medium text-[--tw-prose-links] underline;
-}
+@config '../../tailwind.config.js';
 
-img {
-	max-width: 100%;
-	height: auto;
-}
+@layer theme {
+	a {
+		@apply font-medium text-(--tw-prose-links) underline;
+	}
 
-.no-break {
-	break-inside: avoid;
-}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 
-label,
-button {
-	cursor: pointer;
-}
+	.no-break {
+		break-inside: avoid;
+	}
 
-.arrow,
-.arrow-head {
-	display: none;
-	stroke: var(--tw-prose-links);
+	label,
+	button {
+		cursor: pointer;
+	}
 
-	a:hover & {
-		&.arrow {
-			animation-name: arrow;
+	.arrow,
+	.arrow-head {
+		display: none;
+		stroke: var(--tw-prose-links);
+
+		a:hover & {
+			&.arrow {
+				animation-name: arrow;
+			}
+			&.arrow-head {
+				animation-name: head;
+			}
+			display: block;
+			animation-duration: 1s;
+			animation-timing-function: ease-in-out;
+			animation-direction: normal;
+			animation-iteration-count: infinite;
+			@media (prefers-reduced-motion) {
+				animation: none;
+			}
 		}
-		&.arrow-head {
-			animation-name: head;
+	}
+
+	@keyframes arrow {
+		0% {
+			transform: scale(0, 1);
 		}
-		display: block;
-		animation-duration: 1s;
-		animation-timing-function: ease-in-out;
-		animation-direction: normal;
-		animation-iteration-count: infinite;
-		@media (prefers-reduced-motion) {
-			animation: none;
+		50% {
+			transform: scale(1, 1);
 		}
 	}
-}
 
-@keyframes arrow {
-	0% {
-		transform: scale(0, 1);
-	}
-	50% {
-		transform: scale(1, 1);
-	}
-}
-
-@keyframes head {
-	0% {
-		transform: translate(-350px, 0);
-	}
-	50% {
-		transform: translate(0, 0);
+	@keyframes head {
+		0% {
+			transform: translate(-350px, 0);
+		}
+		50% {
+			transform: translate(0, 0);
+		}
 	}
 }

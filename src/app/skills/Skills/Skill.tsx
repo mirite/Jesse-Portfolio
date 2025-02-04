@@ -17,7 +17,7 @@ const Skill = (skill: SkillType): ReactElement => {
 	if (notes) {
 		className = twMerge(
 			className,
-			"no-underline transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400",
+			"no-underline transition duration-150 ease-in-out hover:bg-neutral-300 hover:shadow-lg focus:bg-neutral-300 focus:ring-0 focus:shadow-lg focus:outline-hidden active:bg-neutral-400 active:shadow-lg dark:hover:bg-neutral-500 dark:focus:bg-neutral-500 dark:active:bg-neutral-400",
 		);
 	}
 

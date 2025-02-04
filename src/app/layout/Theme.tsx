@@ -42,7 +42,7 @@ export default function Theme(props: Props): ReactElement | null {
 	return (
 		<ThemeContext.Provider value={contextValue}>
 			<div className={bodyClass}>
-				<div className="relative flex min-h-dvh max-w-full flex-col justify-center bg-white text-blue-green-900 transition-all dark:bg-blue-green-900 dark:text-white">
+				<div className="text-blue-green-900 dark:bg-blue-green-900 relative flex min-h-dvh max-w-full flex-col justify-center bg-white transition-all dark:text-white">
 					{props.children}
 				</div>
 			</div>
