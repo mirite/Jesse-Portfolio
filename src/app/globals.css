@@ -4,79 +4,63 @@
 
 @config '../../tailwind.config.js';
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
-@layer base {
-	*,
-	::after,
-	::before,
-	::backdrop,
-	::file-selector-button {
-		border-color: var(--color-gray-200, currentColor);
+@layer theme {
+	a {
+		@apply font-medium text-(--tw-prose-links) underline;
 	}
-}
 
-a {
-	@apply font-medium text-(--tw-prose-links) underline;
-}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 
-img {
-	max-width: 100%;
-	height: auto;
-}
+	.no-break {
+		break-inside: avoid;
+	}
 
-.no-break {
-	break-inside: avoid;
-}
+	label,
+	button {
+		cursor: pointer;
+	}
 
-label,
-button {
-	cursor: pointer;
-}
+	.arrow,
+	.arrow-head {
+		display: none;
+		stroke: var(--tw-prose-links);
 
-.arrow,
-.arrow-head {
-	display: none;
-	stroke: var(--tw-prose-links);
-
-	a:hover & {
-		&.arrow {
-			animation-name: arrow;
-		}
-		&.arrow-head {
-			animation-name: head;
-		}
-		display: block;
-		animation-duration: 1s;
-		animation-timing-function: ease-in-out;
-		animation-direction: normal;
-		animation-iteration-count: infinite;
-		@media (prefers-reduced-motion) {
-			animation: none;
+		a:hover & {
+			&.arrow {
+				animation-name: arrow;
+			}
+			&.arrow-head {
+				animation-name: head;
+			}
+			display: block;
+			animation-duration: 1s;
+			animation-timing-function: ease-in-out;
+			animation-direction: normal;
+			animation-iteration-count: infinite;
+			@media (prefers-reduced-motion) {
+				animation: none;
+			}
 		}
 	}
-}
 
-@keyframes arrow {
-	0% {
-		transform: scale(0, 1);
+	@keyframes arrow {
+		0% {
+			transform: scale(0, 1);
+		}
+		50% {
+			transform: scale(1, 1);
+		}
 	}
-	50% {
-		transform: scale(1, 1);
-	}
-}
 
-@keyframes head {
-	0% {
-		transform: translate(-350px, 0);
-	}
-	50% {
-		transform: translate(0, 0);
+	@keyframes head {
+		0% {
+			transform: translate(-350px, 0);
+		}
+		50% {
+			transform: translate(0, 0);
+		}
 	}
 }
