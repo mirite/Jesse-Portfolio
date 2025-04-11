@@ -14,10 +14,10 @@ interface Props {
 const Card = (props: Props): ReactElement => {
 	const { title, link, excerpt, date } = props;
 	return (
-		<div className="w-full rounded-lg border shadow-sm transition-all hover:bg-black/10 dark:hover:bg-white/10">
+		<div className="w-full rounded-lg border shadow-xs transition-all hover:bg-black/10 dark:hover:bg-white/10">
 			<Link
 				className={
-					"prose prose-blue-green dark:prose-invert flex size-full flex-col items-start justify-between p-2 no-underline"
+					"group prose flex size-full flex-col items-start justify-between p-2 no-underline prose-blue-green dark:prose-invert"
 				}
 				href={link}
 			>

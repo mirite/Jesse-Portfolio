@@ -1,52 +1,25 @@
-import forms from "@tailwindcss/forms";
-import typography from "@tailwindcss/typography";
-
 const config = {
-	content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
 	theme: {
 		extend: {
-			screens: {
-				xs: "475px",
-			},
-			fontFamily: {
-				sans: ["Visia Pro", "system-ui", "sans-serif"],
-			},
-			colors: {
-				"blue-green": {
-					50: "#1A2E25",
-					100: "#1A2E25",
-					200: "#1A2E25",
-					300: "#1A2E25",
-					400: "#1A2E25",
-					500: "#1A2E25",
-					600: "#1A2E25",
-					700: "#1A2E25",
-					800: "#1A2E25",
-					900: "#1A2E25",
-				},
-				high: { DEFAULT: "#709226" },
-				medium: { DEFAULT: "#7cca65" },
-				starter: { DEFAULT: "#2dc2b5" },
-			},
 			typography: ({ theme }) => ({
 				"blue-green": {
 					css: {
-						"--tw-prose-body": "#1A2E25",
-						"--tw-prose-headings": "#1A2E25",
-						"--tw-prose-lead": "#1A2E25",
-						"--tw-prose-links": "#1A2E25",
-						"--tw-prose-bold": "#1A2E25",
-						"--tw-prose-counters": "#1A2E25",
-						"--tw-prose-bullets": "#1A2E25",
-						"--tw-prose-hr": "#1A2E25",
-						"--tw-prose-quotes": "#1A2E25",
-						"--tw-prose-quote-borders": "#1A2E25",
-						"--tw-prose-captions": "#1A2E25",
-						"--tw-prose-code": "#1A2E25",
-						"--tw-prose-pre-code": "#1A2E25",
-						"--tw-prose-pre-bg": "#1A2E25",
-						"--tw-prose-th-borders": "#1A2E25",
-						"--tw-prose-td-borders": "#1A2E25",
+						"--tw-prose-body": "var(--color-blue-green)",
+						"--tw-prose-headings": "var(--color-blue-green)",
+						"--tw-prose-lead": "var(--color-blue-green)",
+						"--tw-prose-links": "var(--color-blue-green)",
+						"--tw-prose-bold": "var(--color-blue-green)",
+						"--tw-prose-counters": "var(--color-blue-green)",
+						"--tw-prose-bullets": "var(--color-blue-green)",
+						"--tw-prose-hr": "var(--color-blue-green)",
+						"--tw-prose-quotes": "var(--color-blue-green)",
+						"--tw-prose-quote-borders": "var(--color-blue-green)",
+						"--tw-prose-captions": "var(--color-blue-green)",
+						"--tw-prose-code": "var(--color-blue-green)",
+						"--tw-prose-pre-code": "var(--color-blue-green)",
+						"--tw-prose-pre-bg": "var(--color-blue-green)",
+						"--tw-prose-th-borders": "var(--color-blue-green)",
+						"--tw-prose-td-borders": "var(--color-blue-green)",
 						"--tw-prose-invert-body": theme("colors.white"),
 						"--tw-prose-invert-headings": theme("colors.white"),
 						"--tw-prose-invert-lead": theme("colors.white"),
@@ -68,7 +41,5 @@ const config = {
 			}),
 		},
 	},
-	darkMode: "class",
-	plugins: [typography, forms],
 };
 export default config;

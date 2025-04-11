@@ -3,48 +3,19 @@
 @import "tailwindcss";
 
 @config '../../tailwind.config.js';
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@custom-variant dark (&:is(.dark * ));
 
-@layer theme {
-	a {
-		@apply font-medium text-(--tw-prose-links) underline;
-	}
-
-	img {
-		max-width: 100%;
-		height: auto;
-	}
-
-	.no-break {
-		break-inside: avoid;
-	}
-
-	label,
-	button {
-		cursor: pointer;
-	}
-
-	.arrow,
-	.arrow-head {
-		display: none;
-		stroke: var(--tw-prose-links);
-
-		a:hover & {
-			&.arrow {
-				animation-name: arrow;
-			}
-			&.arrow-head {
-				animation-name: head;
-			}
-			display: block;
-			animation-duration: 1s;
-			animation-timing-function: ease-in-out;
-			animation-direction: normal;
-			animation-iteration-count: infinite;
-			@media (prefers-reduced-motion) {
-				animation: none;
-			}
-		}
-	}
+@theme {
+	--breakpoint-xs: 475px;
+	--font-sans: "Visia Pro", system-ui, sans-serif;
+	--color-high: #709226;
+	--color-medium: #7cca65;
+	--color-starter: #2dc2b5;
+	--color-blue-green: #1a2e25;
+	--animate-arrow: arrow 1s ease-in-out infinite;
+	--animate-head: head 1s ease-in-out infinite;
 
 	@keyframes arrow {
 		0% {
