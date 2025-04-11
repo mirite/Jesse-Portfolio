@@ -20,7 +20,8 @@ const Footer = (): ReactElement => {
 				<Nav
 					menuToggleProps={{
 						forceOpen: true,
-						className: "static h-auto w-auto p-0 grow-0",
+						className:
+							"static h-auto w-auto p-0 grow-0 bg-transparent dark:bg-transparent",
 					}}
 					menuProps={{
 						className: "text-lg columns-2 block text-center sm:text-left",
