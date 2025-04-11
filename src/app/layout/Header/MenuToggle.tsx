@@ -45,7 +45,7 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 					<motion.div
 						key={"menu"}
 						className={twMerge(
-							"dark:bg-blue-green-900 fixed inset-0 flex h-dvh w-dvw flex-col items-center justify-center bg-white lg:static lg:size-auto lg:flex-row lg:justify-end lg:bg-transparent lg:dark:bg-transparent",
+							"fixed inset-0 flex h-dvh w-dvw flex-col items-center justify-center bg-white lg:static lg:size-auto lg:flex-row lg:justify-end lg:bg-transparent dark:bg-blue-green lg:dark:bg-transparent",
 							className,
 						)}
 						initial={hiddenState}
