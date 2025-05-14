@@ -11,33 +11,33 @@ import type { Social } from "./types";
 export * from "./types";
 export const socials: Social[] = [
 	{
+		icon: faGithub,
+		link: "https://github.com/mirite",
 		platform: "GitHub",
 		username: "mirite",
-		link: "https://github.com/mirite",
-		icon: faGithub,
 	},
 	{
+		icon: faLinkedin,
+		link: "https://www.linkedin.com/in/jesse-conner-24672741/",
 		platform: "LinkedIn",
 		username: "Jesse Conner",
-		link: "https://www.linkedin.com/in/jesse-conner-24672741/",
-		icon: faLinkedin,
 	},
 	{
+		icon: faEmail,
+		link: "mailto:me@jesseconner.ca",
 		platform: "Email",
 		username: "me@jesseconner.ca",
-		link: "mailto:me@jesseconner.ca",
-		icon: faEmail,
 	},
 	{
+		icon: faNpm,
+		link: "https://www.npmjs.com/~mirite",
 		platform: "NPM",
 		username: "mirite",
-		link: "https://www.npmjs.com/~mirite",
-		icon: faNpm,
 	},
 	{
+		icon: faStackOverflow,
+		link: "https://stackoverflow.com/users/1727253/m-i-rite",
 		platform: "StackOverflow",
 		username: "m-i-rite",
-		link: "https://stackoverflow.com/users/1727253/m-i-rite",
-		icon: faStackOverflow,
 	},
 ];

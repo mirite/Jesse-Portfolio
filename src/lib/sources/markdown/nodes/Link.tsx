@@ -4,7 +4,7 @@ import { ChildTree } from "./ChildTree";
 
 export const Link: Handler<"link"> = (props) => {
 	return (
-		<a href={props.url} target="_blank" rel="noreferrer">
+		<a href={props.url} rel="noreferrer" target="_blank">
 			<ChildTree children={props.children} />
 		</a>
 	);

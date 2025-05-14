@@ -1,11 +1,11 @@
 "use server";
-import * as fs from "node:fs";
-import * as path from "node:path";
+import type { Root } from "remark-parse/lib";
 
 import matter from "gray-matter";
+import * as fs from "node:fs";
+import * as path from "node:path";
 import codeblocks from "remark-code-blocks";
 import parser from "remark-parse";
-import type { Root } from "remark-parse/lib";
 import { unified } from "unified";
 
 import type { Post } from "../types";
@@ -33,12 +33,12 @@ export async function getLocalPosts(): Promise<Omit<Post<Root>, "source">[]> {
 			.parse(matterResult.content);
 
 		posts.push({
-			posted: matterResult.data.posted,
-			title: matterResult.data.title,
-			slug: file.replace(/\.md$/, ""),
-			content: parsedContent,
 			categorySlug: matterResult.data.category,
+			content: parsedContent,
 			excerpt: matterResult.data.excerpt,
+			posted: matterResult.data.posted,
+			slug: file.replace(/\.md$/, ""),
+			title: matterResult.data.title,
 		});
 	}
 	return posts;

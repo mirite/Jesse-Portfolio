@@ -4,56 +4,57 @@ const defaultNpmPrefix = "https://www.npmjs.com/package/@mirite/";
 
 const apps = [
 	{
+		blog: "/blog/re-visiting-csv-magic",
+		github: `${defaultGithubPrefix}csv-magic`,
 		name: "CSV Magic",
 		url: `https://csvmagic${defaultURLSuffix}`,
-		github: `${defaultGithubPrefix}csv-magic`,
-		blog: "/blog/re-visiting-csv-magic",
 	},
 	{
+		github: `${defaultGithubPrefix}svg-magic`,
 		name: "SVG Magic",
 		url: `https://svgmagic${defaultURLSuffix}`,
-		github: `${defaultGithubPrefix}svg-magic`,
 	},
 	{
+		blog: "/blog/wordhecc",
+		github: `${defaultGithubPrefix}wordhecc`,
 		name: "wordhecc",
 		url: `https://wordhecc${defaultURLSuffix}`,
-		github: `${defaultGithubPrefix}wordhecc`,
-		blog: "/blog/wordhecc",
 	},
 	{
+		github: `${defaultGithubPrefix}bottle-helper`,
 		name: "3D Label Helper",
 		url: `https://models${defaultURLSuffix}/`,
-		github: `${defaultGithubPrefix}bottle-helper`,
 	},
 	{
-		name: "CSV to JSON Parser",
-		github: `${defaultGithubPrefix}csv-json-parser`,
-		npm: `${defaultNpmPrefix}csv-json-parser`,
 		blog: "/blog/rust-csv-parser-for-javascript",
+		github: `${defaultGithubPrefix}csv-json-parser`,
+		name: "CSV to JSON Parser",
+		npm: `${defaultNpmPrefix}csv-json-parser`,
 	},
 	{
-		name: "Sudoku Solver",
-		github: `${defaultGithubPrefix}sudoku-solver`,
 		blog: "/blog/sudoku-solver",
+		github: `${defaultGithubPrefix}sudoku-solver`,
+		name: "Sudoku Solver",
 	},
 	{
-		name: "Web Crawler",
-		github: `${defaultGithubPrefix}Node-Site-Crawler`,
 		blog: "/blog/web-crawler",
+		github: `${defaultGithubPrefix}Node-Site-Crawler`,
+		name: "Web Crawler",
 		npm: `https://www.npmjs.com/package/simple-node-site-crawler`,
 	},
 	{
-		name: "Site Archive",
 		github: `${defaultGithubPrefix}site-archive`,
+		name: "Site Archive",
 		npm: `https://www.npmjs.com/package/site-archive`,
 	},
 	{
-		name: "Zod to Mongoose",
 		github: `${defaultGithubPrefix}zod-to-mongoose`,
+		name: "Zod to Mongoose",
 		npm: `${defaultNpmPrefix}zod-to-mongoose`,
 	},
 ];
 
+export type AppListing = (typeof apps)[number];
 /**
  * Get the apps that I've made.
  *
@@ -62,4 +63,3 @@ const apps = [
 export function getApps(): AppListing[] {
 	return apps.sort((a, b) => a.name.localeCompare(b.name));
 }
-export type AppListing = (typeof apps)[number];

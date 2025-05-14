@@ -14,13 +14,13 @@ export default function ThemeToggle(): ReactElement {
 	return (
 		<li>
 			<button
-				type={"button"}
 				className="text-2xl"
 				onClick={() => {
 					if (theme) {
 						theme.setTheme(theme.theme.slug === "light" ? "Dark" : "Light");
 					}
 				}}
+				type={"button"}
 			>
 				{theme?.theme.slug === "light" ? "🌞" : "🌜"}
 			</button>

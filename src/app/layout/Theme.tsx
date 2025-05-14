@@ -1,14 +1,15 @@
 "use client";
 import React, {
+	createContext,
 	type HTMLAttributes,
 	type ReactElement,
-	createContext,
-	useState,
 	useEffect,
 	useMemo,
+	useState,
 } from "react";
 
 import type { OptionDefinition, ThemeOption } from "@/lib";
+
 import { useTheme } from "@/lib";
 
 type Props = HTMLAttributes<HTMLDivElement>;
@@ -23,7 +24,7 @@ export const ThemeContext = createContext<null | {
  * @param props The props for the component.
  * @returns The component.
  */
-export default function Theme(props: Props): ReactElement | null {
+export default function Theme(props: Props): null | ReactElement {
 	const [theme, setTheme, bodyClass] = useTheme();
 	const [client, setClient] = useState(false);
 	useEffect(() => {

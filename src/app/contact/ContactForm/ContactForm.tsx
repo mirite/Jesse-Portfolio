@@ -19,18 +19,18 @@ export default function ContactForm(): ReactElement {
 		<TextWrapper>
 			<form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
 				<Field id="email" label="Email Address:">
-					<input id="email" type="email" name="email" />
-					<ValidationError prefix="Email" field="email" errors={state.errors} />
+					<input id="email" name="email" type="email" />
+					<ValidationError errors={state.errors} field="email" prefix="Email" />
 				</Field>
 				<Field id={"message"} label={"Message:"}>
 					<textarea id="message" name="message" rows={5} />
 					<ValidationError
-						prefix="Message"
-						field="message"
 						errors={state.errors}
+						field="message"
+						prefix="Message"
 					/>
 				</Field>
-				<Button type="submit" disabled={state.submitting}>
+				<Button disabled={state.submitting} type="submit">
 					Send Message
 				</Button>
 			</form>

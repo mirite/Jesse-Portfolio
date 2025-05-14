@@ -13,15 +13,15 @@
 	},
 	"type": "module",
 	"scripts": {
+		"build": "next build",
 		"check": "tsc --noEmit",
 		"dev": "next dev",
-		"build": "next build",
-		"start": "next start",
-		"lint": "next lint --fix",
 		"format": "prettier --write --cache .",
+		"lint": "next lint --fix",
+		"prepare": "husky",
+		"start": "next start",
 		"test": "vitest run --coverage",
-		"test:watch": "vitest --coverage --ui",
-		"prepare": "husky"
+		"test:watch": "vitest --coverage --ui"
 	},
 	"dependencies": {
 		"@contentful/rich-text-plain-text-renderer": "^17.0.0",
@@ -49,7 +49,7 @@
 		"unified": "^11.0.5"
 	},
 	"devDependencies": {
-		"@mirite/eslint-config-mirite": "^1.0.1",
+		"@mirite/eslint-config-mirite": "^1.1.0",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/postcss": "^4.1.6",
 		"@tailwindcss/typography": "^0.5.16",

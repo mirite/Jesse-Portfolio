@@ -1,12 +1,14 @@
 "use client";
 
 import type { ReactElement } from "react";
+
 import React from "react";
+
+import type { Skill } from "@/lib/skills";
 
 import Legend from "@/app/skills/Skills/Legend";
 import Search from "@/app/skills/Skills/Search";
 import SkillLevel from "@/app/skills/Skills/SkillLevel";
-import type { Skill } from "@/lib/skills";
 
 interface Props {
 	skills: Skill[];
@@ -22,7 +24,7 @@ const Skills = (props: Props): ReactElement => {
 			);
 	return (
 		<div className="mx-auto my-8 flex max-w-prose flex-col items-center gap-4">
-			<Search searchTerm={searchTerm} onChange={setSearchTerm} />
+			<Search onChange={setSearchTerm} searchTerm={searchTerm} />
 			<Legend />
 			<SkillLevel skills={filteredSkills} />
 		</div>

@@ -15,6 +15,17 @@ export async function getSkills(): Promise<Skill[]> {
 }
 
 /**
+ * Gets the skills Ordered by their proficiency
+ *
+ * @returns The skills ordered by proficiency
+ */
+export async function getSplitSkills(): Promise<Skill[]> {
+	const { high, medium, starter } = splitSkillsByProficiency(await getSkills());
+	const skills = [...high, ...medium, ...starter];
+	return skills;
+}
+
+/**
  * Splits the skills by proficiency.
  *
  * @param allSkills All the skills.
@@ -45,15 +56,4 @@ export function splitSkillsByProficiency(allSkills: Skill[]): {
 		medium: Skill[];
 		starter: Skill[];
 	};
-}
-
-/**
- * Gets the skills Ordered by their proficiency
- *
- * @returns The skills ordered by proficiency
- */
-export async function getSplitSkills(): Promise<Skill[]> {
-	const { high, medium, starter } = splitSkillsByProficiency(await getSkills());
-	const skills = [...high, ...medium, ...starter];
-	return skills;
 }

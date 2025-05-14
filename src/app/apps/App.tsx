@@ -21,7 +21,7 @@ export default function App(props: Props): ReactElement {
 	return (
 		<div className={"flex items-center gap-2"}>
 			{app.url ? (
-				<Link href={app.url} className={"text-xl"} target={"_blank"}>
+				<Link className={"text-xl"} href={app.url} target={"_blank"}>
 					{app.name}
 				</Link>
 			) : (
@@ -29,26 +29,26 @@ export default function App(props: Props): ReactElement {
 			)}
 			<Link href={app.github} target={"_blank"}>
 				<FontAwesomeIcon
-					title={"Source on GitHub"}
-					icon={faGithub}
 					className={"size-6"}
+					icon={faGithub}
+					title={"Source on GitHub"}
 				/>
 			</Link>
 			{app.blog ? (
 				<Link href={app.blog} target={"_blank"}>
 					<FontAwesomeIcon
-						title={"Blog Post"}
-						icon={faNoteSticky}
 						className={"size-6"}
+						icon={faNoteSticky}
+						title={"Blog Post"}
 					/>
 				</Link>
 			) : null}
 			{app.npm ? (
 				<Link href={app.npm} target={"_blank"}>
 					<FontAwesomeIcon
-						title={"NPM Package"}
-						icon={faNpm}
 						className={"size-6"}
+						icon={faNpm}
+						title={"NPM Package"}
 					/>
 				</Link>
 			) : null}

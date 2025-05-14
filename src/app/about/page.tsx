@@ -1,8 +1,9 @@
 import type { Metadata, ResolvedMetadata } from "next";
+
 import Link from "next/link";
 import React, { type ReactElement } from "react";
 
-import { TextWrapper, PageWrapper, Post } from "@/app/components";
+import { PageWrapper, Post, TextWrapper } from "@/app/components";
 import { getSnippet } from "@/lib/snippets";
 import contentful from "@/lib/sources/contentful";
 
@@ -12,11 +13,11 @@ const Page = async (): Promise<ReactElement> => {
 	return (
 		<PageWrapper title={content.label || ""}>
 			<Post
-				content={content.content}
 				className={"mb-4"}
-				title={""}
-				source={contentful}
+				content={content.content}
 				posted={""}
+				source={contentful}
+				title={""}
 			/>
 			<TextWrapper>
 				<p>
@@ -40,8 +41,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const parentMetadata = await parent;
 	return {
-		title: `${parentMetadata.title?.absolute} - About`,
 		description: "All about me.",
+		title: `${parentMetadata.title?.absolute} - About`,
 	};
 }
 

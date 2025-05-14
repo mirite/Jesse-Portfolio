@@ -1,4 +1,5 @@
 import type { ComponentProps, ReactElement } from "react";
+
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -7,8 +8,8 @@ type Props = ComponentProps<"div"> & {
 };
 const MaxWidthContainer = (props: Props): ReactElement => {
 	const {
-		className: extendedClassName,
 		children,
+		className: extendedClassName,
 		Element: substituteElement,
 		...rest
 	} = props;

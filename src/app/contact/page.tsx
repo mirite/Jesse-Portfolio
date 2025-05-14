@@ -1,5 +1,6 @@
 import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
+
 import React from "react";
 
 import { PageWrapper } from "@/app/components/";
@@ -35,8 +36,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const parentMetadata = await parent;
 	return {
-		title: `${parentMetadata.title?.absolute} - Contact`,
 		description: "How to get in touch with me.",
+		title: `${parentMetadata.title?.absolute} - Contact`,
 	};
 }
 

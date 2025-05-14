@@ -1,9 +1,10 @@
 "use client";
+import type { HTMLAttributes, ReactElement } from "react";
+
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import type { HTMLAttributes, ReactElement } from "react";
 import React, { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -43,15 +44,15 @@ const MenuToggle = (props: MenuToggleProps): ReactElement => {
 			<AnimatePresence>
 				{shouldShow ? (
 					<motion.div
-						key={"menu"}
+						animate={{ left: "0" }}
 						className={twMerge(
 							"fixed inset-0 flex h-dvh w-dvw flex-col items-center justify-center bg-white lg:static lg:size-auto lg:flex-row lg:justify-end lg:bg-transparent dark:bg-blue-green lg:dark:bg-transparent",
 							className,
 						)}
-						initial={hiddenState}
-						transition={{ duration: 0.3, ease: "easeInOut" }}
-						animate={{ left: "0" }}
 						exit={hiddenState}
+						initial={hiddenState}
+						key={"menu"}
+						transition={{ duration: 0.3, ease: "easeInOut" }}
 					>
 						{children}
 					</motion.div>
