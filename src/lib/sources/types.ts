@@ -19,6 +19,6 @@ export type Post<T> = {
 
 export type Source<T> = {
 	Component: ComponentType<{ content: T }>;
-	getCategories: () => Promise<Category[]>;
+	getCategories: () => Category[] | Promise<Category[]>;
 	getPosts: () => Promise<Post<T>[]>;
 };

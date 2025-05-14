@@ -7,7 +7,7 @@ import { getLocalPosts } from "./posts";
 
 const source: Source<Root> = {
 	Component: MdPost,
-	getCategories: async () => {
+	getCategories: () => {
 		return [];
 	},
 	getPosts: async function () {
