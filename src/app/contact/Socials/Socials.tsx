@@ -9,7 +9,7 @@ type SocialsProps = HTMLAttributes<HTMLUListElement> & {
 	iconsOnly?: boolean;
 };
 
-const Socials = async (props: SocialsProps): Promise<ReactElement> => {
+const Socials = (props: SocialsProps): ReactElement => {
 	const { className, iconsOnly, ...rest } = props;
 
 	return (

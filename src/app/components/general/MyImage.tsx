@@ -10,7 +10,7 @@ interface Props extends Omit<ImageProps, "alt" | "src"> {
 	assetid: string;
 }
 
-const MyImage: ComponentType<Props> = async (props) => {
+const MyImage: ComponentType<Props> = (props) => {
 	return (
 		<div className={"leading-none"}>
 			<NextImage
