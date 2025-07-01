@@ -1,14 +1,15 @@
 import "./globals.css";
-import type { ReactElement, PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactElement } from "react";
+
 import React from "react";
 
-import { Header, Footer } from "@/app/layout/index";
+import { Footer, Header } from "@/app/layout/index";
 import Theme from "@/app/layout/Theme";
 
 export const metadata = {
-	title: "Jesse Conner",
 	description:
 		"Welcome to my site! I am a software developer (primarily web) from Toronto, Ontario. This site is a place for me to share my skills, projects, and tell a little about myself.",
+	title: "Jesse Conner",
 };
 
 type Props = PropsWithChildren;

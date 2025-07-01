@@ -15,16 +15,16 @@ const Footer = (): ReactElement => {
 					}
 				>
 					<Logo className={"w-32 xs:w-64"} />
-					<Socials iconsOnly={true} className={"flex-row gap-4"} />
+					<Socials className={"flex-row gap-4"} iconsOnly={true} />
 				</div>
 				<Nav
-					menuToggleProps={{
-						forceOpen: true,
-						className:
-							"static h-auto w-auto p-0 grow-0 bg-transparent dark:bg-transparent",
-					}}
 					menuProps={{
 						className: "text-lg columns-2 block text-center sm:text-left",
+					}}
+					menuToggleProps={{
+						className:
+							"static h-auto w-auto p-0 grow-0 bg-transparent dark:bg-transparent",
+						forceOpen: true,
 					}}
 				/>
 			</div>

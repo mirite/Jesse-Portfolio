@@ -1,9 +1,11 @@
 import type { ReactElement } from "react";
+
 import React from "react";
+
+import type { Post } from "@/lib/sources";
 
 import { Card } from "@/app/components/";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
-import type { Post } from "@/lib/sources";
 
 interface Props {
 	posts: Post<unknown>[];
@@ -18,11 +20,11 @@ const Posts = (props: Props): ReactElement => {
 				)
 				.map((post) => (
 					<Card
-						key={post.slug}
-						title={post.title}
-						link={post.categorySlug + "/" + post.slug}
-						excerpt={post.excerpt}
 						date={post.posted}
+						excerpt={post.excerpt}
+						key={post.slug}
+						link={post.categorySlug + "/" + post.slug}
+						title={post.title}
 					/>
 				))}
 		</MaxWidthContainer>

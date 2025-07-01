@@ -1,12 +1,26 @@
-import Image from "next/image";
-import Link from "next/link";
 import type { ReactElement } from "react";
 
-import { TextWrapper, PageWrapper, Posts } from "@/app/components";
+import Image from "next/image";
+import Link from "next/link";
+
+import { PageWrapper, Posts, TextWrapper } from "@/app/components";
 import { getPosts } from "@/lib";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
 import pic from "../../public/Jesse-2.png";
+/**
+ * Generates the metadata for the home page.
+ *
+ * @returns The metadata.
+ */
+export function generateMetadata(): { description: string; title: string } {
+	return {
+		description:
+			"Hello all! My name is Jesse Conner, and I am from Toronto, Ontario. I am passionate about programming, mental health, and getting outdoors to explore the area around me while getting steps. I made this site to share my projects, photos, and all of the opinions that the people that know me are already sick of.",
+		title: "Jesse Conner",
+	};
+}
+
 /**
  * The home page.
  *
@@ -16,14 +30,14 @@ export default async function Home(): Promise<ReactElement> {
 	const title = await getPlainTextContent("5elXtJ9BtgyNW3u0qrTzxy", "content");
 	const posts = (await getPosts(6)) || [];
 	return (
-		<PageWrapper title={title} className={"flex flex-col gap-4"}>
+		<PageWrapper className={"flex flex-col gap-4"} title={title}>
 			<div className={"flex flex-col items-center gap-4 lg:flex-row"}>
 				<Image
-					src={pic}
-					width={300}
-					height={300}
 					alt={""}
 					className={"lg:order-2"}
+					height={300}
+					src={pic}
+					width={300}
 				/>
 				<TextWrapper>
 					<h2>About Me</h2>
@@ -48,17 +62,4 @@ export default async function Home(): Promise<ReactElement> {
 			<Posts posts={posts} />
 		</PageWrapper>
 	);
-}
-
-/**
- * Generates the metadata for the home page.
- *
- * @returns The metadata.
- */
-export function generateMetadata(): { title: string; description: string } {
-	return {
-		title: "Jesse Conner",
-		description:
-			"Hello all! My name is Jesse Conner, and I am from Toronto, Ontario. I am passionate about programming, mental health, and getting outdoors to explore the area around me while getting steps. I made this site to share my projects, photos, and all of the opinions that the people that know me are already sick of.",
-	};
 }

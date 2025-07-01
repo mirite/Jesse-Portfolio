@@ -1,6 +1,10 @@
 import type { Metadata, ResolvedMetadata } from "next";
 
-import { sources, type Post } from "@/lib/sources";
+import { type Post, sources } from "@/lib/sources";
+
+export interface PostPageProps {
+	params: Promise<{ categorySlug: string; slug: string }>;
+}
 
 /**
  * Generates the Next metadata for a post.
@@ -20,10 +24,10 @@ export async function generateMetadata(
 		return {};
 	}
 
-	const { title, excerpt } = post;
+	const { excerpt, title } = post;
 	return {
-		title: `${parentTitle?.absolute} - ${title}`,
 		description: excerpt,
+		title: `${parentTitle?.absolute} - ${title}`,
 	};
 }
 
@@ -81,8 +85,4 @@ export async function getPosts(
 		.filter((post) => !categorySlug || post.categorySlug === categorySlug)
 		.sort((a, b) => new Date(b.posted).getTime() - new Date(a.posted).getTime())
 		.slice(0, count);
-}
-
-export interface PostPageProps {
-	params: Promise<{ slug: string; categorySlug: string }>;
 }

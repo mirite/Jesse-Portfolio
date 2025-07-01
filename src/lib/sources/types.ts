@@ -1,24 +1,24 @@
 import type { ComponentType } from "react";
 
-export type Post<T> = {
-	posted: string;
-	title: string;
-	content: T;
-	slug: string;
-	categorySlug: string;
-	excerpt: string;
-	source: Source<T>;
-};
-
 export type Category = {
+	description: string;
+	id: number;
 	name: string;
 	slug: string;
-	id: number;
-	description: string;
+};
+
+export type Post<T> = {
+	categorySlug: string;
+	content: T;
+	excerpt: string;
+	posted: string;
+	slug: string;
+	source: Source<T>;
+	title: string;
 };
 
 export type Source<T> = {
+	Component: ComponentType<{ content: T }>;
 	getCategories: () => Promise<Category[]>;
 	getPosts: () => Promise<Post<T>[]>;
-	Component: ComponentType<{ content: T }>;
 };

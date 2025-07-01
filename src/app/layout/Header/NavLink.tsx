@@ -5,21 +5,21 @@ import React, { type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 const NavLink = ({
-	path,
 	label,
+	path,
 }: {
-	path: string;
 	label: string;
+	path: string;
 }): ReactElement => {
 	const currentPath = usePathname();
 	return (
 		<li className="prose-blue-green dark:prose-invert">
 			<Link
-				href={path}
 				className={twMerge(
 					"leading-none no-underline transition hover:underline",
 					currentPath === path ? "underline" : "",
 				)}
+				href={path}
 			>
 				{label}
 			</Link>

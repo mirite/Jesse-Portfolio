@@ -1,4 +1,5 @@
 import type { ReactElement } from "react";
+
 import React from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -7,8 +8,8 @@ import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
 
 const PageWrapper = ({
 	children,
-	title,
 	className: extendedClassName,
+	title,
 	...rest
 }: React.HTMLAttributes<HTMLDivElement> & { title: string }): ReactElement => {
 	const className = twMerge("grow", extendedClassName);

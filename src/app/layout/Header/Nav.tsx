@@ -2,14 +2,15 @@ import React, { type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 import type { MenuToggleProps } from "@/app/layout/Header/MenuToggle";
+
 import MenuToggle from "@/app/layout/Header/MenuToggle";
 import ThemeToggle from "@/app/layout/Header/ThemeToggle";
 
 import NavLink from "./NavLink";
 
 type Props = {
-	menuToggleProps?: Omit<MenuToggleProps, "children">;
 	menuProps?: Omit<React.HTMLProps<HTMLMenuElement>, "children">;
+	menuToggleProps?: Omit<MenuToggleProps, "children">;
 };
 const Nav = (props: Props): ReactElement => {
 	const { menuProps, menuToggleProps } = props;
@@ -27,11 +28,11 @@ const Nav = (props: Props): ReactElement => {
 					)}
 					{...rest}
 				>
-					<NavLink path="/apps" label="Apps" />
-					<NavLink path="/blog" label="Blog" />
-					<NavLink path="/skills" label="Skills" />
-					<NavLink path="/about" label="About" />
-					<NavLink path="/contact" label="Contact" />
+					<NavLink label="Apps" path="/apps" />
+					<NavLink label="Blog" path="/blog" />
+					<NavLink label="Skills" path="/skills" />
+					<NavLink label="About" path="/about" />
+					<NavLink label="Contact" path="/contact" />
 					{!menuToggleProps?.forceOpen && <ThemeToggle />}
 				</menu>
 			</nav>

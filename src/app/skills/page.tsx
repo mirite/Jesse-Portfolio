@@ -1,6 +1,7 @@
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
+
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
@@ -41,8 +42,8 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 	const parentMetadata = await parent;
 	return {
-		title: `${parentMetadata.title?.absolute} - Skills`,
 		description: "A subset of the skills I have.",
+		title: `${parentMetadata.title?.absolute} - Skills`,
 	};
 }
 

@@ -6,13 +6,13 @@ import MdPost from "./MDPost";
 import { getLocalPosts } from "./posts";
 
 const source: Source<Root> = {
+	Component: MdPost,
 	getCategories: async () => {
 		return [];
 	},
 	getPosts: async function () {
 		return (await getLocalPosts()).map((p) => ({ ...p, source: this }));
 	},
-	Component: MdPost,
 };
 
 export default source;

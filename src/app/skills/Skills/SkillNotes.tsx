@@ -1,12 +1,14 @@
+import type { ReactElement } from "react";
+
 //TODO: Fix the cast to string[] the type in SkillSkeleton is wrong
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import type { ReactElement } from "react";
 import React, { useEffect } from "react";
+
+import type { SkillSkeleton } from "@/lib/skills";
 
 import { Button } from "@/app/components/";
 import NotesContent from "@/app/skills/Skills/NotesContent";
-import type { SkillSkeleton } from "@/lib/skills";
 
 const SkillNotes = (
 	props: SkillSkeleton["fields"] & { onClose: () => void },

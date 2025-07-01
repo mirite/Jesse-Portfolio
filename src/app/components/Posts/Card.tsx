@@ -1,18 +1,19 @@
-import Link from "next/link";
 import type { ReactElement } from "react";
+
+import Link from "next/link";
 import React from "react";
 
 import Arrow from "@/app/components/Posts/Arrow";
 import { getPrettyDate } from "@/lib";
 
 interface Props {
-	title: string;
-	link: string;
 	date?: string;
 	excerpt?: string;
+	link: string;
+	title: string;
 }
 const Card = (props: Props): ReactElement => {
-	const { title, link, excerpt, date } = props;
+	const { date, excerpt, link, title } = props;
 	return (
 		<div className="w-full rounded-lg border shadow-xs transition-all hover:bg-black/10 dark:hover:bg-white/10">
 			<Link

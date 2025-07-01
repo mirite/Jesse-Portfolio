@@ -1,8 +1,10 @@
 import type { ReactElement } from "react";
+
 import React from "react";
 
-import { PageWrapper, Post } from "@/app/components";
 import type { PostPageProps } from "@/lib/";
+
+import { PageWrapper, Post } from "@/app/components";
 import { getPost } from "@/lib/";
 
 const Page = async (props: PostPageProps): Promise<ReactElement> => {
@@ -19,6 +21,6 @@ const Page = async (props: PostPageProps): Promise<ReactElement> => {
 	);
 };
 
-export { generateStaticParams, generateMetadata } from "@/lib/posts";
+export { generateMetadata, generateStaticParams } from "@/lib/posts";
 
 export default Page;

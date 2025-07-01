@@ -8,17 +8,17 @@ type Props = Social & {
 };
 
 const Social = (social: Props): ReactElement => {
-	const { platform, username, link, icon, iconsOnly } = social;
+	const { icon, iconsOnly, link, platform, username } = social;
 	return (
 		<li>
 			<a
-				href={link}
-				target="_blank"
-				rel="noopener noreferrer"
 				className="flex items-center justify-start gap-2"
+				href={link}
+				rel="noopener noreferrer"
+				target="_blank"
 			>
 				{icon ? (
-					<FontAwesomeIcon icon={icon} className="text-xl" title={platform} />
+					<FontAwesomeIcon className="text-xl" icon={icon} title={platform} />
 				) : null}
 				{!icon && <span>{platform}</span>}
 				{!iconsOnly && <span>{username}</span>}

@@ -1,52 +1,11 @@
 import type { Metadata, ResolvingMetadata } from "next";
 
 import type { Category } from "@/lib/sources";
+
 import { sources } from "@/lib/sources";
 
-/**
- * Gets the categories.
- *
- * @returns The categories.
- */
-export async function getCategories(): Promise<Category[]> {
-	const categories: Category[] = [];
-	for (const source of sources) {
-		const sourceCategories = await source.getCategories();
-		categories.push(...sourceCategories);
-	}
-	return categories;
-}
-
-/**
- * Gets the static category parameters.
- *
- * @returns The static category parameters.
- */
-export async function generateStaticParams(): Promise<
-	Awaited<CategoryPageProps["params"]>[]
-> {
-	const categories = await getCategories();
-	return categories.map((category) => ({
-		categorySlug: category.slug,
-	}));
-}
-
-/**
- * Gets a category by its slug.
- *
- * @param categorySlug The slug of the category.
- * @returns The category with the given slug, or undefined if not found.
- */
-export async function getCategory(
-	categorySlug: string,
-): Promise<Category | undefined> {
-	const categories = await getCategories();
-	const category = categories.find(({ slug }) => {
-		return categorySlug.toLowerCase() === slug.toLowerCase();
-	});
-	if (category) {
-		return category;
-	}
+export interface CategoryPageProps {
+	params: Promise<{ categorySlug: string }>;
 }
 
 /**
@@ -66,10 +25,52 @@ export async function generateMetadata(
 	if (!category) {
 		return {};
 	}
-	const { name, description } = category;
-	return { title: `${title?.absolute} - ${name}`, description };
+	const { description, name } = category;
+	return { description, title: `${title?.absolute} - ${name}` };
 }
 
-export interface CategoryPageProps {
-	params: Promise<{ categorySlug: string }>;
+/**
+ * Gets the static category parameters.
+ *
+ * @returns The static category parameters.
+ */
+export async function generateStaticParams(): Promise<
+	Awaited<CategoryPageProps["params"]>[]
+> {
+	const categories = await getCategories();
+	return categories.map((category) => ({
+		categorySlug: category.slug,
+	}));
+}
+
+/**
+ * Gets the categories.
+ *
+ * @returns The categories.
+ */
+export async function getCategories(): Promise<Category[]> {
+	const categories: Category[] = [];
+	for (const source of sources) {
+		const sourceCategories = await source.getCategories();
+		categories.push(...sourceCategories);
+	}
+	return categories;
+}
+
+/**
+ * Gets a category by its slug.
+ *
+ * @param categorySlug The slug of the category.
+ * @returns The category with the given slug, or undefined if not found.
+ */
+export async function getCategory(
+	categorySlug: string,
+): Promise<Category | undefined> {
+	const categories = await getCategories();
+	const category = categories.find(({ slug }) => {
+		return categorySlug.toLowerCase() === slug.toLowerCase();
+	});
+	if (category) {
+		return category;
+	}
 }

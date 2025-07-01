@@ -5,12 +5,12 @@ import { socials } from "@/lib/socials";
 
 import Social from "./Social";
 
-type SocialsProps = {
+type SocialsProps = HTMLAttributes<HTMLUListElement> & {
 	iconsOnly?: boolean;
-} & HTMLAttributes<HTMLUListElement>;
+};
 
 const Socials = async (props: SocialsProps): Promise<ReactElement> => {
-	const { iconsOnly, className, ...rest } = props;
+	const { className, iconsOnly, ...rest } = props;
 
 	return (
 		<ul
@@ -19,7 +19,7 @@ const Socials = async (props: SocialsProps): Promise<ReactElement> => {
 		>
 			{socials.map((social) => {
 				return (
-					<Social key={social.platform} iconsOnly={iconsOnly} {...social} />
+					<Social iconsOnly={iconsOnly} key={social.platform} {...social} />
 				);
 			})}
 		</ul>

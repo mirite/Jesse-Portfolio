@@ -1,6 +1,6 @@
-import { getContent } from "../sources/contentful/connector";
-
 import type { Snippet, SnippetSkeleton } from "./types";
+
+import { getContent } from "../sources/contentful/connector";
 
 export * from "./types";
 

@@ -5,11 +5,11 @@ import type { ContentType } from "@/lib/supplementalData";
 
 import type { Category } from "../types";
 
+export type CategorySkeleton = ContentType<"category", Category>;
 export type PostSkeleton = ContentType<"blogPost", RawPost>;
 export type RawPost = {
-	posted: string;
-	content: Document;
-	title: string;
 	category: Entry<CategorySkeleton, undefined>[];
+	content: Document;
+	posted: string;
+	title: string;
 };
-export type CategorySkeleton = ContentType<"category", Category>;
