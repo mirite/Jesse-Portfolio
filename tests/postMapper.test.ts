@@ -1,35 +1,36 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
+
+import type { RawPost } from "@/lib/sources/contentful/types";
 
 import { postMapper } from "@/lib/sources/contentful/postMapper";
-import type { RawPost } from "@/lib/sources/contentful/types";
 
 describe("postMapper", () => {
 	it("Should create excerpts and slugs for posts", () => {
 		const input = {
-			posted: "2021-06-01T00:00:00.000",
+			category: [
+				{
+					fields: {
+						description: "Test Description",
+						id: 1,
+						name: "Test Category",
+						slug: "test-category",
+					},
+				},
+			],
 			content: {
 				content: [
 					{
-						nodeType: "paragraph",
 						content: [
 							{
 								value: "Hello World",
 							},
 						],
+						nodeType: "paragraph",
 					},
 				],
 			},
+			posted: "2021-06-01T00:00:00.000",
 			title: "Test Post",
-			category: [
-				{
-					fields: {
-						name: "Test Category",
-						slug: "test-category",
-						id: 1,
-						description: "Test Description",
-					},
-				},
-			],
 		} as unknown as RawPost;
 		const output = postMapper(input);
 		expect(output.slug).toBe("test-post");
@@ -39,12 +40,12 @@ describe("postMapper", () => {
 
 	it("Should give a blank excerpt when there is no body copy", () => {
 		const input = {
-			posted: "2021-06-01T00:00:00.000",
+			category: [],
 			content: {
 				content: [],
 			} as unknown as Document,
+			posted: "2021-06-01T00:00:00.000",
 			title: "Test Post",
-			category: [],
 		} as unknown as RawPost;
 		const output = postMapper(input);
 		expect(output.excerpt).toBe("");

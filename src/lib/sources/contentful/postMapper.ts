@@ -67,6 +67,7 @@ function getCategory(entry: RawPost) {
 function getExcerpt(entry: RawPost): string {
 	const content = entry.content.content;
 	const firstParagraph = content.find(
+		// eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
 		(block) => block.nodeType === "paragraph",
 	);
 

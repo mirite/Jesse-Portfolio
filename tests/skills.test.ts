@@ -1,17 +1,18 @@
-import { describe, it, expect } from "vitest";
+import { describe, expect, it } from "vitest";
 
 import type { Skill } from "@/lib/skills";
+
 import { splitSkillsByProficiency } from "@/lib/skills";
 
 describe("skills", () => {
 	it("should split skills by proficiency", () => {
 		const testSkills: Skill[] = [
-			{ proficiency: "high", name: "Skill 1", interestingness: 1 },
-			{ proficiency: "medium", name: "Skill 2", interestingness: 2 },
-			{ proficiency: "starter", name: "Skill 3", interestingness: 3 },
-			{ proficiency: "high", name: "Skill 4", interestingness: 4 },
-			{ proficiency: "medium", name: "Skill 5", interestingness: 5 },
-			{ proficiency: "starter", name: "Skill 6", interestingness: 6 },
+			{ interestingness: 1, name: "Skill 1", proficiency: "high" },
+			{ interestingness: 2, name: "Skill 2", proficiency: "medium" },
+			{ interestingness: 3, name: "Skill 3", proficiency: "starter" },
+			{ interestingness: 4, name: "Skill 4", proficiency: "high" },
+			{ interestingness: 5, name: "Skill 5", proficiency: "medium" },
+			{ interestingness: 6, name: "Skill 6", proficiency: "starter" },
 		];
 		const { high, medium, starter } = splitSkillsByProficiency(testSkills);
 		expect(high.length).toBe(2);

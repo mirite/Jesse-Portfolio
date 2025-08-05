@@ -4,12 +4,12 @@ import type { ReactElement } from "react";
 import React from "react";
 
 import { PageWrapper } from "@/app/components/";
-import BioImage from "@/app/contact/BioImage";
-import ContactForm from "@/app/contact/ContactForm/ContactForm";
 
+import BioImage from "./BioImage";
+import ContactForm from "./ContactForm/ContactForm";
 import Socials from "./Socials";
 
-const Page = async (): Promise<ReactElement> => {
+const Page = (): ReactElement => {
 	return (
 		<PageWrapper title={"Contact"}>
 			<div className="container">

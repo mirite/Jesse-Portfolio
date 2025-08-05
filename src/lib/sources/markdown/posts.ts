@@ -26,19 +26,18 @@ export async function getLocalPosts(): Promise<Omit<Post<Root>, "source">[]> {
 			"utf8",
 		);
 		const matterResult = matter(content);
-
 		const parsedContent = unified()
 			.use(parser)
 			.use(codeblocks)
 			.parse(matterResult.content);
 
 		posts.push({
-			categorySlug: matterResult.data.category,
+			categorySlug: matterResult.data.category as string,
 			content: parsedContent,
-			excerpt: matterResult.data.excerpt,
-			posted: matterResult.data.posted,
+			excerpt: matterResult.data.excerpt as string,
+			posted: matterResult.data.posted as string,
 			slug: file.replace(/\.md$/, ""),
-			title: matterResult.data.title,
+			title: matterResult.data.title as string,
 		});
 	}
 	return posts;

@@ -1,5 +1,6 @@
 import { general, react, tailwind } from "@mirite/eslint-config-mirite";
 import pluginNext from "@next/eslint-plugin-next";
+import path from "node:path";
 
 export default [
 	...general,
@@ -8,6 +9,16 @@ export default [
 	{
 		plugins: {
 			"@next/next": pluginNext,
+		},
+		settings: {
+			tailwindcss: {
+				config: path.resolve("src", "app", "globals.css"),
+			},
+		},
+		rules: {
+			"@typescript-eslint/no-unsafe-member-access": "warn",
+			"@typescript-eslint/no-floating-promises": "warn",
+			"@typescript-eslint/no-unsafe-assignment": "warn",
 		},
 	},
 	{

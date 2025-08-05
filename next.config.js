@@ -1,15 +1,15 @@
 const nextConfig = {
+	experimental: { reactCompiler: true },
 	images: {
 		remotePatterns: [
 			{
-				protocol: "https",
 				hostname: "images.ctfassets.net",
-				port: "",
 				pathname: "**",
+				port: "",
+				protocol: "https",
 			},
 		],
 	},
-	experimental: { reactCompiler: true },
 };
 
 export default nextConfig;
