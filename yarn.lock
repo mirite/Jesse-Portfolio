@@ -1178,9 +1178,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mirite/eslint-config-mirite@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "@mirite/eslint-config-mirite@npm:1.2.0"
+"@mirite/eslint-config-mirite@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@mirite/eslint-config-mirite@npm:1.2.1"
   dependencies:
     "@eslint/js": "npm:^9.32.0"
     eslint: "npm:^9.32.0"
@@ -1199,11 +1199,11 @@ __metadata:
     prettier-plugin-tailwindcss: "npm:^0.6.14"
     tailwindcss: "npm:^4.1.11"
     typescript: "npm:^5.9.2"
-    typescript-eslint: "npm:^8.38.0"
+    typescript-eslint: "npm:^8.39.0"
   peerDependencies:
     eslint: ^9.30.1
     prettier: ^3.6.2
-  checksum: 10c0/30a94c4c2d883ca7dba756b46951edf107f60cdd785d0a15946b883125dc7c67cfdcbdc735c7d7a177042e7bac2b52dc55ba98291d13c78c0176d7c4de9928f7
+  checksum: 10c0/b9420ead643822e31c21fde054046e187a75a11c539a7bc4d792ac79f642c74d57bd060c6c3e8cc78a02b64d360e150c2688f3f073f7b0a19d97e7f5a9c325b5
   languageName: node
   linkType: hard
 
@@ -1219,7 +1219,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^7.0.0"
     "@fortawesome/free-solid-svg-icons": "npm:^7.0.0"
     "@fortawesome/react-fontawesome": "npm:^0.2.3"
-    "@mirite/eslint-config-mirite": "npm:^1.2.0"
+    "@mirite/eslint-config-mirite": "npm:^1.2.1"
     "@tailwindcss/forms": "npm:^0.5.10"
     "@tailwindcss/postcss": "npm:^4.1.11"
     "@tailwindcss/typography": "npm:^0.5.16"
@@ -10133,7 +10133,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.38.0":
+"typescript-eslint@npm:^8.39.0":
   version: 8.39.0
   resolution: "typescript-eslint@npm:8.39.0"
   dependencies:

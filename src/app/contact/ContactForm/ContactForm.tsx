@@ -17,7 +17,12 @@ export default function ContactForm(): ReactElement {
 	}
 	return (
 		<TextWrapper>
-			<form className="flex flex-col space-y-2" onSubmit={handleSubmit}>
+			<form
+				className="flex flex-col space-y-2"
+				onSubmit={(e) => {
+					handleSubmit(e);
+				}}
+			>
 				<Field id="email" label="Email Address:">
 					<input id="email" name="email" type="email" />
 					<ValidationError errors={state.errors} field="email" prefix="Email" />
