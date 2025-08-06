@@ -13,6 +13,7 @@ export default [
 		settings: {
 			tailwindcss: {
 				config: path.resolve("src", "app", "globals.css"),
+				callees: ["classnames", "clsx", "ctl", "twMerge"],
 			},
 		},
 		rules: {
