@@ -1,4 +1,5 @@
 "use client";
+
 import type { HTMLAttributes, ReactElement } from "react";
 
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";

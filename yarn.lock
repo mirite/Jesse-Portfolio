@@ -76,7 +76,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/generator@npm:^7.28.0":
+"@babel/generator@npm:^7.26.2, @babel/generator@npm:^7.28.0":
   version: 7.28.0
   resolution: "@babel/generator@npm:7.28.0"
   dependencies:
@@ -238,7 +238,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/parser@npm:^7.24.4, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.28.0":
+"@babel/parser@npm:^7.24.4, @babel/parser@npm:^7.25.4, @babel/parser@npm:^7.26.2, @babel/parser@npm:^7.27.2, @babel/parser@npm:^7.28.0":
   version: 7.28.0
   resolution: "@babel/parser@npm:7.28.0"
   dependencies:
@@ -272,7 +272,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/traverse@npm:^7.27.1, @babel/traverse@npm:^7.27.3, @babel/traverse@npm:^7.28.0":
+"@babel/traverse@npm:^7.25.9, @babel/traverse@npm:^7.27.1, @babel/traverse@npm:^7.27.3, @babel/traverse@npm:^7.28.0":
   version: 7.28.0
   resolution: "@babel/traverse@npm:7.28.0"
   dependencies:
@@ -822,6 +822,34 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@ianvs/prettier-plugin-sort-imports@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "@ianvs/prettier-plugin-sort-imports@npm:4.6.0"
+  dependencies:
+    "@babel/generator": "npm:^7.26.2"
+    "@babel/parser": "npm:^7.26.2"
+    "@babel/traverse": "npm:^7.25.9"
+    "@babel/types": "npm:^7.26.0"
+    semver: "npm:^7.5.2"
+  peerDependencies:
+    "@prettier/plugin-oxc": ^0.0.4
+    "@vue/compiler-sfc": 2.7.x || 3.x
+    content-tag: ^4.0.0
+    prettier: 2 || 3 || ^4.0.0-0
+    prettier-plugin-ember-template-tag: ^2.1.0
+  peerDependenciesMeta:
+    "@prettier/plugin-oxc":
+      optional: true
+    "@vue/compiler-sfc":
+      optional: true
+    content-tag:
+      optional: true
+    prettier-plugin-ember-template-tag:
+      optional: true
+  checksum: 10c0/d3f6c26edbd7a2d5e5c327e90d2174b066918340c4718149b598ac0d72aa5e8c233d6a1225ae22ccbcb224c489b4f5afcdcefb134dcc5b488a081504ce9f305f
+  languageName: node
+  linkType: hard
+
 "@img/sharp-darwin-arm64@npm:0.34.3":
   version: 0.34.3
   resolution: "@img/sharp-darwin-arm64@npm:0.34.3"
@@ -1087,32 +1115,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mirite/eslint-config-mirite@npm:^1.2.1":
-  version: 1.2.1
-  resolution: "@mirite/eslint-config-mirite@npm:1.2.1"
+"@mirite/eslint-config-mirite@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "@mirite/eslint-config-mirite@npm:1.3.0"
   dependencies:
     "@eslint/js": "npm:^9.32.0"
-    eslint: "npm:^9.32.0"
+    "@ianvs/prettier-plugin-sort-imports": "npm:^4.6.0"
     eslint-import-resolver-typescript: "npm:^4.4.4"
     eslint-plugin-import: "npm:^2.32.0"
-    eslint-plugin-jsdoc: "npm:^52.0.2"
+    eslint-plugin-jsdoc: "npm:^52.0.4"
     eslint-plugin-perfectionist: "npm:^4.15.0"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-compiler: "npm:19.1.0-rc.2"
     eslint-plugin-react-hooks: "npm:^5.2.0"
     eslint-plugin-tailwindcss: "npm:^4.0.0-beta.0"
     globals: "npm:^16.3.0"
-    prettier: "npm:^3.6.2"
     prettier-plugin-jsdoc: "npm:^1.3.3"
     prettier-plugin-packagejson: "npm:^2.5.19"
     prettier-plugin-tailwindcss: "npm:^0.6.14"
-    tailwindcss: "npm:^4.1.11"
-    typescript: "npm:^5.9.2"
     typescript-eslint: "npm:^8.39.0"
   peerDependencies:
     eslint: ^9.30.1
     prettier: ^3.6.2
-  checksum: 10c0/b9420ead643822e31c21fde054046e187a75a11c539a7bc4d792ac79f642c74d57bd060c6c3e8cc78a02b64d360e150c2688f3f073f7b0a19d97e7f5a9c325b5
+    tailwindcss: ^4.1.11
+  checksum: 10c0/0b6a027bc6c571e1b5fbb699c052413335f665af2ac6cc2aa4dd223bf7a7e9fca6e5fe082cba48221d4cb17d7840468052ea4899c9bb60adc7f6ed39ba8aa852
   languageName: node
   linkType: hard
 
@@ -1128,7 +1154,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:^7.0.0"
     "@fortawesome/free-solid-svg-icons": "npm:^7.0.0"
     "@fortawesome/react-fontawesome": "npm:^0.2.3"
-    "@mirite/eslint-config-mirite": "npm:^1.2.1"
+    "@mirite/eslint-config-mirite": "npm:^1.3.0"
     "@tailwindcss/forms": "npm:^0.5.10"
     "@tailwindcss/postcss": "npm:^4.1.11"
     "@tailwindcss/typography": "npm:^0.5.16"
@@ -3606,7 +3632,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-jsdoc@npm:^52.0.2":
+"eslint-plugin-jsdoc@npm:^52.0.4":
   version: 52.0.4
   resolution: "eslint-plugin-jsdoc@npm:52.0.4"
   dependencies:
@@ -3755,7 +3781,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:9.32.0, eslint@npm:^9.32.0":
+"eslint@npm:9.32.0":
   version: 9.32.0
   resolution: "eslint@npm:9.32.0"
   dependencies:
@@ -6521,7 +6547,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:3.6.2, prettier@npm:^3.6.2":
+"prettier@npm:3.6.2":
   version: 3.6.2
   resolution: "prettier@npm:3.6.2"
   bin:
@@ -6960,7 +6986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^7.3.5, semver@npm:^7.5.3, semver@npm:^7.6.0, semver@npm:^7.7.1, semver@npm:^7.7.2":
+"semver@npm:^7.3.5, semver@npm:^7.5.2, semver@npm:^7.5.3, semver@npm:^7.6.0, semver@npm:^7.7.1, semver@npm:^7.7.2":
   version: 7.7.2
   resolution: "semver@npm:7.7.2"
   bin:
@@ -7599,7 +7625,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.1.11, tailwindcss@npm:^4.1.11":
+"tailwindcss@npm:4.1.11":
   version: 4.1.11
   resolution: "tailwindcss@npm:4.1.11"
   checksum: 10c0/e23eed0a0d6557b3aff8ba320b82758988ca67c351ee9b33dfc646e83a64f6eaeca6183dfc97e931f7b2fab46e925090066edd697d2ede3f396c9fdeb4af24c1
@@ -7861,7 +7887,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:5.9.2, typescript@npm:^5.9.2":
+"typescript@npm:5.9.2":
   version: 5.9.2
   resolution: "typescript@npm:5.9.2"
   bin:
@@ -7871,7 +7897,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>, typescript@patch:typescript@npm%3A^5.9.2#optional!builtin<compat/typescript>":
+"typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>":
   version: 5.9.2
   resolution: "typescript@patch:typescript@npm%3A5.9.2#optional!builtin<compat/typescript>::version=5.9.2&hash=5786d5"
   bin:

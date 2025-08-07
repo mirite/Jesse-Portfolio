@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import type { Skill } from "@/lib/skills";
-
 import { splitSkillsByProficiency } from "@/lib/skills";
 
 describe("skills", () => {

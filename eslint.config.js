@@ -1,6 +1,6 @@
+import path from "node:path";
 import { general, react, tailwind } from "@mirite/eslint-config-mirite";
 import pluginNext from "@next/eslint-plugin-next";
-import path from "node:path";
 
 export default [
 	...general,

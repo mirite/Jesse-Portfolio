@@ -46,7 +46,7 @@
 		"unified": "^11.0.5"
 	},
 	"devDependencies": {
-		"@mirite/eslint-config-mirite": "^1.2.1",
+		"@mirite/eslint-config-mirite": "^1.3.0",
 		"@tailwindcss/forms": "^0.5.10",
 		"@tailwindcss/postcss": "^4.1.11",
 		"@tailwindcss/typography": "^0.5.16",

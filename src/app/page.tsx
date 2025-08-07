@@ -8,6 +8,7 @@ import { getPosts } from "@/lib";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
 
 import pic from "../../public/Jesse-2.png";
+
 /**
  * Generates the metadata for the home page.
  *
