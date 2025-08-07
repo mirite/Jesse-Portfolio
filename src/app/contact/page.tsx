@@ -1,10 +1,8 @@
 import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
-
 import React from "react";
 
 import { PageWrapper } from "@/app/components/";
-
 import BioImage from "./BioImage";
 import ContactForm from "./ContactForm/ContactForm";
 import Socials from "./Socials";

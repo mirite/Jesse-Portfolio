@@ -1,6 +1,5 @@
-import type { Document } from "@contentful/rich-text-types";
-
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Document } from "@contentful/rich-text-types";
 import React, { type ReactElement } from "react";
 
 import { TextWrapper } from "@/app/components";

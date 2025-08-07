@@ -1,10 +1,8 @@
 import type { ReactElement } from "react";
-
 import React from "react";
 
-import type { PostPageProps } from "@/lib/";
-
 import { PageWrapper, Post } from "@/app/components";
+import type { PostPageProps } from "@/lib/";
 import { getPost } from "@/lib/";
 
 const Page = async (props: PostPageProps): Promise<ReactElement> => {

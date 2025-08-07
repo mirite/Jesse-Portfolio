@@ -1,10 +1,8 @@
 import type { ReactElement } from "react";
-
 import React from "react";
 
-import type { Skill as SkillType } from "@/lib/skills";
-
 import Skill from "@/app/skills/Skills/Skill";
+import type { Skill as SkillType } from "@/lib/skills";
 
 interface Props {
 	skills: SkillType[];

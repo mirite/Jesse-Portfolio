@@ -1,13 +1,11 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Metadata, ResolvedMetadata } from "next";
 import type { ReactElement } from "react";
-
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 
 import { PageWrapper, TextWrapper } from "@/app/components/";
 import { getSplitSkills } from "@/lib/skills";
 import { getSnippet } from "@/lib/snippets";
-
 import Skills from "./Skills/Skills";
 
 const Page = async (): Promise<ReactElement> => {

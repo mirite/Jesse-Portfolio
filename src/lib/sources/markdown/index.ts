@@ -1,7 +1,6 @@
 import type { Root } from "remark-parse/lib";
 
 import type { Source } from "../types";
-
 import MdPost from "./MDPost";
 import { getLocalPosts } from "./posts";
 

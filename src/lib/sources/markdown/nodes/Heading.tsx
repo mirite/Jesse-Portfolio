@@ -1,5 +1,4 @@
 import type { Handler } from "../types";
-
 import { ChildTree } from "./ChildTree";
 
 export const Heading: Handler<"heading"> = (props) => {

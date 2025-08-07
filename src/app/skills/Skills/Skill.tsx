@@ -1,14 +1,11 @@
-import type { ReactElement } from "react";
-
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import type { ReactElement } from "react";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 
-import type { Skill as SkillType } from "@/lib/skills";
-
 import { Button } from "@/app/components/";
-
+import type { Skill as SkillType } from "@/lib/skills";
 import SkillNotes from "./SkillNotes";
 
 const Skill = (skill: SkillType): ReactElement => {

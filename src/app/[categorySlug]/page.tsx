@@ -1,11 +1,9 @@
-import type { ReactElement } from "react";
-
 import Link from "next/link";
+import type { ReactElement } from "react";
 import React from "react";
 
-import type { CategoryPageProps } from "@/lib/";
-
 import { PageWrapper, TextWrapper } from "@/app/components/";
+import type { CategoryPageProps } from "@/lib/";
 import { getCategories, getPosts } from "@/lib/";
 
 const Page = async (props: CategoryPageProps): Promise<ReactElement> => {

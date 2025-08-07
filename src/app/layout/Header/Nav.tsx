@@ -2,10 +2,8 @@ import React, { type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 import type { MenuToggleProps } from "@/app/layout/Header/MenuToggle";
-
 import MenuToggle from "@/app/layout/Header/MenuToggle";
 import ThemeToggle from "@/app/layout/Header/ThemeToggle";
-
 import NavLink from "./NavLink";
 
 type Props = {

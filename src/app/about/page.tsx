@@ -1,5 +1,4 @@
 import type { Metadata, ResolvedMetadata } from "next";
-
 import Link from "next/link";
 import React, { type ReactElement } from "react";
 

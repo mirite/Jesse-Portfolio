@@ -1,7 +1,6 @@
 import type { ImageProps } from "next/image";
-import type { ComponentType } from "react";
-
 import NextImage from "next/image";
+import type { ComponentType } from "react";
 import React from "react";
 
 import pic from "../../../../public/Jesse-01.png";
