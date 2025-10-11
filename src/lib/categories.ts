@@ -1,7 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 
 import type { Category } from "@/lib/sources";
-
 import { sources } from "@/lib/sources";
 
 export interface CategoryPageProps {

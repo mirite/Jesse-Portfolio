@@ -1,14 +1,12 @@
 "use client";
 
 import type { ReactElement } from "react";
-
 import React from "react";
-
-import type { Skill } from "@/lib/skills";
 
 import Legend from "@/app/skills/Skills/Legend";
 import Search from "@/app/skills/Skills/Search";
 import SkillLevel from "@/app/skills/Skills/SkillLevel";
+import type { Skill } from "@/lib/skills";
 
 interface Props {
 	skills: Skill[];

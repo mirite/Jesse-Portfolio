@@ -1,15 +1,15 @@
 "use client";
+
 import React, {
 	createContext,
-	type HTMLAttributes,
-	type ReactElement,
 	useEffect,
 	useMemo,
 	useState,
+	type HTMLAttributes,
+	type ReactElement,
 } from "react";
 
 import type { OptionDefinition, ThemeOption } from "@/lib";
-
 import { useTheme } from "@/lib";
 
 type Props = HTMLAttributes<HTMLDivElement>;

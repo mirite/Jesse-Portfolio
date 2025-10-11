@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import type { Category } from "../src/lib/sources";
-
 import { categoryMapper } from "../src/lib/sources/contentful/categoryMapper";
 
 describe("categoryMapper", () => {

@@ -2,7 +2,6 @@ import React, { type HTMLAttributes, type ReactElement } from "react";
 import { twMerge } from "tailwind-merge";
 
 import { socials } from "@/lib/socials";
-
 import Social from "./Social";
 
 type SocialsProps = HTMLAttributes<HTMLUListElement> & {

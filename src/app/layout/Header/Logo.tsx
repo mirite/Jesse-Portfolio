@@ -1,7 +1,6 @@
-import type { ComponentProps, ReactElement } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import type { ComponentProps, ReactElement } from "react";
 import React from "react";
 import { twMerge } from "tailwind-merge";
 

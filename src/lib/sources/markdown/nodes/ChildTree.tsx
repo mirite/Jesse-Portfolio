@@ -2,7 +2,6 @@ import type { ReactElement } from "react";
 import type { Root } from "remark-parse/lib";
 
 import type { Handler as HandlerType } from "../types";
-
 import { nodeHandlers } from "./index";
 
 type Props = { children: Root["children"] };

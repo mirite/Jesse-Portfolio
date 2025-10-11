@@ -1,13 +1,12 @@
-import type { ReactElement } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactElement } from "react";
 
 import { PageWrapper, Posts, TextWrapper } from "@/app/components";
 import { getPosts } from "@/lib";
 import { getPlainTextContent } from "@/lib/sources/contentful/connector";
-
 import pic from "../../public/Jesse-2.png";
+
 /**
  * Generates the metadata for the home page.
  *

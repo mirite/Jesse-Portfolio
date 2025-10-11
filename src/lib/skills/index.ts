@@ -1,5 +1,4 @@
 import { getEntries } from "@/lib/sources/contentful/connector";
-
 import type { Skill, SkillSkeleton } from "./types";
 
 export * from "./types";

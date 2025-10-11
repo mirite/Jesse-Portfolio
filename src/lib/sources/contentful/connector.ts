@@ -1,14 +1,13 @@
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import type { Document } from "@contentful/rich-text-types";
 import type {
 	AssetFields,
 	CreateClientParams,
 	EntrySkeletonType,
 } from "contentful";
-import type { ReactNode } from "react";
-
-import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { createClient } from "contentful";
+import type { ReactNode } from "react";
 
 let _client: ReturnType<typeof createClient>;
 

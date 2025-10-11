@@ -1,9 +1,8 @@
-import type { Document, Node } from "@contentful/rich-text-types";
-import type { ReactElement } from "react";
-
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Document, Node } from "@contentful/rich-text-types";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
 import Image from "next/image";
+import type { ReactElement } from "react";
 
 const renderOptions = {
 	renderNode: {

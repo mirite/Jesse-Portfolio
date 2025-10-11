@@ -1,8 +1,7 @@
 import { describe, expect, it } from "vitest";
 
-import type { RawPost } from "@/lib/sources/contentful/types";
-
 import { postMapper } from "@/lib/sources/contentful/postMapper";
+import type { RawPost } from "@/lib/sources/contentful/types";
 
 describe("postMapper", () => {
 	it("Should create excerpts and slugs for posts", () => {

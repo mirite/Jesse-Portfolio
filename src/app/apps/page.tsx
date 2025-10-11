@@ -1,10 +1,8 @@
 import type { Metadata, ResolvedMetadata } from "next";
-
 import { type ReactElement } from "react";
 
 import PageWrapper from "@/app/components/general/PageWrapper";
 import { getApps } from "@/lib/apps";
-
 import App from "./App";
 
 /**

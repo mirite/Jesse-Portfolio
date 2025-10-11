@@ -1,4 +1,5 @@
 "use client";
+
 import { faLightbulb, faMoon } from "@fortawesome/free-regular-svg-icons";
 import { faDisplay } from "@fortawesome/free-solid-svg-icons";
 import { useState, useSyncExternalStore } from "react";

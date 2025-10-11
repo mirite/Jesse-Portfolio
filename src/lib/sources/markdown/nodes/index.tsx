@@ -1,5 +1,4 @@
 import type { Handlers } from "../types";
-
 import { Blockquote } from "./Blockquote";
 import { Break } from "./Break";
 import { Code } from "./Code";

@@ -1,11 +1,9 @@
 import type { ReactElement } from "react";
-
 import React from "react";
-
-import type { Post } from "@/lib/sources";
 
 import { Card } from "@/app/components/";
 import MaxWidthContainer from "@/app/layout/MaxWidthContainer";
+import type { Post } from "@/lib/sources";
 
 interface Props {
 	posts: Post<unknown>[];

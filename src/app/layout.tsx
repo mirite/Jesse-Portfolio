@@ -1,7 +1,7 @@
 import "./globals.css";
+
 import type { Metadata } from "next";
 import type { PropsWithChildren, ReactElement } from "react";
-
 import React from "react";
 
 import { Footer, Header } from "@/app/layout/index";

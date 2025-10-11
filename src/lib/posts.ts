@@ -1,6 +1,6 @@
 import type { Metadata, ResolvedMetadata } from "next";
 
-import { type Post, sources } from "@/lib/sources";
+import { sources, type Post } from "@/lib/sources";
 
 export interface PostPageProps {
 	params: Promise<{ categorySlug: string; slug: string }>;
