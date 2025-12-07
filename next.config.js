@@ -1,5 +1,4 @@
 const nextConfig = {
-	experimental: { reactCompiler: true },
 	images: {
 		remotePatterns: [
 			{
@@ -10,6 +9,7 @@ const nextConfig = {
 			},
 		],
 	},
+	reactCompiler: true,
 };
 
 export default nextConfig;
