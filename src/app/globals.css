@@ -2,7 +2,7 @@
 
 @import "tailwindcss";
 
-@config '../../tailwind.config.js';
+@config "../../tailwind.config.js";
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 @custom-variant dark (&:is(.dark * ));

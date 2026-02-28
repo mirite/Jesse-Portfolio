@@ -1,5 +1,5 @@
 import path from "node:path";
-import { general, react, tailwind } from "@mirite/eslint-config-mirite";
+import { general, getTailwind, react } from "@mirite/eslint-config-mirite";
 import pluginNext from "@next/eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
@@ -7,7 +7,7 @@ import tseslint from "typescript-eslint";
 export default [
 	...general,
 	...react,
-	...tailwind,
+	...getTailwind("./src/app/globals.css"),
 	{
 		plugins: {
 			"@next/next": pluginNext,
