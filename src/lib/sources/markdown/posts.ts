@@ -3,9 +3,9 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
 import matter from "gray-matter";
+import type { Root } from "mdast";
 import codeblocks from "remark-code-blocks";
 import parser from "remark-parse";
-import type { Root } from "remark-parse/lib";
 import { unified } from "unified";
 
 import type { Post } from "../types";

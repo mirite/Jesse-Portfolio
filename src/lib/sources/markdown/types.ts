@@ -1,5 +1,5 @@
+import type { Root } from "mdast";
 import type { FC } from "react";
-import type { Root } from "remark-parse/lib";
 
 export type Handler<T extends NodeType> = FC<HandlerProps<T>>;
 export type HandlerProps<T extends NodeType> = Extract<Node, { type: T }>;

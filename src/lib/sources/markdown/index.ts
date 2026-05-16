@@ -1,4 +1,4 @@
-import type { Root } from "remark-parse/lib";
+import type { Root } from "mdast";
 
 import type { Source } from "../types";
 import MdPost from "./MDPost";

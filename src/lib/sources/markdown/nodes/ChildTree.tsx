@@ -1,5 +1,5 @@
+import type { Root } from "mdast";
 import type { ReactElement } from "react";
-import type { Root } from "remark-parse/lib";
 
 import type { Handler as HandlerType } from "../types";
 import { nodeHandlers } from "./index";
@@ -36,5 +36,5 @@ export function ChildTree(props: Props): ReactElement {
 function getHandler<T extends Root["children"][number]["type"]>(
 	type: T,
 ): HandlerType<T> {
-	return nodeHandlers[type] as HandlerType<T>;
+	return nodeHandlers[type];
 }

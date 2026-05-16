@@ -1,5 +1,5 @@
+import type { Root } from "mdast";
 import type { ReactElement } from "react";
-import type { Root } from "remark-parse/lib";
 
 import { ChildTree } from "./nodes/ChildTree";
 
